@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import Logo from "../assets/V4long.svg";
+import Logo from "../assets/V4longW.svg";
 import BG from "../assets/Bglandinghome.png";
 import { FaBars } from "react-icons/fa"; // Pour l'icône du menu hamburger
 import { HiPaintBrush } from "react-icons/hi2";
-import { easeIn, easeInOut, motion } from "framer-motion";
+import { RiComputerLine } from "react-icons/ri";
+import { MdOutlineMenu } from "react-icons/md";
+import { MdGroups } from "react-icons/md";
+import { BsStars } from "react-icons/bs";
+
 const Menu = [
-    { name: "Accueil", href: "#" },
+    { name: "Accueil", href: "#Accueil" },
     { name: "Nos Solutions", href: "#Section2" },
     { name: "Nos Services", href: "#Section3" },
     { name: "Notre Mission", href: "#Section4" },
@@ -82,23 +86,23 @@ const Section1 = () => {
                     <div
                     className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
                         <HiPaintBrush className="text-white size-6"/>
-                        <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
+                        <p className="text-white text-lg sm:text-xl font-thin font-abeezee">Design</p>
                     </div>
                     <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
-                        <HiPaintBrush className="text-white size-6"/>
-                        <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
+                        <RiComputerLine className="text-white size-6"/>
+                        <p className="text-white text-lg sm:text-xl font-thin font-abeezee">Site Web</p>
                     </div>
                     <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
-                        <HiPaintBrush className="text-white size-6"/>
-                        <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
+                        <MdOutlineMenu className="text-white size-6"/>
+                        <p className="text-white text-lg sm:text-xl font-thin font-abeezee">CRM</p>
                     </div>
                     <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
-                        <HiPaintBrush className="text-white size-6"/>
-                        <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
+                        <MdGroups className="text-white size-6"/>
+                        <p className="text-white text-lg sm:text-xl font-thin font-abeezee">Communication</p>
                     </div>
                     <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
-                        <HiPaintBrush className="text-white size-6"/>
-                        <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
+                        <BsStars className="text-white size-6"/>
+                        <p className="text-white text-lg sm:text-xl font-thin font-abeezee">Outils API</p>
                     </div>
 
                 </div>

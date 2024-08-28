@@ -22,6 +22,8 @@ module.exports = {
         'roboto': ['Roboto', 'sans-serif'],
         'jost': ['Jost', 'sans-serif'],
         'afacad': ['Afacad', 'sans-serif'],
+        'abeezee': ['ABeeZee', 'sans-serif'],
+
       }, // Assurez-vous que le nom correspond exactement à Google Fonts
       colors: {
         primary: '#A6654E',
