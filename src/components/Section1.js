@@ -14,8 +14,7 @@ const Menu = [
 const Navbar = () => {
     return (
         <div
-            className="w-full fixed top-0 left-0 z-50"
-            style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+            className="w-full fixed top-0 left-0 z-50b bg-transparent"
         >
             <div className="flex items-center justify-between py-4 px-8">
                 <img src={Logo} alt="Logo" className="h-12" />
@@ -39,7 +38,7 @@ const Navbar = () => {
 
 const Section1 = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen w-full bg-cover bg-center" style={{ backgroundImage: `url(${BG})` }}>
+        <div className="flex flex-col items-center justify-center min-h-screen w-full bg-center bg-cover " style={{ backgroundImage: `url(${BG})` }}>
             <Navbar />
             {/* Contenu de la section */}
         </div>
