@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "../assets/V4 long W.svg";
-import BG from "../assets/Bg landing home.png";
+import Logo from "../assets/V4long.svg";
+import BG from "../assets/Bglandinghome.png";
 
 const Menu = [
     { name: "Accueil", href: "#" },

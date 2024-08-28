@@ -5,7 +5,7 @@ import LogoSynergie from "../assets/V4 simple W.svg";
 import LogoVox from "../assets/PictoVox.svg";
 import LogoImma from "../assets/PictoImaMissio.svg";
 import LogoScan from "../assets/PictoScanAvis.png";
-import SynergieLong from "../assets/V4 long W.svg";
+import SynergieLong from "../assets/V4long.svg";
 import { FaPhoneAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
