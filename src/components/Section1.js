@@ -3,7 +3,7 @@ import Logo from "../assets/V4long.svg";
 import BG from "../assets/Bglandinghome.png";
 import { FaBars } from "react-icons/fa"; // Pour l'icône du menu hamburger
 import { HiPaintBrush } from "react-icons/hi2";
-
+import { easeIn, easeInOut, motion } from "framer-motion";
 const Menu = [
     { name: "Accueil", href: "#" },
     { name: "Nos Solutions", href: "#Section2" },
@@ -79,23 +79,24 @@ const Section1 = () => {
                 <p className="text-white text-2xl sm:text-4xl font-thin font-afacad">numérique</p>
                 </div>
                 <div className="flex flex-wrap items-center justify-center mt-16 gap-x-4">
-                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2">
+                    <div
+                    className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
                         <HiPaintBrush className="text-white size-6"/>
                         <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
                     </div>
-                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2">
+                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
                         <HiPaintBrush className="text-white size-6"/>
                         <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
                     </div>
-                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2">
+                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
                         <HiPaintBrush className="text-white size-6"/>
                         <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
                     </div>
-                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2">
+                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
                         <HiPaintBrush className="text-white size-6"/>
                         <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
                     </div>
-                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2">
+                    <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
                         <HiPaintBrush className="text-white size-6"/>
                         <p className="text-white text-lg sm:text-xl font-thin font-afacad">Design</p>
                     </div>
