@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
+import SynergieInnovationPage from './pages/SynergieInnovation';
 
 const App = () => {
   useEffect(() => {
@@ -26,6 +27,8 @@ const App = () => {
         <div className="flex flex-col xl:gap-y-12 w-full">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
+
             {/* Ajoutez d'autres routes ici pour vos autres pages */}
           </Routes>
         </div>

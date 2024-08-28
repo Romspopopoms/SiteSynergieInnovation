@@ -1,25 +1,47 @@
 import React from "react";
-import { easeInOut, motion } from "framer-motion";
+import Logo from "../assets/V4 long W.svg";
+import BG from "../assets/Bg landing home.png";
 
+const Menu = [
+    { name: "Accueil", href: "#" },
+    { name: "Nos Solutions", href: "#Section2" },
+    { name: "Nos Services", href: "#Section3" },
+    { name: "Notre Mission", href: "#Section4" },
+    { name: "Notre équipe", href: "#Section5" },
+    { name: "Contact", href: "#Section6" },
+];
+
+const Navbar = () => {
+    return (
+        <div
+            className="w-full fixed top-0 left-0 z-50"
+            style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+        >
+            <div className="flex items-center justify-between py-4 px-8">
+                <img src={Logo} alt="Logo" className="h-12" />
+                <ul className="flex space-x-8">
+                    {Menu.map((item, index) => (
+                        <li key={index}>
+                            <a
+                                href={item.href}
+                                className="text-white text-lg font-medium hover:text-gray-300 transition-colors duration-200"
+                            >
+                                {item.name}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <hr className="border-0 h-px bg-gradient-to-r from-transparent via-white to-transparent my-0" />
+        </div>
+    );
+};
 
 const Section1 = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-96 w-auto">
-            
-            <img src={''} alt="Photo1" className="absolute inset-0 w-full blur-sm z-0 min-h-96" />
-            <motion.h1 
-            initial={{ opacity: 0, y: 100 }}
-            animate={{opacity: 1, y:0 }}
-            transition={{ duration: 1, ease:easeInOut }}
-            className="z-10 self-start xl:ml-32 xl:mt-32 mt-12 ml-8 font-jost text-2xl md:text-4xl lg:text-6xl font-bold text-white"
-            >LA BOULANGERIE</motion.h1>
-            
-            <motion.h2 
-            initial={{ opacity: 0, y: 100 }}
-            animate={{opacity: 1, y:0 }}
-            transition={{ duration: 1, ease:easeInOut, delay:0.3 }}
-            className="z-10 self-start xl:ml-32 mt-4 ml-8 font-jost text-2xl sm:text-4xl font-bold text-white">L'art de la boulangerie française à votre portée</motion.h2>
-                
+        <div className="flex flex-col items-center justify-center min-h-screen w-full bg-cover bg-center" style={{ backgroundImage: `url(${BG})` }}>
+            <Navbar />
+            {/* Contenu de la section */}
         </div>
     );
 };

@@ -7,16 +7,19 @@ import LogoImma from "../assets/PictoImaMissio.svg";
 import LogoScan from "../assets/PictoScanAvis.png";
 import SynergieLong from "../assets/V4 long W.svg";
 import { FaPhoneAlt } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [activeItem, setActiveItem] = useState(null);
+    const navigate = useNavigate(); // Utilisation du hook useNavigate
 
     const menuItems = [
         {
             logo: LogoSynergie,
             text: 'Synergie',
             alt: 'LogoSynergie',
+            href: "/SynergieInnovation",
             class: 'size-10 md:size-12',
             extraClass: 'md:ml-32',
             description: (
@@ -31,6 +34,7 @@ const HomePage = () => {
         {
             logo: LogoVox,
             text: 'VoxUnity',
+            href: "/",
             alt: 'LogoVox',
             class: 'h-auto w-10 md:w-12',
             extraClass: '',
@@ -48,6 +52,7 @@ const HomePage = () => {
             logo: LogoScan,
             text: 'Scan\'Avis',
             alt: 'LogoScan',
+            href: "/",
             class: 'size-10 md:size-16',
             extraClass: 'md:mr-32',
             description: (
@@ -63,6 +68,7 @@ const HomePage = () => {
             logo: LogoImma,
             text: 'ImmaMissio',
             alt: 'LogoImma',
+            href: "/",
             class: 'h-8 w-auto md:h-12',
             extraClass: '',
             description: (
@@ -80,16 +86,24 @@ const HomePage = () => {
             logo: 'phone',
             text: 'Contact',
             alt: 'Contact',
+            href: "/",
             class: 'size-10 md:size-12 text-[#FFFFFF]',
             extraClass: 'md:ml-32',
             description: (
-                <p className="text-2xl">Nous contacter pour obtenir un devis rapidement !</p>
+                <>
+                <p className="text-3xl font-bold mb-4">Nous contacter</p>
+                <p className="text-2xl">pour obtenir un devis rapidement !</p>
+                </>
             )
         },
     ];
 
-    const handleItemInteraction = (index) => {
+    const handleMouseEnter = (index) => {
         setActiveItem(index);
+    };
+
+    const handleItemClick = (href) => {
+        navigate(href);
     };
 
     return (
@@ -124,8 +138,8 @@ const HomePage = () => {
                                         <li 
                                             key={index} 
                                             className={`flex items-center justify-center ${item.extraClass} cursor-pointer`}
-                                            onMouseEnter={() => handleItemInteraction(index)}
-                                            onClick={() => handleItemInteraction(index)}
+                                            onMouseEnter={() => handleMouseEnter(index)}
+                                            onClick={() => handleItemClick(item.href)} // Navigation au clic
                                         >
                                             {item.logo === 'phone' ? (
                                                 <FaPhoneAlt className={item.class} />
