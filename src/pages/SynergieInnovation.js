@@ -10,7 +10,7 @@ const SynergieInnovationPage = () => {
             </div>
             <div>
             <Section2 />
-             </div>
+            </div>
         </div>
     )
 }
