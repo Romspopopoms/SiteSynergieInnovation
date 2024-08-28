@@ -21,6 +21,7 @@ module.exports = {
         'baloo': ['"Baloo 2"', 'cursive'],
         'roboto': ['Roboto', 'sans-serif'],
         'jost': ['Jost', 'sans-serif'],
+        'afacad': ['Afacad', 'sans-serif'],
       }, // Assurez-vous que le nom correspond exactement à Google Fonts
       colors: {
         primary: '#A6654E',
