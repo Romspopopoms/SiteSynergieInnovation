@@ -1,29 +1,14 @@
 import React from "react";
-import { ReactTyped as Typed } from "react-typed";
-import { easeInOut, motion } from "framer-motion";
-
+import BG from "../assets/Bg2.png"
+import Frame from "../assets/Frame@4x.png"
 const Section3 = () => {
     return (
-        <motion.div 
-        initial={{ opacity: 0, y: 100 }}
-        animate={{opacity: 1, y:0 }}
-        transition={{ duration: 1, ease:easeInOut }} 
-        className="flex flex-col items-center justify-center h-full w-auto mt-48 xl:mt-64 bg-black px-4">
-            <h1
-            className="text-4xl sm:text-6xl text-primary font-jost font-bold text-center">Notre engagement</h1>
-            <Typed
-                strings={[
-                    `Notre boulangerie s'engage à soutenir la communauté locale. Nous sélectionnons nos ingrédients auprès de producteurs locaux, favorisant ainsi l'économie régionale. Chaque pain et chaque viennoiserie reflètent notre dévouement à offrir des produits frais et de qualité, tout en réduisant notre empreinte écologique. Ensemble, nous cultivons le goût de l'authenticité et du partage.`
-                ]}
-                typeSpeed={20}
-                backSpeed={20}
-                backDelay={1500}
-                startDelay={1000}
-                loop={false}
-                showCursor={true}
-                className="text-accent font-jost text-xl sm:text-2xl mt-12 font-semibold max-w-[60%] text-center"
-            />
-        </motion.div>
+        <div className="flex flex-col items-center justify-center min-h-screen w-full bg-top bg-cover space-y-12 "
+        style={{backgroundImage : `url(${BG})`}}>
+            <h1 className="text-white text-4xl sm:text-6xl font-bold font-inter mt-48 text-center">Des solutions web adaptées</h1>
+            <img src={Frame} alt="Frame" className="bg-cover max-w-[80%] mx-auto"></img>
+            <p className="text-white text-lg sm:text-xl font-afacal max-w-[80%] md:max-w-[50%] mx-auto text-center font-semibold">Chez Synergie Innovation, nous concevons des solutions sur mesure pour aider les entreprises à se développer sur le web. Notre expertise permet de créer des outils numériques adaptés à vos besoins spécifiques, afin de maximiser votre croissance en ligne et renforcer votre présence digitale.</p>
+        </div>
     );
 };
 

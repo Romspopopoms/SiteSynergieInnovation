@@ -10,7 +10,7 @@ import { BsStars } from "react-icons/bs";
 
 const Menu = [
     { name: "Accueil", href: "#Accueil" },
-    { name: "Nos Solutions", href: "#Section2" },
+    { name: "Nos Solutions", href: "#NosSolutions" },
     { name: "Nos Services", href: "#Section3" },
     { name: "Notre Mission", href: "#Section4" },
     { name: "Notre équipe", href: "#Section5" },
@@ -21,7 +21,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="w-full fixed top-0 left-0 z-50 bg-transparent">
+        <div className="w-full absolute top-0 left-0 z-50 bg-transparent">
             <div className="relative flex justify-between items-center min-h-20 px-4 sm:px-8">
                 {/* Logo à gauche */}
                 <div className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2">
@@ -82,7 +82,7 @@ const Section1 = () => {
                 <p className="text-white text-2xl sm:text-4xl font-thin font-afacad">Pour maîtriser votre avenir</p>
                 <p className="text-white text-2xl sm:text-4xl font-thin font-afacad">numérique</p>
                 </div>
-                <div className="flex flex-wrap items-center justify-center mt-16 gap-x-4">
+                <div className="flex flex-wrap items-center justify-center mt-16 gap-x-4 gap-y-4">
                     <div
                     className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
                         <HiPaintBrush className="text-white size-6"/>
