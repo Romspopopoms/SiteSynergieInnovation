@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import { useInView } from "framer-motion";
-import AnimatedTitle from "../components/Animated"; // Assurez-vous que le composant AnimatedTitle est importé
+import { useInView, motion } from "framer-motion";
+import AnimatedTitle from "../components/Animated";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,6 +11,19 @@ const Section6 = () => {
 
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
+
+    const toggleVariants = {
+        open: {
+            height: "auto",
+            opacity: 1,
+            transition: { duration: 0.3 },
+        },
+        closed: {
+            height: 0,
+            opacity: 0,
+            transition: { duration: 0.3 },
+        },
+    };
 
     return (
         <div ref={ref} className="grid grid-cols-1 relative mt-36 md:max-w-[80%] mx-auto">
@@ -29,13 +42,17 @@ const Section6 = () => {
                             <FontAwesomeIcon icon={Open ? faTimes : faPlus} className="size-6 text-[#394040] mt-1" />
                             <h3 className="font-afacad text-[#FFFFFF] font-semibold text-2xl">Quels types de solutions numériques ?</h3>
                         </div>
-                        {Open && (
-                            <div className="mt-4 ml-20 max-w-[80%]">
-                                <p className="text-left font-afacad text-xl text-[#FFFFFF]">
-                                    Nous proposons des solutions personnalisées incluant la création de site web vitrine, e-commerce, CRM, ainsi que des services de design graphique, de SEO, et de développement d'applications web.
-                                </p>
-                            </div>
-                        )}
+                        <motion.div
+                            initial={false}
+                            animate={Open ? "open" : "closed"}
+                            variants={toggleVariants}
+                            style={{ overflow: "hidden" }}
+                            className="ml-20 mt-4 max-w-[80%]"
+                        >
+                            <p className="text-left font-afacad text-xl text-[#FFFFFF]">
+                                Nous proposons des solutions personnalisées incluant la création de site web vitrine, e-commerce, CRM, ainsi que des services de design graphique, de SEO, et de développement d'applications web.
+                            </p>
+                        </motion.div>
                         <hr className="border-0 h-px bg-gradient-to-r from-transparent via-white to-transparent my-0 mt-8" />
                     </div>
 
@@ -47,13 +64,17 @@ const Section6 = () => {
                             <FontAwesomeIcon icon={Open2 ? faTimes : faPlus} className="size-6 text-[#394040] mt-1" />
                             <h4 className="font-afacad text-[#FFFFFF] font-semibold text-2xl">Quels sont vos tarifs pour les services de développement web et de design graphique ?</h4>
                         </div>
-                        {Open2 && (
-                            <div className="mt-4 ml-20 max-w-[80%] text-[#394040]">
-                                <p className="text-left font-afacad text-xl text-[#FFFFFF]">
-                                    Nos tarifs sont compétitifs et adaptés aux besoins spécifiques de chaque client. Contactez-nous pour obtenir un devis personnalisé en fonction de votre projet.
-                                </p>
-                            </div>
-                        )}
+                        <motion.div
+                            initial={false}
+                            animate={Open2 ? "open" : "closed"}
+                            variants={toggleVariants}
+                            style={{ overflow: "hidden" }}
+                            className="ml-20 mt-4 max-w-[80%] text-[#394040]"
+                        >
+                            <p className="text-left font-afacad text-xl text-[#FFFFFF]">
+                                Nos tarifs sont compétitifs et adaptés aux besoins spécifiques de chaque client. Contactez-nous pour obtenir un devis personnalisé en fonction de votre projet.
+                            </p>
+                        </motion.div>
                         <hr className="border-0 h-px bg-gradient-to-r from-transparent via-white to-transparent my-0 mt-8" />
                     </div>
 
@@ -65,13 +86,17 @@ const Section6 = () => {
                             <FontAwesomeIcon icon={Open3 ? faTimes : faPlus} className="size-6 text-[#394040] mt-1" />
                             <h5 className="font-afacad text-[#FFFFFF] font-semibold text-2xl">Comment garantir la visibilité de mon site web?</h5>
                         </div>
-                        {Open3 && (
-                            <div className="mt-4 ml-20 max-w-[80%]">
-                                <p className="text-left font-afacad text-xl text-[#FFFFFF]">
-                                    Nous offrons des services de SEO pour améliorer le classement de votre site sur les moteurs de recherche et augmenter sa visibilité en ligne. Nous adaptons nos stratégies pour maximiser votre présence digitale.
-                                </p>
-                            </div>
-                        )}
+                        <motion.div
+                            initial={false}
+                            animate={Open3 ? "open" : "closed"}
+                            variants={toggleVariants}
+                            style={{ overflow: "hidden" }}
+                            className="ml-20 mt-4 max-w-[80%]"
+                        >
+                            <p className="text-left font-afacad text-xl text-[#FFFFFF]">
+                                Nous offrons des services de SEO pour améliorer le classement de votre site sur les moteurs de recherche et augmenter sa visibilité en ligne. Nous adaptons nos stratégies pour maximiser votre présence digitale.
+                            </p>
+                        </motion.div>
                         <hr className="border-0 h-px bg-gradient-to-r from-transparent via-white to-transparent my-0 mt-8" />
                     </div>
                 </div>
