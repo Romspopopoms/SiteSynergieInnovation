@@ -1,5 +1,5 @@
 import React from "react";
-import BG from "../assets/Bg2.png";
+import BG from "../assets/Bglandinghome.png";
 import Section1 from "../components/Section1";
 import Section2 from "../components/Section2";
 import Section3 from "../components/Section3";
@@ -10,7 +10,7 @@ import Section7 from "../components/Section7";
 import Footer from "../components/Footer";
 const SynergieInnovationPage = () => {
     return (
-        <div className="w-full bg-top bg-cover space-y-12 bg-repeat"
+        <div className="w-full bg-top bg-cover bg-repeat"
         style={{backgroundImage : `url(${BG})`}}>
             <div id="Accueil" className="min-h-screen">
                 <Section1 />

@@ -4,7 +4,7 @@ import BG from "../assets/Bglandinghome.png";
 import { FaBars } from "react-icons/fa"; // Pour l'icône du menu hamburger
 import { HiPaintBrush } from "react-icons/hi2";
 import { RiComputerLine } from "react-icons/ri";
-import { MdOutlineMenu } from "react-icons/md";
+import Square from "../assets/Square+.svg"
 import { MdGroups } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
 
@@ -94,7 +94,7 @@ const Section1 = () => {
                         <p className="text-white text-lg sm:text-xl font-thin font-abeezee">Site Web</p>
                     </div>
                     <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
-                        <MdOutlineMenu className="text-white size-6"/>
+                        <img src={Square} alt="Square" className=" size-6"/>
                         <p className="text-white text-lg sm:text-xl font-thin font-abeezee">CRM</p>
                     </div>
                     <div className="flex gap-x-2 rounded-xl border-2 border-white p-2 hover:scale-110 ease-in-out duration-300">
