@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, easeInOut } from "framer-motion";
 import Logo from "../assets/V4longW.svg";
-import BG from "../assets/Bglandinghome.png";
+import BG from "../assets/Bglandinghome.webp";
 import { FaBars } from "react-icons/fa"; // Pour l'icône du menu hamburger
 import { HiPaintBrush } from "react-icons/hi2";
 import { RiComputerLine } from "react-icons/ri";

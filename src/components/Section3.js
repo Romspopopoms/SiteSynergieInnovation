@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView, easeInOut } from "framer-motion";
-import Frame from "../assets/Frame@4x.png";
+import Frame from "../assets/Frame@4x.webp";
 
 const Section3 = () => {
     // Référence pour l'élément à observer
