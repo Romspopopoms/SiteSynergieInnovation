@@ -5,7 +5,7 @@ import Scan from "../assets/LogoScan.png"
 
 const Section4 = () => {
     return (
-        <div className="min-h-screen w-full flex flex-col justify-center items-center">
+        <div className="min-h-[70vh] md:min-h-screen w-full flex flex-col justify-center items-center">
             <h1 className="text-white text-4xl sm:text-6xl font-bold font-afacad text-center">Nos services web pour vos besoins</h1>
             <div className="flex space-x-12 mt-24 max-w-[80%]">
                 <a href="/VoxUnity">

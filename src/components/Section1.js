@@ -75,7 +75,7 @@ const Navbar = () => {
 
 const Section1 = () => {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen w-full bg-center bg-cover" style={{ backgroundImage: `url(${BG})` }}>
+        <div className="flex flex-col items-center justify-center min-h-[70vh] md:min-h-screen w-full bg-center bg-cover" style={{ backgroundImage: `url(${BG})` }}>
             <Navbar />
             <div className="flex flex-col items-center text-center">
                 <h1 className="text-white text-4xl sm:text-6xl font-bold font-afacad">Innovons ensemble</h1>
