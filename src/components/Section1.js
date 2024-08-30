@@ -10,7 +10,7 @@ import { MdGroups } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
 
 const Menu = [
-    { name: "Accueil", href: "#Accueil" },
+    { name: "Accueil", href: "/" },
     { name: "Nos Solutions", href: "#NosSolutions" },
     { name: "Nos Services", href: "#NosServices" },
     { name: "Notre Mission", href: "#NotreMission" },
