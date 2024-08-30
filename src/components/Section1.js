@@ -11,11 +11,12 @@ import { BsStars } from "react-icons/bs";
 const Menu = [
     { name: "Accueil", href: "#Accueil" },
     { name: "Nos Solutions", href: "#NosSolutions" },
-    { name: "Nos Services", href: "#Section3" },
-    { name: "Notre Mission", href: "#Section4" },
-    { name: "Notre équipe", href: "#Section5" },
-    { name: "Contact", href: "#Section6" },
+    { name: "Nos Services", href: "#NosServices" },
+    { name: "Notre Mission", href: "#NotreMission" },
+    { name: "Notre équipe", href: "#Notreéquipe" },
+    { name: "Contact", href: "#Contact" },
 ];
+
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);

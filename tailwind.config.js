@@ -23,6 +23,7 @@ module.exports = {
         'jost': ['Jost', 'sans-serif'],
         'afacad': ['Afacad', 'sans-serif'],
         'abeezee': ['ABeeZee', 'sans-serif'],
+        'antonio': ['Antonio', 'sans-serif'],
 
       }, // Assurez-vous que le nom correspond exactement à Google Fonts
       colors: {
