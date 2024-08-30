@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, easeInOut } from "framer-motion";
 import Logo from "../assets/V4longW.svg";
 import BG from "../assets/Bglandinghome.png";
 import { FaBars } from "react-icons/fa"; // Pour l'icône du menu hamburger
@@ -78,7 +79,12 @@ const Section1 = () => {
         <div className="flex flex-col items-center justify-center min-h-[70vh] md:min-h-screen w-full bg-center bg-cover" style={{ backgroundImage: `url(${BG})` }}>
             <Navbar />
             <div className="flex flex-col items-center text-center">
-                <h1 className="text-white text-4xl sm:text-6xl font-bold font-afacad">Innovons ensemble</h1>
+                <motion.h1 
+                initial={{opacity:0, }}
+                animate={{opacity:1, }}
+                transition={{ duration:0.8, Ease:easeInOut}}
+
+                className="text-white text-4xl sm:text-6xl font-bold font-afacad">Innovons ensemble</motion.h1>
                 <div className="mt-4">
                 <p className="text-white text-2xl sm:text-4xl font-thin font-afacad">Pour maîtriser votre avenir</p>
                 <p className="text-white text-2xl sm:text-4xl font-thin font-afacad">numérique</p>
