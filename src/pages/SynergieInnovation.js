@@ -12,7 +12,7 @@ const SynergieInnovationPage = () => {
     return (
         <div className="w-full bg-top bg-cover bg-repeat"
         style={{backgroundImage : `url(${BG})`}}>
-            <div id="Accueil" className="min-h-screen">
+            <div id="Accueil" className="md:min-h-screen">
                 <Section1 />
             </div>
             <div>
