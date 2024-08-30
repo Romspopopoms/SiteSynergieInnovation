@@ -9,7 +9,7 @@ const App = () => {
   useEffect(() => {
     // Insertion du script Google Analytics
     const script = document.createElement('script');
-    script.async = true;
+    script.async = true; 
     script.src = `https://www.googletagmanager.com/gtag/js?id=G-87DN704803`;
     document.head.appendChild(script);
 
