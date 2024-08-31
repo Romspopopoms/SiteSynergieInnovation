@@ -18,10 +18,7 @@ const Loader = ({ isVisible }) => (
         className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         style={{ backgroundImage: `url(${BG})` }}
     >
-        <div 
-            className="h-32 w-32 sm:h-48 sm:w-48 animate-spin"
-            style={{ animationDuration: '3s' }}
-        >
+        <div className="h-32 w-32 sm:h-48 sm:w-48 animate-spin">
             <img src={LogoSynergie} alt="Loading..." className="h-full w-full object-contain" />
         </div>
         <p className='text-white text-xl sm:text-3xl font-bold font-afacad mt-4'>
@@ -30,22 +27,17 @@ const Loader = ({ isVisible }) => (
     </div>
 );
 
-const SectionWrapper = ({ children }) => (
-    <Suspense fallback={<Loader isVisible={true} />}>
-        {children}
-    </Suspense>
-);
-
 const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 3000); // Définir un délai de 3 secondes pour le chargement initial
+        }, 2000); // Réduire le temps d'attente pour éviter les blocages
         return () => clearTimeout(timer);
     }, []);
 
+    // Assurez-vous que le Loader est visible tant que le contenu n'est pas prêt
     if (isLoading) {
         return <Loader isVisible={true} />;
     }
@@ -58,47 +50,47 @@ const SynergieInnovationPage = () => {
                 <link rel="preload" href={BG} as="image" />
             </Helmet>
 
-            <SectionWrapper>
+            <Suspense fallback={<Loader isVisible={true} />}>
                 <div id="Accueil" className="md:min-h-screen">
                     <Section1 />
                 </div>
-            </SectionWrapper>
+            </Suspense>
 
-            <SectionWrapper>
+            <Suspense fallback={<Loader isVisible={true} />}>
                 <div>
                     <Section2 />
                 </div>
-            </SectionWrapper>
+            </Suspense>
 
-            <SectionWrapper>
+            <Suspense fallback={<Loader isVisible={true} />}>
                 <div id="NosSolutions" className="min-h-screen">
                     <Section3 />
                 </div>
-            </SectionWrapper>
+            </Suspense>
 
-            <SectionWrapper>
+            <Suspense fallback={<Loader isVisible={true} />}>
                 <div id="NosServices" className="md:min-h-screen">
                     <Section4 />
                 </div>
-            </SectionWrapper>
+            </Suspense>
 
-            <SectionWrapper>
+            <Suspense fallback={<Loader isVisible={true} />}>
                 <div id="NotreMission" className="min-h-screen">
                     <Section5 />
                 </div>
-            </SectionWrapper>
+            </Suspense>
 
-            <SectionWrapper>
+            <Suspense fallback={<Loader isVisible={true} />}>
                 <div id="Notreequipe" className="">
                     <Section6 />
                 </div>
-            </SectionWrapper>
+            </Suspense>
 
-            <SectionWrapper>
+            <Suspense fallback={<Loader isVisible={true} />}>
                 <div id="Contact" className="">
                     <Section7 />
                 </div>
-            </SectionWrapper>
+            </Suspense>
 
             <Footer />
         </div>
