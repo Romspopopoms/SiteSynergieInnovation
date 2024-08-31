@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect, useCallback } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Helmet } from 'react-helmet-async';
 import BG from "../assets/Bglandinghome.webp";
 import LogoSynergie from "../assets/V4 simple W.svg";
@@ -39,72 +39,68 @@ const SectionWrapper = ({ children }) => (
 const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
 
-    const handleSectionChange = useCallback(() => {
-        setIsLoading(true);
-        // Simule un court délai de chargement
-        setTimeout(() => setIsLoading(false), 500);
-    }, []);
-
     useEffect(() => {
-        // Chargement initial
+        // Simule le chargement initial
         const timer = setTimeout(() => setIsLoading(false), 3000);
         return () => clearTimeout(timer);
     }, []);
 
     return (
         <>
-            <Loader isVisible={isLoading} />
-            <div className="w-full bg-top bg-cover bg-repeat"
-                style={{ backgroundImage: `url(${BG})` }}
-            >
-                <Helmet>
-                    <link rel="preload" href={BG} as="image" />
-                </Helmet>
+            {isLoading && <Loader isVisible={true} />}
+            {!isLoading && (
+                <div className="w-full bg-top bg-cover bg-repeat"
+                    style={{ backgroundImage: `url(${BG})` }}
+                >
+                    <Helmet>
+                        <link rel="preload" href={BG} as="image" />
+                    </Helmet>
 
-                <SectionWrapper>
-                    <div id="Accueil" className="md:min-h-screen">
-                        <Section1 onSectionChange={handleSectionChange} />
-                    </div>
-                </SectionWrapper>
+                    <SectionWrapper>
+                        <div id="Accueil" className="md:min-h-screen">
+                            <Section1 />
+                        </div>
+                    </SectionWrapper>
 
-                <SectionWrapper>
-                    <div>
-                        <Section2 onSectionChange={handleSectionChange} />
-                    </div>
-                </SectionWrapper>
+                    <SectionWrapper>
+                        <div>
+                            <Section2 />
+                        </div>
+                    </SectionWrapper>
 
-                <SectionWrapper>
-                    <div id="NosSolutions" className="min-h-screen">
-                        <Section3 onSectionChange={handleSectionChange} />
-                    </div>
-                </SectionWrapper>
+                    <SectionWrapper>
+                        <div id="NosSolutions" className="min-h-screen">
+                            <Section3 />
+                        </div>
+                    </SectionWrapper>
 
-                <SectionWrapper>
-                    <div id="NosServices" className="md:min-h-screen">
-                        <Section4 onSectionChange={handleSectionChange} />
-                    </div>
-                </SectionWrapper>
+                    <SectionWrapper>
+                        <div id="NosServices" className="md:min-h-screen">
+                            <Section4 />
+                        </div>
+                    </SectionWrapper>
 
-                <SectionWrapper>
-                    <div id="NotreMission" className="min-h-screen">
-                        <Section5 onSectionChange={handleSectionChange} />
-                    </div>
-                </SectionWrapper>
+                    <SectionWrapper>
+                        <div id="NotreMission" className="min-h-screen">
+                            <Section5 />
+                        </div>
+                    </SectionWrapper>
 
-                <SectionWrapper>
-                    <div id="Notreequipe" className="">
-                        <Section6 onSectionChange={handleSectionChange} />
-                    </div>
-                </SectionWrapper>
+                    <SectionWrapper>
+                        <div id="Notreequipe" className="">
+                            <Section6 />
+                        </div>
+                    </SectionWrapper>
 
-                <SectionWrapper>
-                    <div id="Contact" className="">
-                        <Section7 onSectionChange={handleSectionChange} />
-                    </div>
-                </SectionWrapper>
+                    <SectionWrapper>
+                        <div id="Contact" className="">
+                            <Section7 />
+                        </div>
+                    </SectionWrapper>
 
-                <Footer />
-            </div>
+                    <Footer />
+                </div>
+            )}
         </>
     );
 }
