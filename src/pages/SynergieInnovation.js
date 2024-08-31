@@ -55,11 +55,25 @@ const SectionWrapper = ({ children }) => {
 
 const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
+    const [sectionsLoaded, setSectionsLoaded] = useState({});
 
     useEffect(() => {
-        const timer = setTimeout(() => setIsLoading(false), 2000);
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 2000);
+
         return () => clearTimeout(timer);
     }, []);
+
+    const handleSectionLoad = (sectionId) => {
+        setSectionsLoaded(prev => ({ ...prev, [sectionId]: true }));
+    };
+
+    useEffect(() => {
+        if (Object.values(sectionsLoaded).every(loaded => loaded)) {
+            setIsLoading(false);
+        }
+    }, [sectionsLoaded]);
 
     return (
         <>
@@ -73,43 +87,43 @@ const SynergieInnovationPage = () => {
 
                 <SectionWrapper>
                     <div id="Accueil" className="md:min-h-screen">
-                        <Section1 />
+                        <Section1 onLoad={() => handleSectionLoad('Accueil')} />
                     </div>
                 </SectionWrapper>
 
                 <SectionWrapper>
                     <div>
-                        <Section2 />
+                        <Section2 onLoad={() => handleSectionLoad('Section2')} />
                     </div>
                 </SectionWrapper>
 
                 <SectionWrapper>
                     <div id="NosSolutions" className="min-h-screen">
-                        <Section3 />
+                        <Section3 onLoad={() => handleSectionLoad('NosSolutions')} />
                     </div>
                 </SectionWrapper>
 
                 <SectionWrapper>
                     <div id="NosServices" className="md:min-h-screen">
-                        <Section4 />
+                        <Section4 onLoad={() => handleSectionLoad('NosServices')} />
                     </div>
                 </SectionWrapper>
 
                 <SectionWrapper>
                     <div id="NotreMission" className="min-h-screen">
-                        <Section5 />
+                        <Section5 onLoad={() => handleSectionLoad('NotreMission')} />
                     </div>
                 </SectionWrapper>
 
                 <SectionWrapper>
                     <div id="Notreéquipe" className="">
-                        <Section6 />
+                        <Section6 onLoad={() => handleSectionLoad('Notreéquipe')} />
                     </div>
                 </SectionWrapper>
 
                 <SectionWrapper>
                     <div id="Contact" className="">
-                        <Section7 />
+                        <Section7 onLoad={() => handleSectionLoad('Contact')} />
                     </div>
                 </SectionWrapper>
 
