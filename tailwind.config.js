@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       animation: {
-        slide: 'slide 1s ease-in-out infinite',
+        'spin-slow': 'spin 3s linear infinite',
       },
       keyframes: {
         slide: {

@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     // Simule un chargement de ressources de 2 secondes
     const handleLoad = () => {
-      setTimeout(() => setIsLoading(false), 2000); // Vous pouvez ajuster le temps
+      setTimeout(() => setIsLoading(false), 3000); // Vous pouvez ajuster le temps
     };
 
     window.addEventListener('load', handleLoad);
