@@ -5,7 +5,7 @@ import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
 import Loader from './components/Loader'; // Import du loader
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const AppContent = () => {
   const location = useLocation();
@@ -13,7 +13,7 @@ const AppContent = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    const timer = setTimeout(() => setIsLoading(false), 3000); // Loader disparaît après 3 secondes max
+    const timer = setTimeout(() => setIsLoading(false), 4000); // Prolongation de la durée de l'animation
     return () => clearTimeout(timer);
   }, [location]);
 
@@ -22,11 +22,19 @@ const AppContent = () => {
       {isLoading && <Loader />}
       <AnimatePresence exitBeforeEnter>
         {!isLoading && (
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
-            <Route path="*" element={<Navigate to="/" />} />
-          </Routes>
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5 }} // Prolongation de la transition pour éviter les éclats blancs
+          >
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
+              <Route path="*" element={<Navigate to="/" />} />
+            </Routes>
+          </motion.div>
         )}
       </AnimatePresence>
     </>
@@ -37,23 +45,19 @@ const App = () => {
   const [isInitialLoading, setIsInitialLoading] = useState(true);
 
   useEffect(() => {
-    // Vérification si l'appareil est mobile en fonction de la largeur de l'écran
     const isMobile = window.innerWidth < 768;
 
     if (isMobile) {
-      // Désactiver le loader pour les mobiles
       setIsInitialLoading(false);
     } else {
-      // Loader sur les appareils non mobiles
       const timer = setTimeout(() => {
         setIsInitialLoading(false);
-      }, 3000); 
+      }, 4000); // Alignement avec la durée de la transition
       return () => clearTimeout(timer);
     }
   }, []);
 
   useEffect(() => {
-    // Insertion du script Google Analytics
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=G-87DN704803`;
