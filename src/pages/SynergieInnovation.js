@@ -29,24 +29,24 @@ const Loader = ({ isVisible }) => (
 
 const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [isContentReady, setIsContentReady] = useState(false);
-
+    
     useEffect(() => {
-        // Charger les éléments avec un timeout pour simuler un chargement
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 2000); // Réduire le temps d'attente pour éviter les blocages
-        return () => clearTimeout(timer);
+        // Promise.race will either resolve after 2 seconds (timeout) or when the content is ready (2 seconds max)
+        const timeout = new Promise(resolve => setTimeout(resolve, 2000));
+        
+        const loadContent = new Promise(resolve => {
+            const timer = setTimeout(() => {
+                setIsLoading(false);
+                resolve();
+            }, 2000); 
+            return () => clearTimeout(timer);
+        });
+
+        Promise.race([timeout, loadContent]).then(() => setIsLoading(false));
+
     }, []);
 
-    useEffect(() => {
-        if (!isLoading) {
-            setIsContentReady(true);
-        }
-    }, [isLoading]);
-
-    // Forcer l'affichage de la HomePage après un certain temps ou si le contenu est prêt
-    if (isLoading || !isContentReady) {
+    if (isLoading) {
         return <Loader isVisible={true} />;
     }
 
