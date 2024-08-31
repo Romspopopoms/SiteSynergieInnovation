@@ -144,7 +144,7 @@ const HomePage = () => {
                                             {item.logo === 'phone' ? (
                                                 <FaPhoneAlt className={item.class} />
                                             ) : (
-                                                <img src={item.logo} alt={item.alt} className={item.class} loading="lazy" />
+                                                <img src={item.logo} alt={item.alt} className={item.class} loading="lazy" /> 
                                             )}
                                             <span className='text-4xl md:text-6xl ml-4 font-afacad font-semibold text-[#1C4B5D]'>{item.text}</span>
                                         </li>
