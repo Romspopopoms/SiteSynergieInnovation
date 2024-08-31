@@ -1,33 +1,54 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
 import Loader from './components/Loader'; // Import du loader
+import { AnimatePresence } from 'framer-motion';
 
-const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
+const AppContent = () => {
   const location = useLocation();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => setIsLoading(false), 3000); // Loader disparaît après 3 secondes max
+    return () => clearTimeout(timer);
+  }, [location]);
+
+  return (
+    <>
+      {isLoading && <Loader />}
+      <AnimatePresence exitBeforeEnter>
+        {!isLoading && (
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+const App = () => {
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+
+  useEffect(() => {
+    // Vérification si l'appareil est mobile en fonction de la largeur de l'écran
     const isMobile = window.innerWidth < 768;
 
     if (isMobile) {
-      // Loader pour mobile
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 3000); // Forcer le rendu après 3 secondes
-      return () => clearTimeout(timer);
+      // Désactiver le loader pour les mobiles
+      setIsInitialLoading(false);
     } else {
-      // Loader pour non mobile
-      const handleLoad = () => {
-        setTimeout(() => setIsLoading(false), 3000);
-      };
-
-      window.addEventListener('load', handleLoad);
-      return () => window.removeEventListener('load', handleLoad);
+      // Loader sur les appareils non mobiles
+      const timer = setTimeout(() => {
+        setIsInitialLoading(false);
+      }, 3000); 
+      return () => clearTimeout(timer);
     }
   }, []);
 
@@ -48,23 +69,17 @@ const App = () => {
 
   return (
     <HelmetProvider>
-      <AnimatePresence exitBeforeEnter>
-        {isLoading ? (
-          <Loader key="loader" />
-        ) : (
-          <Router>
-            <div className="flex flex-col xl:gap-y-12 w-full">
-              <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Home />} />
-                <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
-                {/* Ajoutez d'autres routes ici pour vos autres pages */}
-              </Routes>
-            </div>
-          </Router>
-        )}
-      </AnimatePresence>
+      {isInitialLoading ? (
+        <Loader />
+      ) : (
+        <Router>
+          <div className="flex flex-col xl:gap-y-12 w-full">
+            <AppContent />
+          </div>
+        </Router>
+      )}
     </HelmetProvider>
   );
-}
+};
 
 export default App;
