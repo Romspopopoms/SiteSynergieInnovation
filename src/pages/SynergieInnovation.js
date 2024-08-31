@@ -29,16 +29,24 @@ const Loader = ({ isVisible }) => (
 
 const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
+    const [isContentReady, setIsContentReady] = useState(false);
 
     useEffect(() => {
+        // Charger les éléments avec un timeout pour simuler un chargement
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, 2000); // Réduire le temps d'attente pour éviter les blocages
         return () => clearTimeout(timer);
     }, []);
 
-    // Assurez-vous que le Loader est visible tant que le contenu n'est pas prêt
-    if (isLoading) {
+    useEffect(() => {
+        if (!isLoading) {
+            setIsContentReady(true);
+        }
+    }, [isLoading]);
+
+    // Forcer l'affichage de la HomePage après un certain temps ou si le contenu est prêt
+    if (isLoading || !isContentReady) {
         return <Loader isVisible={true} />;
     }
 
