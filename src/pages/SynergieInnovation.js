@@ -13,10 +13,10 @@ const Section5 = React.lazy(() => import("../components/Section5"));
 const Section6 = React.lazy(() => import("../components/Section6"));
 const Section7 = React.lazy(() => import("../components/Section7"));
 
-const Loader = () => {
+const Loader = ({ isVisible }) => {
     return (
         <div 
-            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-cover bg-center"
+            className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
             style={{ backgroundImage: `url(${BG})` }}
         >
             <div 
@@ -54,69 +54,68 @@ const SectionWrapper = ({ children }) => {
 };
 
 const SynergieInnovationPage = () => {
-    const [isInitialLoading, setIsInitialLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const timer = setTimeout(() => setIsInitialLoading(false), 2000);
+        const timer = setTimeout(() => setIsLoading(false), 2000);
         return () => clearTimeout(timer);
     }, []);
 
-    if (isInitialLoading) {
-        return <Loader />;
-    }
-
     return (
-        <div className="w-full bg-top bg-cover bg-repeat"
-            style={{ backgroundImage: `url(${BG})` }}
-        >
-            <Helmet>
-                <link rel="preload" href={BG} as="image" />
-            </Helmet>
+        <>
+            <Loader isVisible={isLoading} />
+            <div className="w-full bg-top bg-cover bg-repeat"
+                style={{ backgroundImage: `url(${BG})` }}
+            >
+                <Helmet>
+                    <link rel="preload" href={BG} as="image" />
+                </Helmet>
 
-            <SectionWrapper>
-                <div id="Accueil" className="md:min-h-screen">
-                    <Section1 />
-                </div>
-            </SectionWrapper>
+                <SectionWrapper>
+                    <div id="Accueil" className="md:min-h-screen">
+                        <Section1 />
+                    </div>
+                </SectionWrapper>
 
-            <SectionWrapper>
-                <div>
-                    <Section2 />
-                </div>
-            </SectionWrapper>
+                <SectionWrapper>
+                    <div>
+                        <Section2 />
+                    </div>
+                </SectionWrapper>
 
-            <SectionWrapper>
-                <div id="NosSolutions" className="min-h-screen">
-                    <Section3 />
-                </div>
-            </SectionWrapper>
+                <SectionWrapper>
+                    <div id="NosSolutions" className="min-h-screen">
+                        <Section3 />
+                    </div>
+                </SectionWrapper>
 
-            <SectionWrapper>
-                <div id="NosServices" className="md:min-h-screen">
-                    <Section4 />
-                </div>
-            </SectionWrapper>
+                <SectionWrapper>
+                    <div id="NosServices" className="md:min-h-screen">
+                        <Section4 />
+                    </div>
+                </SectionWrapper>
 
-            <SectionWrapper>
-                <div id="NotreMission" className="min-h-screen">
-                    <Section5 />
-                </div>
-            </SectionWrapper>
+                <SectionWrapper>
+                    <div id="NotreMission" className="min-h-screen">
+                        <Section5 />
+                    </div>
+                </SectionWrapper>
 
-            <SectionWrapper>
-                <div id="Notreéquipe" className="">
-                    <Section6 />
-                </div>
-            </SectionWrapper>
+                <SectionWrapper>
+                    <div id="Notreéquipe" className="">
+                        <Section6 />
+                    </div>
+                </SectionWrapper>
 
-            <SectionWrapper>
-                <div id="Contact" className="">
-                    <Section7 />
-                </div>
-            </SectionWrapper>
+                <SectionWrapper>
+                    <div id="Contact" className="">
+                        <Section7 />
+                    </div>
+                </SectionWrapper>
 
-            <Footer />
-        </div>
+                <Footer />
+            </div>
+        </>
     );
 }
 
