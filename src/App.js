@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
@@ -10,13 +10,19 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simule un chargement de ressources de 2 secondes
-    const handleLoad = () => {
-      setTimeout(() => setIsLoading(false), 3000); // Vous pouvez ajuster le temps
-    };
+    // Vérification si l'appareil est mobile en fonction de la largeur de l'écran
+    const isMobile = window.innerWidth < 768;
 
-    window.addEventListener('load', handleLoad);
-    return () => window.removeEventListener('load', handleLoad);
+    if (isMobile) {
+      // Désactiver le loader pour les mobiles
+      setIsLoading(false);
+    } else {
+      // Loader sur les appareils non mobiles
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000); 
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   useEffect(() => {
@@ -44,8 +50,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
-
-              {/* Ajoutez d'autres routes ici pour vos autres pages */}
+              {/* Redirection par défaut vers la page d'accueil */}
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </div>
         </Router>

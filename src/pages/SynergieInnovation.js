@@ -1,7 +1,6 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { Suspense } from "react";
 import { Helmet } from 'react-helmet-async';
 import BG from "../assets/Bglandinghome.webp";
-import LogoSynergie from "../assets/V4 simple W.svg";
 import Footer from "../components/Footer";
 
 // Lazy loading des sections
@@ -13,43 +12,7 @@ const Section5 = React.lazy(() => import("../components/Section5"));
 const Section6 = React.lazy(() => import("../components/Section6"));
 const Section7 = React.lazy(() => import("../components/Section7"));
 
-const Loader = ({ isVisible }) => (
-    <div 
-        className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-        style={{ backgroundImage: `url(${BG})` }}
-    >
-        <div className="h-32 w-32 sm:h-48 sm:w-48 animate-spin">
-            <img src={LogoSynergie} alt="Loading..." className="h-full w-full object-contain" />
-        </div>
-        <p className='text-white text-xl sm:text-3xl font-bold font-afacad mt-4'>
-            Chargement en cours...
-        </p>
-    </div>
-);
-
 const SynergieInnovationPage = () => {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        // Vérifier si l'appareil est mobile en fonction de la largeur de l'écran
-        const isMobile = window.innerWidth < 768;
-
-        if (isMobile) {
-            // Désactiver le loader pour les mobiles
-            setIsLoading(false);
-        } else {
-            // Loader sur les appareils non mobiles
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-            }, 2000); 
-            return () => clearTimeout(timer);
-        }
-    }, []);
-
-    if (isLoading) {
-        return <Loader isVisible={true} />;
-    }
-
     return (
         <div className="w-full bg-top bg-cover bg-repeat"
             style={{ backgroundImage: `url(${BG})` }}
