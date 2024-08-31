@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { Helmet } from 'react-helmet-async';
 import BG from "../assets/Bglandinghome.webp";
 import LogoSynergie from "../assets/V4 simple W.svg";
@@ -21,7 +21,7 @@ const Loader = () => {
         >
             <div 
                 className="h-32 w-32 sm:h-48 sm:w-48 animate-spin"
-                style={{ animationDuration: '3s' }} // Lent pour un effet plus fluide
+                style={{ animationDuration: '3s' }}
             >
                 <img src={LogoSynergie} alt="Loading..." className="h-full w-full object-contain" />
             </div>
@@ -32,7 +32,39 @@ const Loader = () => {
     );
 };
 
+const SectionWrapper = ({ children }) => {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsVisible(true), 100);
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <Suspense fallback={
+            <div className="h-screen flex items-center justify-center">
+                <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        }>
+            <div className={`transition-opacity duration-1000 ease-in-out ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+                {children}
+            </div>
+        </Suspense>
+    );
+};
+
 const SynergieInnovationPage = () => {
+    const [isInitialLoading, setIsInitialLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setIsInitialLoading(false), 2000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (isInitialLoading) {
+        return <Loader />;
+    }
+
     return (
         <div className="w-full bg-top bg-cover bg-repeat"
             style={{ backgroundImage: `url(${BG})` }}
@@ -41,32 +73,49 @@ const SynergieInnovationPage = () => {
                 <link rel="preload" href={BG} as="image" />
             </Helmet>
 
-            <Suspense fallback={<Loader />}>
+            <SectionWrapper>
                 <div id="Accueil" className="md:min-h-screen">
                     <Section1 />
                 </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
                 <div>
                     <Section2 />
                 </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
                 <div id="NosSolutions" className="min-h-screen">
                     <Section3 />
                 </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
                 <div id="NosServices" className="md:min-h-screen">
                     <Section4 />
                 </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
                 <div id="NotreMission" className="min-h-screen">
                     <Section5 />
                 </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
                 <div id="Notreéquipe" className="">
                     <Section6 />
                 </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
                 <div id="Contact" className="">
                     <Section7 />
                 </div>
-                <div>
-                    <Footer />
-                </div>
-            </Suspense>
+            </SectionWrapper>
+
+            <Footer />
         </div>
     );
 }
