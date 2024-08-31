@@ -17,6 +17,15 @@ module.exports = {
       xl: '1200px',
     },
     extend: {
+      animation: {
+        slide: 'slide 1s ease-in-out infinite',
+      },
+      keyframes: {
+        slide: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(300%)' },
+        },
+      },
       fontFamily: {
         'baloo': ['"Baloo 2"', 'cursive'],
         'roboto': ['Roboto', 'sans-serif'],
@@ -24,13 +33,12 @@ module.exports = {
         'afacad': ['Afacad', 'sans-serif'],
         'abeezee': ['ABeeZee', 'sans-serif'],
         'antonio': ['Antonio', 'sans-serif'],
-
-      }, // Assurez-vous que le nom correspond exactement à Google Fonts
+      }, 
       colors: {
         primary: '#A6654E',
         accent: '#FFE3CC',
       }
-    },
+    }
   },
   plugins: [],
 };
