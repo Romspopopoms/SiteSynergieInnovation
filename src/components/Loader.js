@@ -8,7 +8,7 @@ const Loader = () => {
             className="fixed inset-0 z-50 flex items-center justify-center bg-cover bg-center"
             style={{ backgroundImage: `url(${Background})` }}
         >
-            <div className="animate-spin-slow h-32 w-32 sm:h-48 sm:w-48">
+            <div className=" animate-spin duration-300 ease-linear h-32 w-32 sm:h-48 sm:w-48">
                 <img src={LogoSynergie} alt="Loading..." className="h-full w-full object-contain" />
             </div>
         </div>
