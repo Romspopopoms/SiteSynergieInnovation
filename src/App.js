@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
@@ -8,20 +9,25 @@ import Loader from './components/Loader'; // Import du loader
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
-    // Vérification si l'appareil est mobile en fonction de la largeur de l'écran
     const isMobile = window.innerWidth < 768;
 
     if (isMobile) {
-      // Désactiver le loader pour les mobiles
-      setIsLoading(false);
-    } else {
-      // Loader sur les appareils non mobiles
+      // Loader pour mobile
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 2000); 
+      }, 3000); // Forcer le rendu après 3 secondes
       return () => clearTimeout(timer);
+    } else {
+      // Loader pour non mobile
+      const handleLoad = () => {
+        setTimeout(() => setIsLoading(false), 3000);
+      };
+
+      window.addEventListener('load', handleLoad);
+      return () => window.removeEventListener('load', handleLoad);
     }
   }, []);
 
@@ -42,20 +48,21 @@ const App = () => {
 
   return (
     <HelmetProvider>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <Router>
-          <div className="flex flex-col xl:gap-y-12 w-full">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
-              {/* Redirection par défaut vers la page d'accueil */}
-              <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
-          </div>
-        </Router>
-      )}
+      <AnimatePresence exitBeforeEnter>
+        {isLoading ? (
+          <Loader key="loader" />
+        ) : (
+          <Router>
+            <div className="flex flex-col xl:gap-y-12 w-full">
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<Home />} />
+                <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
+                {/* Ajoutez d'autres routes ici pour vos autres pages */}
+              </Routes>
+            </div>
+          </Router>
+        )}
+      </AnimatePresence>
     </HelmetProvider>
   );
 }
