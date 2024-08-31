@@ -15,10 +15,14 @@ const Section7 = React.lazy(() => import("../components/Section7"));
 
 const Loader = () => {
     return (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-cover bg-center"
+        <div 
+            className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-cover bg-center"
             style={{ backgroundImage: `url(${BG})` }}
         >
-            <div className="h-32 w-32 sm:h-48 sm:w-48 animate-spin-slow">
+            <div 
+                className="h-32 w-32 sm:h-48 sm:w-48 animate-spin"
+                style={{ animationDuration: '3s' }} // Lent pour un effet plus fluide
+            >
                 <img src={LogoSynergie} alt="Loading..." className="h-full w-full object-contain" />
             </div>
             <p className='text-white text-xl sm:text-3xl font-bold font-afacad mt-4'>
