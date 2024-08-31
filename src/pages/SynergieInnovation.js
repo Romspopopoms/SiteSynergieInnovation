@@ -29,35 +29,24 @@ const Loader = ({ isVisible }) => (
 
 const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        // Détecter si l'appareil est un mobile
-        const checkIfMobile = () => {
-            if (window.innerWidth < 768) { // Définir la limite pour considérer un appareil comme mobile
-                setIsMobile(true);
-                setIsLoading(false); // Pas de loader sur mobile
-            } else {
-                setIsMobile(false);
-            }
-        };
+        // Vérifier si l'appareil est mobile en fonction de la largeur de l'écran
+        const isMobile = window.innerWidth < 768;
 
-        checkIfMobile();
-        window.addEventListener('resize', checkIfMobile);
-
-        return () => window.removeEventListener('resize', checkIfMobile);
-    }, []);
-
-    useEffect(() => {
-        if (!isMobile) {
+        if (isMobile) {
+            // Désactiver le loader pour les mobiles
+            setIsLoading(false);
+        } else {
+            // Loader sur les appareils non mobiles
             const timer = setTimeout(() => {
                 setIsLoading(false);
             }, 2000); 
             return () => clearTimeout(timer);
         }
-    }, [isMobile]);
+    }, []);
 
-    if (isLoading && !isMobile) {
+    if (isLoading) {
         return <Loader isVisible={true} />;
     }
 
