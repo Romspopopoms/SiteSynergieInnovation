@@ -40,68 +40,68 @@ const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // Simule le chargement initial
-        const timer = setTimeout(() => setIsLoading(false), 3000);
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 3000); // Définir un délai de 3 secondes pour le chargement initial
         return () => clearTimeout(timer);
     }, []);
 
+    if (isLoading) {
+        return <Loader isVisible={true} />;
+    }
+
     return (
-        <>
-            {isLoading && <Loader isVisible={true} />}
-            {!isLoading && (
-                <div className="w-full bg-top bg-cover bg-repeat"
-                    style={{ backgroundImage: `url(${BG})` }}
-                >
-                    <Helmet>
-                        <link rel="preload" href={BG} as="image" />
-                    </Helmet>
+        <div className="w-full bg-top bg-cover bg-repeat"
+            style={{ backgroundImage: `url(${BG})` }}
+        >
+            <Helmet>
+                <link rel="preload" href={BG} as="image" />
+            </Helmet>
 
-                    <SectionWrapper>
-                        <div id="Accueil" className="md:min-h-screen">
-                            <Section1 />
-                        </div>
-                    </SectionWrapper>
-
-                    <SectionWrapper>
-                        <div>
-                            <Section2 />
-                        </div>
-                    </SectionWrapper>
-
-                    <SectionWrapper>
-                        <div id="NosSolutions" className="min-h-screen">
-                            <Section3 />
-                        </div>
-                    </SectionWrapper>
-
-                    <SectionWrapper>
-                        <div id="NosServices" className="md:min-h-screen">
-                            <Section4 />
-                        </div>
-                    </SectionWrapper>
-
-                    <SectionWrapper>
-                        <div id="NotreMission" className="min-h-screen">
-                            <Section5 />
-                        </div>
-                    </SectionWrapper>
-
-                    <SectionWrapper>
-                        <div id="Notreequipe" className="">
-                            <Section6 />
-                        </div>
-                    </SectionWrapper>
-
-                    <SectionWrapper>
-                        <div id="Contact" className="">
-                            <Section7 />
-                        </div>
-                    </SectionWrapper>
-
-                    <Footer />
+            <SectionWrapper>
+                <div id="Accueil" className="md:min-h-screen">
+                    <Section1 />
                 </div>
-            )}
-        </>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <div>
+                    <Section2 />
+                </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <div id="NosSolutions" className="min-h-screen">
+                    <Section3 />
+                </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <div id="NosServices" className="md:min-h-screen">
+                    <Section4 />
+                </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <div id="NotreMission" className="min-h-screen">
+                    <Section5 />
+                </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <div id="Notreequipe" className="">
+                    <Section6 />
+                </div>
+            </SectionWrapper>
+
+            <SectionWrapper>
+                <div id="Contact" className="">
+                    <Section7 />
+                </div>
+            </SectionWrapper>
+
+            <Footer />
+        </div>
     );
 }
 
