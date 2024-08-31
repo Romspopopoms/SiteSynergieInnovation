@@ -32,13 +32,16 @@ const Loader = ({ isVisible }) => {
     );
 };
 
-const SectionWrapper = ({ children }) => {
+const SectionWrapper = ({ children, onLoad }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        const timer = setTimeout(() => setIsVisible(true), 100);
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+            onLoad();
+        }, 100);
         return () => clearTimeout(timer);
-    }, []);
+    }, [onLoad]);
 
     return (
         <Suspense fallback={
@@ -55,25 +58,26 @@ const SectionWrapper = ({ children }) => {
 
 const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [sectionsLoaded, setSectionsLoaded] = useState({});
+    const [sectionsLoaded, setSectionsLoaded] = useState(0);
+
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 2000);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    const handleSectionLoad = (sectionId) => {
-        setSectionsLoaded(prev => ({ ...prev, [sectionId]: true }));
-    };
-
-    useEffect(() => {
-        if (Object.values(sectionsLoaded).every(loaded => loaded)) {
-            setIsLoading(false);
+        if (isMobile) {
+            // Sur mobile, on attend que toutes les sections soient chargées
+            if (sectionsLoaded === 7) {
+                setIsLoading(false);
+            }
+        } else {
+            // Sur desktop, on utilise un timer comme avant
+            const timer = setTimeout(() => setIsLoading(false), 3000);
+            return () => clearTimeout(timer);
         }
-    }, [sectionsLoaded]);
+    }, [sectionsLoaded, isMobile]);
+
+    const handleSectionLoad = () => {
+        setSectionsLoaded(prev => prev + 1);
+    };
 
     return (
         <>
@@ -85,45 +89,45 @@ const SynergieInnovationPage = () => {
                     <link rel="preload" href={BG} as="image" />
                 </Helmet>
 
-                <SectionWrapper>
+                <SectionWrapper onLoad={handleSectionLoad}>
                     <div id="Accueil" className="md:min-h-screen">
-                        <Section1 onLoad={() => handleSectionLoad('Accueil')} />
+                        <Section1 />
                     </div>
                 </SectionWrapper>
 
-                <SectionWrapper>
+                <SectionWrapper onLoad={handleSectionLoad}>
                     <div>
-                        <Section2 onLoad={() => handleSectionLoad('Section2')} />
+                        <Section2 />
                     </div>
                 </SectionWrapper>
 
-                <SectionWrapper>
+                <SectionWrapper onLoad={handleSectionLoad}>
                     <div id="NosSolutions" className="min-h-screen">
-                        <Section3 onLoad={() => handleSectionLoad('NosSolutions')} />
+                        <Section3 />
                     </div>
                 </SectionWrapper>
 
-                <SectionWrapper>
+                <SectionWrapper onLoad={handleSectionLoad}>
                     <div id="NosServices" className="md:min-h-screen">
-                        <Section4 onLoad={() => handleSectionLoad('NosServices')} />
+                        <Section4 />
                     </div>
                 </SectionWrapper>
 
-                <SectionWrapper>
+                <SectionWrapper onLoad={handleSectionLoad}>
                     <div id="NotreMission" className="min-h-screen">
-                        <Section5 onLoad={() => handleSectionLoad('NotreMission')} />
+                        <Section5 />
                     </div>
                 </SectionWrapper>
 
-                <SectionWrapper>
+                <SectionWrapper onLoad={handleSectionLoad}>
                     <div id="Notreéquipe" className="">
-                        <Section6 onLoad={() => handleSectionLoad('Notreéquipe')} />
+                        <Section6 />
                     </div>
                 </SectionWrapper>
 
-                <SectionWrapper>
+                <SectionWrapper onLoad={handleSectionLoad}>
                     <div id="Contact" className="">
-                        <Section7 onLoad={() => handleSectionLoad('Contact')} />
+                        <Section7 />
                     </div>
                 </SectionWrapper>
 
