@@ -57,16 +57,8 @@ const SynergieInnovationPage = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        const hasLoaded = localStorage.getItem('hasLoadedBefore');
-        if (hasLoaded) {
-            setIsLoading(false);
-        } else {
-            const timer = setTimeout(() => {
-                setIsLoading(false);
-                localStorage.setItem('hasLoadedBefore', 'true');
-            }, 2000);
-            return () => clearTimeout(timer);
-        }
+        const timer = setTimeout(() => setIsLoading(false), 2000);
+        return () => clearTimeout(timer);
     }, []);
 
     return (
@@ -78,7 +70,7 @@ const SynergieInnovationPage = () => {
                 <Helmet>
                     <link rel="preload" href={BG} as="image" />
                 </Helmet>
-                
+
                 <SectionWrapper>
                     <div id="Accueil" className="md:min-h-screen">
                         <Section1 />
