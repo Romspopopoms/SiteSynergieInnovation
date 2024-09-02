@@ -33,10 +33,14 @@ module.exports = {
         'afacad': ['Afacad', 'sans-serif'],
         'abeezee': ['ABeeZee', 'sans-serif'],
         'antonio': ['Antonio', 'sans-serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+
       }, 
       colors: {
         primary: '#A6654E',
         accent: '#FFE3CC',
+        text1: '#6BABFF',
+        text2: '#DE69F0'
       }
     }
   },

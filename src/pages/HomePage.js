@@ -34,7 +34,7 @@ const HomePage = () => {
         {
             logo: LogoVox,
             text: 'VoxUnity',
-            href: "/",
+            href: "/VoxUnity",
             alt: 'LogoVox',
             class: 'h-auto w-10 md:w-12',
             extraClass: '',

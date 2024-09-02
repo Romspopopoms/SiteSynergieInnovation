@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
+import VoxUnity from "./pages/VoxUnity"
 import Loader from './components/Loader'; // Import du loader
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -20,7 +21,7 @@ const AppContent = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode='wait'>
         {!isLoading && (
           <motion.div
             key={location.pathname}
@@ -32,6 +33,7 @@ const AppContent = () => {
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
               <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
+              <Route path="/VoxUnity" element={<VoxUnity />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </motion.div>
