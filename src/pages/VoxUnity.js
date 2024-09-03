@@ -3,14 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import BG from "../assets/bg5.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../components/VoxUnity/Navbar";
 
-// Supprimez ces lignes car vous utilisez React.lazy pour importer les composants
-// import Section1 from "../components/VoxUnity/Section1";
-// import Section2 from "../components/VoxUnity/Section2";
-// import Section3 from "../components/VoxUnity/Section3"
 
 const Section1 = React.lazy(() => import("../components/VoxUnity/Section1"));
 const Section2 = React.lazy(() => import("../components/VoxUnity/Section2"));
 const Section3 = React.lazy(() => import("../components/VoxUnity/Section3"));
+const Section4 = React.lazy(() => import("../components/VoxUnity/Section4"));
 
 const VoxUnity = () => {
     return (
@@ -35,8 +32,14 @@ const VoxUnity = () => {
             </Suspense>
 
             <Suspense fallback={null}>
-                <div className="min-h-screen">
+                <div className="md:mt-24 mt-12">
                     <Section3 />
+                </div>
+            </Suspense>
+
+            <Suspense fallback={null}>
+                <div className="md:mt-24 mt-12">
+                    <Section4 />
                 </div>
             </Suspense>
             

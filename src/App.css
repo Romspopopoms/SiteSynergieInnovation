@@ -13,3 +13,13 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Masquer la barre de défilement pour les navigateurs modernes */
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* pour Chrome, Safari et Opera */
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* pour Internet Explorer et Edge */
+    scrollbar-width: none;  /* pour Firefox */
+  }
+  
+

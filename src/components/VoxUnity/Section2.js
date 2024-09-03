@@ -11,7 +11,7 @@ const Section2 = () => {
             </h1>
 
             {/* Carrousel for Small Screens */}
-            <div className="xl:hidden flex overflow-x-scroll snap-x snap-mandatory space-x-6 w-full px-4 mt-12">
+<div class="overflow-x-scroll overflow-y-hidden snap-x snap-mandatory flex space-x-6 w-full px-4 mt-12 xl:hidden">
                 {/* Card 1 */}
                 <div className="snap-center flex-shrink-0 flex flex-col justify-center items-start bg-[#262626] w-[85%] min-h-[400px] p-8 border-2 border-[#6BABFF]"
                     style={{ borderRadius: "20px" }}>
@@ -100,7 +100,7 @@ const Section2 = () => {
             <img src={LogoVox} alt="PictoVox" className="h-12 w-12" />
             <div className="flex flex-col">
                 <h2 className="font-poppins font-semibold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2"
-                    style={{ fontSize: '20px' }}>
+                    style={{ fontSize: '16px' }}>
                     Un Logo
                 </h2>
                 <p className="font-poppins text-[#FFFFFF] text-base font-medium"
@@ -126,7 +126,7 @@ const Section2 = () => {
             <img src={PictoDesign} alt="PictoDesign" className="h-12 w-12" />
             <div className="flex flex-col">
                 <h2 className="font-poppins font-semibold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2"
-                    style={{ fontSize: '20px' }}>
+                    style={{ fontSize: '16px' }}>
                     Une Charte Graphique
                 </h2>
                 <p className="font-poppins text-[#FFFFFF] text-base font-medium"
@@ -152,7 +152,7 @@ const Section2 = () => {
             <img src={PictoWebDesign} alt="PictoWebDesign" className="h-12 w-12" />
             <div className="flex flex-col">
                 <h2 className="font-poppins font-semibold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2"
-                    style={{ fontSize: '20px' }}>
+                    style={{ fontSize: '16px' }}>
                     Un Web Design
                 </h2>
                 <p className="font-poppins text-[#FFFFFF] text-base font-medium"
