@@ -17,7 +17,7 @@ const Section4 = () => {
                <p className="font-poppins text-[#FFFFFF]  font-medium text-center md:text-start  "
                style={{FontSize:'25px'}}>Capturez vos événements et valorisez votre entreprise grâce à des visuels percutants qui enrichissent votre communication et captivent vos clients avec une prestation photographique.</p>  
             </div>
-            <a href="/Communication" className="bg-white px-8 py-2 rounded-full self-center md:self-start mt-8">
+            <a href="/CharteGraphique" className="bg-white px-8 py-2 rounded-full self-center md:self-start mt-8">
             <h2 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
             Vos photos aujourd'hui
             </h2>
@@ -37,7 +37,7 @@ const Section4 = () => {
                <p className="font-poppins text-[#FFFFFF]  font-medium text-center md:text-end "
                style={{FontSize:'25px'}}>Capturez des images uniques et impressionnantes pour valoriser votre entreprise. Nos drones offrent une perspective inédite pour booster votre communication visuelle.</p>  
             </div>
-            <a href="/Communication" className="bg-white px-8 py-2 rounded-full self-center md:self-end mt-8">
+            <a href="/CharteGraphique" className="bg-white px-8 py-2 rounded-full self-center md:self-end mt-8">
             <h2 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
             Décollage de votre visibilité</h2>
         </a>
