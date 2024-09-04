@@ -1,21 +1,23 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useLocation } from 'react-router-dom'; // Importer useLocation
 import Logo from '../../assets/PictoVox.svg'; // Remplacez par le chemin correct vers le logo VoxUnity
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const location = useLocation(); // Obtenez l'URL actuelle
 
     const Menu = [
         { name: "Hub", href: "/" },
-        { name: "Logo", href: "/Logo" },
-        { name: "Charte Graphique", href: "/CharteGraphique" },
-        { name: "WebDesign", href: "/WebDesign" },
-        { name: "Communication", href: "/Communication" },
+        { name: "Logo", href: "/VoxUnityLogo" },
+        { name: "Charte Graphique", href: "/VoxUnityCharteGraphique" },
+        { name: "WebDesign", href: "/VoxUnityWebDesign" },
+        { name: "Communication", href: "/VoxUnityCommunication" },
     ];
 
     return (
-        <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[89%] xl:w-[65%]  z-50">
+        <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[89%] xl:w-[65%] z-50">
             <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-full p-3 flex justify-between items-center">
                 {/* Logo visible en permanence */}
                 <div className="text-white text-xl">
@@ -36,7 +38,11 @@ const Navbar = () => {
                 {/* Menu pour grands écrans */}
                 <div className={`hidden xl:flex md:items-center md:space-x-3 text-white font-poppins font-semibold mr-8`}>
                     {Menu.map((item, index) => (
-                        <a key={index} href={item.href} className="hover:text-[#8D1257] px-1">
+                        <a 
+                            key={index} 
+                            href={item.href} 
+                            className={`px-1 hover:text-[#8D1257] ${location.pathname === item.href ? 'text-[#8D1257]' : ''}`}
+                        >
                             {item.name}
                         </a>
                     ))}
@@ -75,7 +81,7 @@ const Navbar = () => {
                         <li key={index}>
                             <a
                                 href={item.href}
-                                className="text-white text-lg font-medium hover:text-gray-300 transition-colors duration-200"
+                                className={`text-white text-lg font-medium hover:text-gray-300 transition-colors duration-200 ${location.pathname === item.href ? 'text-gray-300' : ''}`}
                                 onClick={() => setIsOpen(false)} // Ferme le menu après sélection
                             >
                                 {item.name}

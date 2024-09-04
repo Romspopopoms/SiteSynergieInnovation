@@ -5,6 +5,7 @@ import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
 import VoxUnity from "./pages/VoxUnity"
+import VoxUnityLogo from "./pages/VoxUnityLogo"
 import Loader from './components/Loader'; // Import du loader
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -34,6 +35,7 @@ const AppContent = () => {
               <Route path="/" element={<Home />} />
               <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
               <Route path="/VoxUnity" element={<VoxUnity />} />
+              <Route path="/VoxUnityLogo" element={<VoxUnityLogo />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </motion.div>
