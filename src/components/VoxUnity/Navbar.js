@@ -20,9 +20,9 @@ const Navbar = () => {
         <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[89%] xl:w-[65%] z-50">
             <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-full p-3 flex justify-between items-center">
                 {/* Logo visible en permanence */}
-                <div className="text-white text-xl">
+                <a href='/VoxUnity' className="text-white text-xl">
                     <img src={Logo} alt="VoxUnity" className="h-8 md:h-10 ml-4" />
-                </div>
+                </a>
 
                 {/* Bouton Hamburger pour les petits écrans */}
                 <div className="xl:hidden">
