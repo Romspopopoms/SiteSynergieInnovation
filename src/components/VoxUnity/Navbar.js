@@ -15,7 +15,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[60%] max-w-[60%] z-50">
+        <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[89%] xl:w-[65%]  z-50">
             <div className="bg-white bg-opacity-20 backdrop-blur-lg rounded-full p-3 flex justify-between items-center">
                 {/* Logo visible en permanence */}
                 <div className="text-white text-xl">
@@ -34,7 +34,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Menu pour grands écrans */}
-                <div className={`hidden xl:flex md:items-center md:space-x-6 text-white font-poppins font-semibold mr-8`}>
+                <div className={`hidden xl:flex md:items-center md:space-x-3 text-white font-poppins font-semibold mr-8`}>
                     {Menu.map((item, index) => (
                         <a key={index} href={item.href} className="hover:text-[#8D1257] px-1">
                             {item.name}
