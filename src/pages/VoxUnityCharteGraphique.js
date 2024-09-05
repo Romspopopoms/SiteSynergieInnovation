@@ -1,15 +1,18 @@
 import React, { Suspense } from "react";
 import { Helmet } from 'react-helmet-async';
-import BG from "../assets/bg1.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
+import BG from "../assets/bg4.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../components/VoxUnity/Navbar";
 import Footer from "../components/VoxUnity/Footer";
 
-const Section1 = React.lazy(() => import("../components/VoxUnityLogo/Section1"));
-const Section2 = React.lazy(() => import("../components/VoxUnityLogo/Section2"));
-const Section3 = React.lazy(() => import("../components/VoxUnityLogo/Section3"));
-const Section4 = React.lazy(() => import("../components/VoxUnityLogo/Section4"));
+const Section1 = React.lazy(() => import("../components/VoxUnityCharte/Section1"));
+const Section2 = React.lazy(() => import("../components/VoxUnityCharte/Section2"));
+const Section3 = React.lazy(() => import("../components/VoxUnityCharte/Section3"));
+const Section4 = React.lazy(() => import("../components/VoxUnityCharte/Section4"));
+const Section5 = React.lazy(() => import("../components/VoxUnityCharte/Section5"));
+const Section6 = React.lazy(() => import("../components/VoxUnityCharte/Section6"));
 
-const VoxUnityLogo = () => {
+
+const VoxUnityCharteGraphique = () => {
     return (
         <div 
             className="w-full min-h-screen bg-cover bg-no-repeat"
@@ -34,13 +37,25 @@ const VoxUnityLogo = () => {
 
             <Suspense fallback={null}>
                 <div className="mt-24">
-                    <Section3 />
+                    <Section3/>
                 </div>
             </Suspense>
 
             <Suspense fallback={null}>
                 <div className="mt-24">
-                    <Section4 />
+                    <Section4/>
+                </div>
+            </Suspense>
+
+            <Suspense fallback={null}>
+                <div className="mt-24">
+                    <Section5/>
+                </div>
+            </Suspense>
+
+            <Suspense fallback={null}>
+                <div className="mt-24">
+                    <Section6/>
                 </div>
             </Suspense>
             
@@ -49,4 +64,4 @@ const VoxUnityLogo = () => {
     );
 }
 
-export default VoxUnityLogo;
+export default VoxUnityCharteGraphique;

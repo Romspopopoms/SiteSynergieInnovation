@@ -6,8 +6,10 @@ import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
 import VoxUnity from "./pages/VoxUnity"
 import VoxUnityLogo from "./pages/VoxUnityLogo"
+import VoxUnityCharteGraphique from "./pages/VoxUnityCharteGraphique"
 import Loader from './components/Loader'; // Import du loader
 import { AnimatePresence, motion } from 'framer-motion';
+import VoxUnityWebDesign from './pages/VoxUnityWebDesign';
 
 const AppContent = () => {
   const location = useLocation();
@@ -36,6 +38,8 @@ const AppContent = () => {
               <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
               <Route path="/VoxUnity" element={<VoxUnity />} />
               <Route path="/VoxUnityLogo" element={<VoxUnityLogo />} />
+              <Route path="/VoxUnityCharteGraphique" element={<VoxUnityCharteGraphique />} />
+              <Route path="/VoxUnityWebDesign" element={<VoxUnityWebDesign />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </motion.div>
