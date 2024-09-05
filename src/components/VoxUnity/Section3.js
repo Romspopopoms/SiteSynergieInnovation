@@ -1,5 +1,5 @@
 import React from "react";
-import Tel from "../../assets/post insta comment.webp";
+import Tel from "../../assets/Post.webp";
 
 const Section3 = () => {
     return (

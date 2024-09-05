@@ -7,6 +7,7 @@ import Footer from "../components/VoxUnity/Footer"
 const Section1 = React.lazy(() => import("../components/VoxUnityWebDesign/Section1"));
 const Section2 = React.lazy(() => import("../components/VoxUnityWebDesign/Section2"));
 const Section3 = React.lazy(() => import("../components/VoxUnityWebDesign/Section3"));
+const Section4 = React.lazy(() => import("../components/VoxUnityWebDesign/Section4"));
 
 const VoxUnityWebDesign = () => {
     return (
@@ -50,6 +51,12 @@ const VoxUnityWebDesign = () => {
             <div className="md:w-[75%] md:ml-[25%]">
                 <Suspense fallback={null}>
                     <Section3 />
+                </Suspense>
+            </div>
+
+            <div className="md:w-[75%] md:ml-[25%] mt-24">
+                <Suspense fallback={null}>
+                    <Section4 />
                 </Suspense>
             </div>
 

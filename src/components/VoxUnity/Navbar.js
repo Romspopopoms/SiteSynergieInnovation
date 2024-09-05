@@ -13,7 +13,7 @@ const Navbar = () => {
         { name: "Logo", href: "/VoxUnityLogo" },
         { name: "Charte Graphique", href: "/VoxUnityCharteGraphique" },
         { name: "WebDesign", href: "/VoxUnityWebDesign" },
-        { name: "Communication", href: "/VoxUnityCommunication" },
+        { name: "Communication", href: "/VoxUnityCom" },
     ];
 
     return (

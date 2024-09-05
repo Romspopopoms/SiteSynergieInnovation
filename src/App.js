@@ -10,6 +10,8 @@ import VoxUnityCharteGraphique from "./pages/VoxUnityCharteGraphique"
 import Loader from './components/Loader'; // Import du loader
 import { AnimatePresence, motion } from 'framer-motion';
 import VoxUnityWebDesign from './pages/VoxUnityWebDesign';
+import VoxUnityCom from './pages/VoxUnityCom';
+
 
 const AppContent = () => {
   const location = useLocation();
@@ -40,6 +42,7 @@ const AppContent = () => {
               <Route path="/VoxUnityLogo" element={<VoxUnityLogo />} />
               <Route path="/VoxUnityCharteGraphique" element={<VoxUnityCharteGraphique />} />
               <Route path="/VoxUnityWebDesign" element={<VoxUnityWebDesign />} />
+              <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </motion.div>
