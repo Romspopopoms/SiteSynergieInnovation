@@ -41,7 +41,7 @@ const VoxUnityLogo = () => {
                 <link rel="preload" href={BG} as="image" />
 
                 {/* Favicon */}
-                <link rel="icon" type="image/svg+xml" href={require("../../assets/PictoVox.svg")} />
+                <link rel="icon" type="image/svg+xml" href="../../assets/PictoVox.svg" />
             </Helmet>
 
             {/* Navbar */}
