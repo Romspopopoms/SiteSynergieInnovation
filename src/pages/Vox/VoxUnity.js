@@ -28,9 +28,9 @@ const VoxUnity = () => {
    {/* Open Graph / Facebook Meta Tags */}
    <meta property="og:title" content="VoxUnity - Design et Branding sur mesure" />
    <meta property="og:description" content="Nous créons des identités visuelles uniques pour refléter votre marque de manière impactante et élégante." />
-   <meta property="og:image" content="https://synergieinnovation.fr/bg5.webp" /> {/* Image dans /public */}
+   <meta property="og:image" content="https://synergieinnovation.fr/images/bg5.webp" /> {/* Image dans /public */}
    <meta property="og:type" content="website" />
-   <meta property="og:url" content="https://synergieinnovation.fr/VoxUnity" />
+   <meta property="og:url" content="https://synergieinnovation.fr/images/VoxUnity" />
 
    {/* Twitter Cards Meta Tags */}
    <meta name="twitter:card" content="summary_large_image" />
