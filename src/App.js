@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import Loader from './components/Loader'; // Import du loader
+import { AnimatePresence, motion } from 'framer-motion';
 import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
-import VoxUnity from "./pages/VoxUnity"
-import VoxUnityLogo from "./pages/VoxUnityLogo"
-import VoxUnityCharteGraphique from "./pages/VoxUnityCharteGraphique"
-import Loader from './components/Loader'; // Import du loader
-import { AnimatePresence, motion } from 'framer-motion';
-import VoxUnityWebDesign from './pages/VoxUnityWebDesign';
-import VoxUnityCom from './pages/VoxUnityCom';
+import VoxUnity from "./pages/Vox/VoxUnity"
+import VoxUnityLogo from "./pages/Vox/VoxUnityLogo"
+import VoxUnityCharteGraphique from "./pages/Vox/VoxUnityCharteGraphique"
+import VoxUnityWebDesign from './pages/Vox/VoxUnityWebDesign';
+import VoxUnityCom from './pages/Vox/VoxUnityCom';
 
 
 const AppContent = () => {
