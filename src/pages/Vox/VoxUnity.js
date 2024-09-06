@@ -17,32 +17,27 @@ const VoxUnity = () => {
             style={{ backgroundImage: `url(${BG})` }}
         >
          <Helmet>
-   <title>VoxUnity - Votre partenaire en Design et Branding</title>
-   <meta name="description" content="VoxUnity, le studio créatif spécialisé dans la conception de logo, web design, branding et communication visuelle pour votre entreprise." />
-   <meta name="keywords" content="VoxUnity, design, branding, web design, création de logo, communication visuelle, Synergie Innovation" />
+    <title>VoxUnity - Votre partenaire en Design et Branding</title>
+    <meta name="description" content="VoxUnity, le studio créatif spécialisé dans la conception de logo, web design, branding et communication visuelle pour votre entreprise." />
+    <meta name="keywords" content="VoxUnity, design, branding, web design, création de logo, communication visuelle, Synergie Innovation" />
 
-   {/* Canonical URL */}
-   <link rel="canonical" href="https://synergieinnovation.fr/VoxUnity" />
+    {/* Open Graph / Facebook Meta Tags */}
+    <meta property="og:title" content="VoxUnity - Design et Branding sur mesure" />
+    <meta property="og:description" content="Nous créons des identités visuelles uniques pour refléter votre marque de manière impactante et élégante." />
+    <meta property="og:image" content="https://synergieinnovation.fr/images/bg5.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://synergieinnovation.fr/VoxUnity" />
 
-   {/* Open Graph / Facebook Meta Tags */}
-   <meta property="og:title" content="VoxUnity - Design et Branding sur mesure" />
-   <meta property="og:description" content="Nous créons des identités visuelles uniques pour refléter votre marque de manière impactante et élégante." />
-   <meta property="og:image" content="https://synergieinnovation.fr/images/bg5.png" />
-   <meta property="og:type" content="website" />
-   <meta property="og:url" content="https://synergieinnovation.fr/VoxUnity" />
+    {/* Twitter Cards Meta Tags */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VoxUnity - Votre partenaire en Design et Branding" />
+    <meta name="twitter:description" content="Découvrez nos solutions de branding, création de logo, et web design pour votre entreprise." />
+    <meta name="twitter:image" content="https://synergieinnovation.fr/images/bg5.webp" />
 
-   {/* Twitter Cards Meta Tags */}
-   <meta name="twitter:card" content="summary_large_image" />
-   <meta name="twitter:title" content="VoxUnity - Votre partenaire en Design et Branding" />
-   <meta name="twitter:description" content="Découvrez nos solutions de branding, création de logo, et web design pour votre entreprise." />
-   <meta name="twitter:image" content="https://synergieinnovation.fr/images/bg5.png" />
-
-   {/* Preload Background Image */}
-   <link rel="preload" href="/images/bg5.webp" as="image" />
-
-   {/* Favicon - Correct path for SVG */}
-   <link rel="icon" type="image/svg+xml" href="https://synergieinnovation.fr/images/PictoVox.svg" />
+    {/* Preload Image */}
+    <link rel="preload" href="https://synergieinnovation.fr/images/bg5.webp" as="image" />
 </Helmet>
+
 
 
 
