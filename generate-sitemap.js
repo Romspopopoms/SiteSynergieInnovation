@@ -1,4 +1,4 @@
-const { SitemapStream, streamToPromise } = require('sitemap');
+const { SitemapStream } = require('sitemap');
 const { createWriteStream } = require('fs');
 
 // Configuration de base du sitemap
