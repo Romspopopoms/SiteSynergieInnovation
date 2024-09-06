@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { motion, easeInOut } from "framer-motion";
-import Logo from "../assets/V4longW.svg";
-import BG from "../assets/Bglandinghome.webp";
+import Logo from "../../assets/V4longW.svg";
+import BG from "../../assets/Bglandinghome.webp";
 import { FaBars } from "react-icons/fa";
 import { HiPaintBrush } from "react-icons/hi2";
 import { RiComputerLine } from "react-icons/ri";
-import Square from "../assets/Square+.svg";
+import Square from "../../assets/Square+.svg";
 import { MdGroups } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
 

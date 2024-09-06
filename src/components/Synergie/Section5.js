@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { useInView, motion, easeInOut } from "framer-motion";
-import AnimatedTitle from "../components/Animated";
-import Window from "../assets/Window.svg";
-import Square from "../assets/Square+.svg";
+import AnimatedTitle from "../../components/Animated";
+import Window from "../../assets/Window.svg";
+import Square from "../../assets/Square+.svg";
 import { FaCircle } from "react-icons/fa6";
 
 const Section5 = () => {

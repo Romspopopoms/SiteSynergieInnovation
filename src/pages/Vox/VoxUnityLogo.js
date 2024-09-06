@@ -1,13 +1,13 @@
 import React, { Suspense } from "react";
 import { Helmet } from 'react-helmet-async';
-import BG from "../assets/bg1.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
-import Navbar from "../components/VoxUnity/Navbar";
-import Footer from "../components/VoxUnity/Footer";
+import BG from "../../assets/bg1.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
+import Navbar from "../../components/VoxUnity/Navbar";
+import Footer from "../../components/VoxUnity/Footer";
 
-const Section1 = React.lazy(() => import("../components/VoxUnityLogo/Section1"));
-const Section2 = React.lazy(() => import("../components/VoxUnityLogo/Section2"));
-const Section3 = React.lazy(() => import("../components/VoxUnityLogo/Section3"));
-const Section4 = React.lazy(() => import("../components/VoxUnityLogo/Section4"));
+const Section1 = React.lazy(() => import("../../components/VoxUnityLogo/Section1"));
+const Section2 = React.lazy(() => import("../../components/VoxUnityLogo/Section2"));
+const Section3 = React.lazy(() => import("../../components/VoxUnityLogo/Section3"));
+const Section4 = React.lazy(() => import("../../components/VoxUnityLogo/Section4"));
 
 const VoxUnityLogo = () => {
     return (

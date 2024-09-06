@@ -4,13 +4,13 @@ import BG from "../assets/Bglandinghome.webp";
 import Footer from "../components/Footer";
 
 // Lazy loading des sections
-const Section1 = React.lazy(() => import("../components/Section1"));
-const Section2 = React.lazy(() => import("../components/Section2"));
-const Section3 = React.lazy(() => import("../components/Section3"));
-const Section4 = React.lazy(() => import("../components/Section4"));
-const Section5 = React.lazy(() => import("../components/Section5"));
-const Section6 = React.lazy(() => import("../components/Section6"));
-const Section7 = React.lazy(() => import("../components/Section7"));
+const Section1 = React.lazy(() => import("../components/Synergie/Section1"));
+const Section2 = React.lazy(() => import("../components/Synergie/Section2"));
+const Section3 = React.lazy(() => import("../components/Synergie/Section3"));
+const Section4 = React.lazy(() => import("../components/Synergie/Section4"));
+const Section5 = React.lazy(() => import("../components/Synergie/Section5"));
+const Section6 = React.lazy(() => import("../components/Synergie/Section6"));
+const Section7 = React.lazy(() => import("../components/Synergie/Section7"));
 
 const SynergieInnovationPage = () => {
     return (

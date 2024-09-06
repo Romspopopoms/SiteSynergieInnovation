@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { useInView } from "framer-motion";
-import AnimatedTitle from "../components/Animated";
-import Imma from "../assets/Logo ImaMissio W.svg";
-import Vox from "../assets/Logo vox W.svg";
-import Scan from "../assets/LogoScan.webp";
+import AnimatedTitle from "../../components/Animated";
+import Imma from "../../assets/Logo ImaMissio W.svg";
+import Vox from "../../assets/Logo vox W.svg";
+import Scan from "../../assets/LogoScan.webp";
 
 const Section4 = () => {
     const ref = useRef(null);

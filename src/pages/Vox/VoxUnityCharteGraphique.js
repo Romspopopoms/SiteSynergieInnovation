@@ -1,15 +1,15 @@
 import React, { Suspense } from "react";
 import { Helmet } from 'react-helmet-async';
-import BG from "../assets/bg4.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
-import Navbar from "../components/VoxUnity/Navbar";
-import Footer from "../components/VoxUnity/Footer";
+import BG from "../../assets/bg4.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
+import Navbar from "../../components/VoxUnity/Navbar";
+import Footer from "../../components/VoxUnity/Footer";
 
-const Section1 = React.lazy(() => import("../components/VoxUnityCharte/Section1"));
-const Section2 = React.lazy(() => import("../components/VoxUnityCharte/Section2"));
-const Section3 = React.lazy(() => import("../components/VoxUnityCharte/Section3"));
-const Section4 = React.lazy(() => import("../components/VoxUnityCharte/Section4"));
-const Section5 = React.lazy(() => import("../components/VoxUnityCharte/Section5"));
-const Section6 = React.lazy(() => import("../components/VoxUnityCharte/Section6"));
+const Section1 = React.lazy(() => import("../../components/VoxUnityCharte/Section1"));
+const Section2 = React.lazy(() => import("../../components/VoxUnityCharte/Section2"));
+const Section3 = React.lazy(() => import("../../components/VoxUnityCharte/Section3"));
+const Section4 = React.lazy(() => import("../../components/VoxUnityCharte/Section4"));
+const Section5 = React.lazy(() => import("../../components/VoxUnityCharte/Section5"));
+const Section6 = React.lazy(() => import("../../components/VoxUnityCharte/Section6"));
 
 
 const VoxUnityCharteGraphique = () => {

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useInView, motion } from "framer-motion";
-import AnimatedTitle from "../components/Animated";
+import AnimatedTitle from "../Animated";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 

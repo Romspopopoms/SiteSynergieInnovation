@@ -1,6 +1,6 @@
 import React from "react";
-import PictoSynergie from "../assets/V4 simple W.svg"
-import BGLanding from "../assets/Bg2.webp"
+import PictoSynergie from "../../assets/V4 simple W.svg"
+import BGLanding from "../../assets/Bg2.webp"
 const Section7 = () => {
     return (
         <div className="md:grid md:grid-cols-2 flex flex-col items-end mt-32 bg-cover min-h-[600px]" style={{ backgroundImage: `url(${BGLanding})` }}>
