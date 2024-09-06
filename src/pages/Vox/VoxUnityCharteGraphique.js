@@ -11,7 +11,6 @@ const Section4 = React.lazy(() => import("../../components/VoxUnityCharte/Sectio
 const Section5 = React.lazy(() => import("../../components/VoxUnityCharte/Section5"));
 const Section6 = React.lazy(() => import("../../components/VoxUnityCharte/Section6"));
 
-
 const VoxUnityCharteGraphique = () => {
     return (
         <div 
@@ -19,10 +18,38 @@ const VoxUnityCharteGraphique = () => {
             style={{ backgroundImage: `url(${BG})` }} // background-image correcte
         >
             <Helmet>
-                <link rel="preload" href={BG} as="image" /> {/* Préchargement */}
+                {/* SEO Meta Tags */}
+                <title>VoxUnity - Charte Graphique et Identité Visuelle</title>
+                <meta name="description" content="Découvrez les solutions graphiques et l'identité visuelle unique que nous créons pour renforcer votre marque grâce à VoxUnity." />
+                <meta name="keywords" content="charte graphique, identité visuelle, branding, VoxUnity, communication, design graphique, Synergie Innovation" />
+
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://synergieinnovation.fr/VoxUnityCharteGraphique" />
+
+                {/* Open Graph / Facebook Meta Tags */}
+                <meta property="og:title" content="VoxUnity - Charte Graphique et Branding" />
+                <meta property="og:description" content="Nous créons des chartes graphiques uniques pour donner à votre entreprise une identité visuelle forte et mémorable." />
+                <meta property="og:image" content={`${BG}`} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://synergieinnovation.fr/VoxUnityCharteGraphique" />
+
+                {/* Twitter Cards Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="VoxUnity - Charte Graphique et Branding sur mesure" />
+                <meta name="twitter:description" content="Renforcez l'identité de votre marque avec nos solutions graphiques personnalisées." />
+                <meta name="twitter:image" content={`${BG}`} />
+
+                {/* Preload Background Image */}
+                <link rel="preload" href={BG} as="image" />
+
+                {/* Favicon */}
+                <link rel="icon" type="image/svg+xml" href={require("../../assets/PictoVox.svg")} />
             </Helmet>
 
+            {/* Navbar */}
             <Navbar />
+
+            {/* Main Content with Lazy-loaded sections */}
             <Suspense fallback={null}>
                 <div className="md:min-h-screen">
                     <Section1 />
@@ -58,7 +85,8 @@ const VoxUnityCharteGraphique = () => {
                     <Section6/>
                 </div>
             </Suspense>
-            
+
+            {/* Footer */}
             <Footer />
         </div>
     );

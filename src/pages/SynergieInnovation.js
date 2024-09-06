@@ -14,13 +14,40 @@ const Section7 = React.lazy(() => import("../components/Synergie/Section7"));
 
 const SynergieInnovationPage = () => {
     return (
-        <div className="w-full bg-top bg-cover bg-repeat"
+        <div 
+            className="w-full bg-top bg-cover bg-repeat"
             style={{ backgroundImage: `url(${BG})` }}
         >
             <Helmet>
+                {/* Meta Tags pour SEO */}
+                <title>Synergie Innovation - Solutions Numériques sur Mesure</title>
+                <meta name="description" content="Découvrez Synergie Innovation : des solutions numériques complètes, de la création de sites web au branding et au développement logiciel sur mesure." />
+                <meta name="keywords" content="création de site web, développement logiciel, design, branding, solutions numériques, Synergie Innovation, sur mesure" />
+
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://synergieinnovation.fr/SynergieInnovationPage" />
+
+                {/* Open Graph / Facebook Meta Tags */}
+                <meta property="og:title" content="Synergie Innovation - Solutions Numériques sur Mesure" />
+                <meta property="og:description" content="Synergie Innovation vous offre des solutions sur mesure pour tous vos besoins numériques, du design à la création de sites web et applications." />
+                <meta property="og:image" content={BG} />
+                <meta property="og:url" content="https://synergieinnovation.fr/SynergieInnovationPage" />
+                <meta property="og:type" content="website" />
+
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Synergie Innovation - Solutions Numériques Personnalisées" />
+                <meta name="twitter:description" content="Nous offrons des services numériques personnalisés pour vous aider à atteindre vos objectifs digitaux." />
+                <meta name="twitter:image" content={BG} />
+
+                {/* Preload de l'image de fond */}
                 <link rel="preload" href={BG} as="image" />
+
+                {/* Favicon */}
+                <link rel="icon" type="image/webp" href={BG} />
             </Helmet>
 
+            {/* Sections avec Suspense pour un chargement paresseux */}
             <Suspense fallback={null}>
                 <div id="Accueil" className="md:min-h-screen">
                     <Section1 />
@@ -52,13 +79,13 @@ const SynergieInnovationPage = () => {
             </Suspense>
 
             <Suspense fallback={null}>
-                <div id="Notreequipe" className="">
+                <div id="Notreequipe">
                     <Section6 />
                 </div>
             </Suspense>
 
             <Suspense fallback={null}>
-                <div id="Contact" className="">
+                <div id="Contact">
                     <Section7 />
                 </div>
             </Suspense>

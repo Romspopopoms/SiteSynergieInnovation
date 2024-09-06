@@ -112,10 +112,32 @@ const HomePage = () => {
             style={{ backgroundImage: `url(${Background})` }} 
         >
             <Helmet>
+                {/* Meta Tags pour SEO */}
                 <title>Synergie Innovation - Accueil</title>
-                <meta name="description" content="Synergie Innovation vous offre les meilleures solutions en création de sites web, logiciels, design et plus encore." />
-                <meta name="keywords" content="création de site, développement logiciel, design, Synergie Innovation, La Ciotat, Bouche-du-Rhône, sur-mesure" />
-                <link rel="preload" href={Background} as="image" /> {/* Préchargement de l'image de fond */}
+                <meta name="description" content="Synergie Innovation vous offre des solutions en création de sites web, développement logiciel, design, branding, et plus encore." />
+                <meta name="keywords" content="création de site web, développement logiciel, design, branding, QR code, Synergie Innovation, La Ciotat" />
+
+                {/* Canonical URL */}
+                <link rel="canonical" href="https://synergieinnovation.fr" />
+
+                {/* Open Graph / Facebook Meta Tags */}
+                <meta property="og:title" content="Synergie Innovation - Création de Solutions Numériques" />
+                <meta property="og:description" content="Découvrez Synergie Innovation pour toutes vos solutions numériques, y compris le développement de sites web, le branding et plus encore." />
+                <meta property="og:image" content={Background} />
+                <meta property="og:url" content="https://synergieinnovation.fr" />
+                <meta property="og:type" content="website" />
+
+                {/* Twitter Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Synergie Innovation - Solutions Numériques" />
+                <meta name="twitter:description" content="Nous créons des solutions personnalisées pour sites web, logiciels et branding." />
+                <meta name="twitter:image" content={Background} />
+
+                {/* Preload de l'image de fond */}
+                <link rel="preload" href={Background} as="image" />
+
+                {/* Favicon */}
+                <link rel="icon" type="image/svg+xml" href={LogoSynergie} />
             </Helmet>
 
             <div className='flex items-center justify-center min-h-screen w-full'
