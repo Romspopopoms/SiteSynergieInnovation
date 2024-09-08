@@ -11,7 +11,7 @@ import VoxUnityLogo from "./pages/Vox/VoxUnityLogo"
 import VoxUnityCharteGraphique from "./pages/Vox/VoxUnityCharteGraphique"
 import VoxUnityWebDesign from './pages/Vox/VoxUnityWebDesign';
 import VoxUnityCom from './pages/Vox/VoxUnityCom';
-
+import ImmaMissio from "./pages/Imma/ImmaMissio"
 
 const AppContent = () => {
   const location = useLocation();
@@ -43,6 +43,7 @@ const AppContent = () => {
               <Route path="/VoxUnityCharteGraphique" element={<VoxUnityCharteGraphique />} />
               <Route path="/VoxUnityWebDesign" element={<VoxUnityWebDesign />} />
               <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
+              <Route path="/ImmaMissio" element={<ImmaMissio />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </motion.div>

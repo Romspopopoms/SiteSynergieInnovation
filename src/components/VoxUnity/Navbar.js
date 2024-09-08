@@ -12,7 +12,7 @@ const Navbar = () => {
         { name: "Hub", href: "/" },
         { name: "Logo", href: "/VoxUnityLogo" },
         { name: "Charte Graphique", href: "/VoxUnityCharteGraphique" },
-        { name: "WebDesign", href: "/VoxUnityWebDesign" },
+        //{ name: "WebDesign", href: "/VoxUnityWebDesign" },
         { name: "Communication", href: "/VoxUnityCom" },
     ];
 

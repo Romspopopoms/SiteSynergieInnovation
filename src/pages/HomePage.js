@@ -68,7 +68,7 @@ const HomePage = () => {
             logo: LogoImma,
             text: 'ImmaMissio',
             alt: 'LogoImma',
-            href: "/",
+            href: "/ImmaMissio",
             class: 'h-8 w-auto md:h-12',
             extraClass: '',
             description: (
