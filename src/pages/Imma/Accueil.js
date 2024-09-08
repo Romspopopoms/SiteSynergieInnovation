@@ -13,7 +13,7 @@ import Footer from "../../components/ImmaMissio/Footer";
  const Section7 = React.lazy(() => import("../../components/ImmaMissio/Section7"));
 
 
-const ImmaMissio = () => {
+const Accueil = () => {
     return (
         <div className="w-full min-h-screen bg-[#FFFBED]" >
          <Helmet>
@@ -91,4 +91,4 @@ const ImmaMissio = () => {
     );
 }
 
-export default ImmaMissio;
+export default Accueil;

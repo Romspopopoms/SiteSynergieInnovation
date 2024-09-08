@@ -22,7 +22,7 @@ const Navbar = () => {
             <div className="flex justify-between items-center px-4 h-20 bg-[#FFFBED] border-b-2" style={{ borderBottomColor: 'rgba(0, 0, 0, 0.08)' }}>
 
                 {/* Logo visible en permanence */}
-                <a href='/ImmaMissio' className="text-white text-xl">
+                <a href='/Accueil' className="text-white text-xl">
                     <img src={Logo} alt="Imma" className="h-8 md:h-10 ml-4" />
                 </a>
                 
