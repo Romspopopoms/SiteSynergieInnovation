@@ -1,11 +1,11 @@
 import React, {Suspense} from "react";
 import { Helmet } from 'react-helmet-async';
-import Navbar from "../../components/ImmaMissio/Navbar";
-import Footer from "../../components/ImmaMissio/Footer";
+import Navbar from "../../components/AccueilImma/Navbar";
+import Footer from "../../components/AccueilImma/Footer";
 
 // Lazy-loaded sections
  const Section1 = React.lazy(() => import("../../components/AccueilImma/Section1"));
- const Section2 = React.lazy(() => import("../../components/ImmaMissio/Section2"));
+ const Section2 = React.lazy(() => import("../../components/AccueilImma/Section2"));
  const Section3 = React.lazy(() => import("../../components/AccueilImma/Section3"));
  const Section4 = React.lazy(() => import("../../components/AccueilImma/Section4"));
  const Section5 = React.lazy(() => import("../../components/AccueilImma/Section5"));

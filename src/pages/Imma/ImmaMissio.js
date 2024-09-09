@@ -1,7 +1,7 @@
 import React, {Suspense} from "react";
 import { Helmet } from 'react-helmet-async';
-import Navbar from "../../components/ImmaMissio/Navbar";
-import Footer from "../../components/ImmaMissio/Footer";
+import Navbar from "../../components/AccueilImma/Navbar";
+import Footer from "../../components/AccueilImma/Footer";
 
 // Lazy-loaded sections
  const Section1 = React.lazy(() => import("../../components/ImmaMissio/Section1"));
