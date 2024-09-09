@@ -4,13 +4,8 @@ import Navbar from "../../components/ImmaMissio/Navbar";
 import Footer from "../../components/ImmaMissio/Footer";
 
 // Lazy-loaded sections
- const Section1 = React.lazy(() => import("../../components/AccueilImma/Section1"));
- const Section2 = React.lazy(() => import("../../components/ImmaMissio/Section2"));
- const Section3 = React.lazy(() => import("../../components/AccueilImma/Section3"));
- const Section4 = React.lazy(() => import("../../components/AccueilImma/Section4"));
- const Section5 = React.lazy(() => import("../../components/AccueilImma/Section5"));
- const Section6 = React.lazy(() => import("../../components/AccueilImma/Section6"));
- const Section7 = React.lazy(() => import("../../components/AccueilImma/Section7"));
+ const Section1 = React.lazy(() => import("../../components/ImmaMissio/Section1"));
+
 
 
 const Accueil = () => {
@@ -47,42 +42,7 @@ const Accueil = () => {
                 </div>
             </Suspense>
 
-            <Suspense fallback={null}>
-                <div className="mt-24">
-                    <Section2 />
-                </div>
-            </Suspense>
-
-            <Suspense fallback={null}>
-                <div className="mt-24">
-                    <Section3 />
-                </div>
-            </Suspense>
-
-            <Suspense fallback={null}>
-                <div className="mt-24">
-                    <Section4 />
-                </div>
-            </Suspense>
-
-            <Suspense fallback={null}>
-                <div className="mt-24">
-                    <Section5 />
-                </div>
-            </Suspense>
-
-            <Suspense fallback={null}>
-                <div className="min-h-screen mt-24">
-                    <Section6 />
-                </div>
-            </Suspense>
-
-            <Suspense fallback={null}>
-                <div className="min-h-screen mt-24">
-                    <Section7 />
-                </div>
-            </Suspense>
-
+            
             
 
             {/* Footer */}

@@ -1,44 +1,27 @@
 import React from "react";
-import Ima1 from '../../assets/SainteVierge.webp';
-import SiteParoisse from '../../assets/siteparoiseetel.webp';
+import Colonne from "../../assets/Colonnes.webp"; // Assurez-vous que le chemin est correct
 
 const Section1 = () => {
-    return (
-        <div className="flex flex-col items-center w-full min-h-screen bg-[#FFFBED] px-4 md:px-12 lg:px-20 py-8">
-            {/* Titre */}
-            <div className="text-center mb-8 mt-20 md:mt-40">
-                <h1 className="text-[#474747] font-DmSerif font-medium text-3xl md:text-5xl">
-                    Des solutions numériques
-                </h1>
-                <p className="text-[#474747] font-medium text-lg md:text-xl mt-2">
-                    Au service de l'Eglise
-                </p>
-            </div>
-            
-            {/* Conteneur principal */}
-            <div className="relative w-full max-w-4xl aspect-square">
-                {/* Image de la vierge */}
-                <div className="w-full h-full overflow-hidden">
-                    <img 
-                        src={Ima1} 
-                        alt="Statue de la Vierge" 
-                        className="w-full h-full object-cover"
-                    />
-                </div>
-                
-                {/* Image de la paroisse */}
-                <div className="absolute bottom-[-30px] left-[-10px] md:bottom-[-80px] md:left-[-80px] w-1/3 max-w-[250px]">
-                    <div className="bg-white p-2 shadow-lg rounded-md">
-                        <img 
-                            src={SiteParoisse} 
-                            alt="Site de la paroisse" 
-                            className="w-full object-cover rounded-md"
-                        />
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
+  return (
+    <section
+      className="relative bg-cover bg-center"
+      style={{ backgroundImage: `url(${Colonne})` }}
+    >
+      <div className="bg-white bg-opacity-80 p-8 md:p-16 lg:p-24 max-w-4xl mx-auto rounded-lg shadow-lg my-12">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          La mission d'ImaMissio
+        </h1>
+        <p className="text-lg text-gray-700 leading-relaxed">
+          Depuis décembre 2023, Synergie Innovation, à travers sa branche
+          ImaMissio, s'engage à rendre les outils numériques accessibles à
+          l’ensemble du monde ecclésial à des tarifs abordables. Nous
+          développons des solutions web missionnaires pour l'Église tout en
+          offrant nos services aux entreprises à des prix raisonnables, afin de
+          soutenir leur présence en ligne et leur mission d'évangélisation.
+        </p>
+      </div>
+    </section>
+  );
+};
 
 export default Section1;

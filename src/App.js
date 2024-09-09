@@ -11,6 +11,7 @@ import VoxUnityLogo from "./pages/Vox/VoxUnityLogo"
 import VoxUnityCharteGraphique from "./pages/Vox/VoxUnityCharteGraphique"
 import VoxUnityWebDesign from './pages/Vox/VoxUnityWebDesign';
 import VoxUnityCom from './pages/Vox/VoxUnityCom';
+import ImmaMissio from "./pages/Imma/ImmaMissio"
 import Accueil from "./pages/Imma/Accueil"
 
 const AppContent = () => {
@@ -44,6 +45,8 @@ const AppContent = () => {
               <Route path="/VoxUnityWebDesign" element={<VoxUnityWebDesign />} />
               <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
               <Route path="/Accueil" element={<Accueil />} />
+              <Route path="/ImmaMissio" element={<ImmaMissio />} />
+
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </motion.div>
