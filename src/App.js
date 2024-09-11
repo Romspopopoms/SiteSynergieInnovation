@@ -11,8 +11,11 @@ import VoxUnityLogo from "./pages/Vox/VoxUnityLogo"
 import VoxUnityCharteGraphique from "./pages/Vox/VoxUnityCharteGraphique"
 import VoxUnityWebDesign from './pages/Vox/VoxUnityWebDesign';
 import VoxUnityCom from './pages/Vox/VoxUnityCom';
-import ImmaMissio from "./pages/Imma/ImmaMissio"
 import Accueil from "./pages/Imma/Accueil"
+import ImmaMissio from "./pages/Imma/ImmaMissio"
+import ImmaMissioCharteGraphique from "./pages/Imma/ImmaMissioCharteGraphique"
+import ImmaMissioWebDesign from "./pages/Imma/ImmaMissioWebDesign"
+import ImmaMissioCom from "./pages/Imma/ImmaMissioCom"
 
 const AppContent = () => {
   const location = useLocation();
@@ -46,6 +49,9 @@ const AppContent = () => {
               <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
               <Route path="/Accueil" element={<Accueil />} />
               <Route path="/ImmaMissio" element={<ImmaMissio />} />
+              <Route path='/ImmaMissioCharteGraphique' element={<ImmaMissioCharteGraphique />} />
+              <Route path='/ImmaMissioWebDesign' element={<ImmaMissioWebDesign />} />
+              <Route path='/ImmaMissioCom' element={<ImmaMissioCom />} />
 
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>

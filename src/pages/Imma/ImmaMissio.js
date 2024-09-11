@@ -5,6 +5,8 @@ import Footer from "../../components/AccueilImma/Footer";
 
 // Lazy-loaded sections
  const Section1 = React.lazy(() => import("../../components/ImmaMissio/Section1"));
+ const Section2 = React.lazy(() => import("../../components/ImmaMissio/Section2"));
+ const Section3 = React.lazy(() => import("../../components/ImmaMissio/Section3"));
 
 
 
@@ -37,8 +39,20 @@ const Accueil = () => {
             <Navbar />
 
              <Suspense fallback={null}>
-                <div className="md:min-h-screen">
+                <div className="md:min-h-screen ">
                     <Section1 />
+                </div>
+            </Suspense>
+
+            <Suspense fallback={null}>
+                <div className="">
+                    <Section2/>
+                </div>
+            </Suspense>
+
+            <Suspense fallback={null}>
+                <div className="">
+                    <Section3/>
                 </div>
             </Suspense>
 
