@@ -9,7 +9,12 @@ const links = [
   { url: '/VoxUnityCom', changefreq: 'weekly', priority: 0.8 },
   { url: '/VoxUnityLogo', changefreq: 'weekly', priority: 0.8 },
   { url: '/VoxUnityWebDesign', changefreq: 'weekly', priority: 0.8 },
-  { url: '/SynergieInnovationPage', changefreq: 'weekly', priority: 0.8 },
+  { url: '/Accueil', changefreq: 'weekly', priority: 0.8 },
+  { url: '/ImmaMissio', changefreq: 'weekly', priority: 0.8 },
+  { url: '/ImmaMissioCharteGraphique', changefreq: 'weekly', priority: 0.8 },
+  { url: '/ImmaMissioWebDesign', changefreq: 'weekly', priority: 0.8 },
+  { url: '/ImmaMissioCom', changefreq: 'weekly', priority: 0.8 },
+
 ];
 
 // Utilisation de createWriteStream pour écrire dans le fichier sitemap.xml
