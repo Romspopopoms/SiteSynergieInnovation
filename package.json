@@ -31,14 +31,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "generate-sitemap": "node generate-sitemap.js", 
-    "postinstall": "echo 'Skipping Puppeteer Chromium Download'",
-    "postbuild": "npm run generate-sitemap && react-snap"
-  },
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject",
+  "generate-sitemap": "node generate-sitemap.js",
+  "postinstall": "echo 'Skipping Puppeteer Chromium Download'",
+  "postbuild": "npm run generate-sitemap"
+},
   "reactSnap": {
   "inlineCss": true,
   "removeStyleTags": true,
