@@ -36,6 +36,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate-sitemap": "node generate-sitemap.js", 
+    "postinstall": "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install",
     "postbuild": "npm run generate-sitemap && react-snap"
   },
   "reactSnap": {
@@ -44,8 +45,12 @@
   "minifyCss": true,
   "cacheAjaxRequests": true,
   "crawl": true,
-  "preloadImages": true
-}, 
+  "preloadImages": true,
+
+  "puppeteer": {
+    "args": ["--no-sandbox", "--disable-setuid-sandbox"]
+  }
+},
   "eslintConfig": {
     "extends": [
       "react-app",
