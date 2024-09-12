@@ -36,7 +36,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "generate-sitemap": "node generate-sitemap.js", 
-    "postinstall": "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm install",
+    "postinstall": "echo 'Skipping Puppeteer Chromium Download'",
     "postbuild": "npm run generate-sitemap && react-snap"
   },
   "reactSnap": {
