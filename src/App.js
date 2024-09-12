@@ -6,38 +6,43 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
 import SynergieInnovationPage from './pages/SynergieInnovation';
-import VoxUnity from "./pages/Vox/VoxUnity"
-import VoxUnityLogo from "./pages/Vox/VoxUnityLogo"
-import VoxUnityCharteGraphique from "./pages/Vox/VoxUnityCharteGraphique"
+import VoxUnity from "./pages/Vox/VoxUnity";
+import VoxUnityLogo from "./pages/Vox/VoxUnityLogo";
+import VoxUnityCharteGraphique from "./pages/Vox/VoxUnityCharteGraphique";
 import VoxUnityWebDesign from './pages/Vox/VoxUnityWebDesign';
 import VoxUnityCom from './pages/Vox/VoxUnityCom';
-import Accueil from "./pages/Imma/Accueil"
-import ImmaMissio from "./pages/Imma/ImmaMissio"
-import ImmaMissioCharteGraphique from "./pages/Imma/ImmaMissioCharteGraphique"
-import ImmaMissioWebDesign from "./pages/Imma/ImmaMissioWebDesign"
-import ImmaMissioCom from "./pages/Imma/ImmaMissioCom"
+import Accueil from "./pages/Imma/Accueil";
+import ImmaMissio from "./pages/Imma/ImmaMissio";
+import ImmaMissioCharteGraphique from "./pages/Imma/ImmaMissioCharteGraphique";
+import ImmaMissioWebDesign from "./pages/Imma/ImmaMissioWebDesign";
+import ImmaMissioCom from "./pages/Imma/ImmaMissioCom";
 
 const AppContent = () => {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
 
+  // Désactivation du loader pour React Snap
   useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => setIsLoading(false), 4000); // Prolongation de la durée de l'animation
-    return () => clearTimeout(timer);
+    if (navigator.userAgent === 'ReactSnap') {
+      setIsLoading(false);
+    } else {
+      setIsLoading(true);
+      const timer = setTimeout(() => setIsLoading(false), 4000);
+      return () => clearTimeout(timer);
+    }
   }, [location]);
 
   return (
     <>
       {isLoading && <Loader />}
-      <AnimatePresence mode='wait'>
+      <AnimatePresence mode="wait">
         {!isLoading && (
           <motion.div
             key={location.pathname}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }} // Prolongation de la transition pour éviter les éclats blancs
+            transition={{ duration: 1.5 }}
           >
             <Routes location={location} key={location.pathname}>
               <Route path="/" element={<Home />} />
@@ -49,9 +54,9 @@ const AppContent = () => {
               <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
               <Route path="/Accueil" element={<Accueil />} />
               <Route path="/ImmaMissio" element={<ImmaMissio />} />
-              <Route path='/ImmaMissioCharteGraphique' element={<ImmaMissioCharteGraphique />} />
-              <Route path='/ImmaMissioWebDesign' element={<ImmaMissioWebDesign />} />
-              <Route path='/ImmaMissioCom' element={<ImmaMissioCom />} />
+              <Route path="/ImmaMissioCharteGraphique" element={<ImmaMissioCharteGraphique />} />
+              <Route path="/ImmaMissioWebDesign" element={<ImmaMissioWebDesign />} />
+              <Route path="/ImmaMissioCom" element={<ImmaMissioCom />} />
 
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
@@ -66,30 +71,35 @@ const App = () => {
   const [isInitialLoading, setIsInitialLoading] = useState(true);
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 768;
-
-    if (isMobile) {
+    if (navigator.userAgent === 'ReactSnap') {
       setIsInitialLoading(false);
     } else {
-      const timer = setTimeout(() => {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
         setIsInitialLoading(false);
-      }, 4000); // Alignement avec la durée de la transition
-      return () => clearTimeout(timer);
+      } else {
+        const timer = setTimeout(() => {
+          setIsInitialLoading(false);
+        }, 4000);
+        return () => clearTimeout(timer);
+      }
     }
   }, []);
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=G-87DN704803`;
-    document.head.appendChild(script);
+    if (navigator.userAgent !== 'ReactSnap') {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=G-87DN704803`;
+      document.head.appendChild(script);
 
-    script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){window.dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-87DN704803');
-    };
+      script.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-87DN704803');
+      };
+    }
   }, []);
 
   return (

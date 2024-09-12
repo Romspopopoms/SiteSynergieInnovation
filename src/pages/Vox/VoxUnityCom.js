@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import BG from "../../assets/bg7.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../../components/VoxUnity/Navbar";
 import Footer from "../../components/VoxUnity/Footer";
+import Synergie from "../../assets/Synergie.webp"
 
 const Section1 = React.lazy(() => import("../../components/VoxUnityCom/Section1"));
 const Section2 = React.lazy(() => import("../../components/VoxUnityCom/Section2"));
@@ -27,7 +28,7 @@ const VoxUnityCom = () => {
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="VoxUnity - Stratégies de Communication Digitale" />
                 <meta property="og:description" content="Découvrez comment VoxUnity peut améliorer la communication de votre entreprise grâce à des stratégies digitales sur mesure." />
-                <meta property="og:image" content={`${BG}`} />
+                <meta property="og:image" content={Synergie} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://synergieinnovation.fr/VoxUnityCom" />
 
@@ -35,13 +36,13 @@ const VoxUnityCom = () => {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="VoxUnity - Stratégies de Communication et Branding Digital" />
                 <meta name="twitter:description" content="Optimisez votre communication et branding digital avec VoxUnity. Découvrez nos services de stratégie, création de contenu, et plus encore." />
-                <meta name="twitter:image" content={`${BG}`} />
+                <meta name="twitter:image" content={Synergie}/>
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />
 
                 {/* Favicon */}
-                <link rel="icon" type="image/svg+xml" href="../../assets/PictoVox.svg" />
+                <link rel="icon" href="/rond_ico.ico" />
             </Helmet>
 
             {/* Navbar */}

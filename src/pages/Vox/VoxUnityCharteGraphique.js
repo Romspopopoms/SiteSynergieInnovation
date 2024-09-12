@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import BG from "../../assets/bg4.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../../components/VoxUnity/Navbar";
 import Footer from "../../components/VoxUnity/Footer";
+import Synergie from "assets/Synergie.webp"
 
 const Section1 = React.lazy(() => import("../../components/VoxUnityCharte/Section1"));
 const Section2 = React.lazy(() => import("../../components/VoxUnityCharte/Section2"));
@@ -15,7 +16,7 @@ const VoxUnityCharteGraphique = () => {
     return (
         <div 
             className="w-full min-h-screen bg-cover bg-no-repeat"
-            style={{ backgroundImage: `url(${BG})` }} // background-image correcte
+            style={{ backgroundImage: `url(${BG})` }} // Background image correctly used
         >
             <Helmet>
                 {/* SEO Meta Tags */}
@@ -29,7 +30,7 @@ const VoxUnityCharteGraphique = () => {
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="VoxUnity - Charte Graphique et Branding" />
                 <meta property="og:description" content="Nous créons des chartes graphiques uniques pour donner à votre entreprise une identité visuelle forte et mémorable." />
-                <meta property="og:image" content={`${BG}`} />
+                <meta property="og:image" content={Synergie} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://synergieinnovation.fr/VoxUnityCharteGraphique" />
 
@@ -37,13 +38,13 @@ const VoxUnityCharteGraphique = () => {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="VoxUnity - Charte Graphique et Branding sur mesure" />
                 <meta name="twitter:description" content="Renforcez l'identité de votre marque avec nos solutions graphiques personnalisées." />
-                <meta name="twitter:image" content={`${BG}`} />
+                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />
 
                 {/* Favicon */}
-                <link rel="icon" type="image/svg+xml" href="../../assets/PictoVox.svg" />
+                <link rel="icon" href="/rond_ico.ico" type="image/x-icon" />
             </Helmet>
 
             {/* Navbar */}

@@ -1,51 +1,61 @@
-import React, {Suspense} from "react";
+import React, { Suspense } from "react";
 import { Helmet } from 'react-helmet-async';
 import Navbar from "../../components/AccueilImma/Navbar";
 import Footer from "../../components/AccueilImma/Footer";
+import BG from "assets/bgCharteImma.webp"; 
+import Synergie from "assets/Synergie.webp"
 
 // Lazy-loaded sections
- const Section1 = React.lazy(() => import("../../components/ImmaCharteLogo/Section1"));
- const Section2 = React.lazy(() => import("../../components/ImmaCharteLogo/Section2"));
- const Section3 = React.lazy(() => import("../../components/ImmaCharteLogo/Section3"));
- const Section4 = React.lazy(() => import("../../components/ImmaCharteLogo/Section4"));
- const Section5 = React.lazy(() => import("../../components/ImmaCharteLogo/Section5"));
- const Section6 = React.lazy(() => import("../../components/ImmaCharteLogo/Section6"));
- const Section7 = React.lazy(() => import("../../components/ImmaCharteLogo/Section7"));
- const Section8 = React.lazy(() => import("../../components/ImmaCharteLogo/Section8"));
- const Section9 = React.lazy(() => import("../../components/ImmaCharteLogo/Section9"));
+const Section1 = React.lazy(() => import("../../components/ImmaCharteLogo/Section1"));
+const Section2 = React.lazy(() => import("../../components/ImmaCharteLogo/Section2"));
+const Section3 = React.lazy(() => import("../../components/ImmaCharteLogo/Section3"));
+const Section4 = React.lazy(() => import("../../components/ImmaCharteLogo/Section4"));
+const Section5 = React.lazy(() => import("../../components/ImmaCharteLogo/Section5"));
+const Section6 = React.lazy(() => import("../../components/ImmaCharteLogo/Section6"));
+const Section7 = React.lazy(() => import("../../components/ImmaCharteLogo/Section7"));
+const Section8 = React.lazy(() => import("../../components/ImmaCharteLogo/Section8"));
+const Section9 = React.lazy(() => import("../../components/ImmaCharteLogo/Section9"));
 
-
-
-
-const Accueil = () => {
+const ImmaMissioCharteGraphique = () => {
     return (
-        <div className="w-full min-h-screen bg-[#FFFBED]" >
-         <Helmet>
-                <title>VoxUnity - Design et Branding sur mesure</title>
-                <meta name="description" content="VoxUnity, le studio créatif spécialisé dans la conception de logo, web design, branding et communication visuelle." />
-                <meta name="keywords" content="VoxUnity, design, branding, web design, logo, communication visuelle" />
+        <div 
+            className="w-full min-h-screen bg-[#FFFBED]"
+            style={{ backgroundImage: `url(${BG})` }} // Assurez-vous que l'image de fond est chargée
+        >
+            <Helmet>
+                {/* SEO Meta Tags */}
+                <title>ImmaCharteLogo - Création de Chartes Graphiques et Logos</title>
+                <meta name="description" content="Découvrez ImmaCharteLogo, spécialisé dans la création de chartes graphiques et de logos sur mesure pour une identité visuelle forte et cohérente." />
+                <meta name="keywords" content="ImmaCharteLogo, charte graphique, création de logo, branding, identité visuelle, Synergie Innovation" />
 
                 {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/VoxUnity" />
+                <link rel="canonical" href="https://synergieinnovation.fr/ImmaMissioCharteGraphique" />
 
-                {/* Open Graph Tags */}
-                <meta property="og:title" content="VoxUnity - Design et Branding sur mesure" />
-                <meta property="og:description" content="Création de logos et d'identités visuelles uniques pour refléter votre marque de manière impactante." />
-                <meta property="og:image" content="https://synergieinnovation.fr/images/bg5.webp" />
+                {/* Open Graph / Facebook Meta Tags */}
+                <meta property="og:title" content="ImmaCharteLogo - Chartes Graphiques et Logos sur Mesure" />
+                <meta property="og:description" content="Créez une identité visuelle unique avec nos services de conception de logos et chartes graphiques sur mesure." />
+                <meta property="og:image" content={Synergie} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/VoxUnity" />
+                <meta property="og:url" content="https://synergieinnovation.fr/ImmaCharteLogo" />
 
-                {/* Twitter Cards */}
+                {/* Twitter Cards Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="VoxUnity - Votre partenaire en Design et Branding" />
-                <meta name="twitter:description" content="Découvrez nos solutions de branding, création de logo, et web design pour votre entreprise." />
-                <meta name="twitter:image" content="https://synergieinnovation.fr/images/bg5.webp" />
+                <meta name="twitter:title" content="ImmaCharteLogo - Création de Logos et Chartes Graphiques" />
+                <meta name="twitter:description" content="Renforcez l'identité visuelle de votre marque grâce à nos solutions de création de logos et chartes graphiques." />
+                <meta name="twitter:image" content={Synergie} />
+
+                {/* Preload Background Image */}
+                <link rel="preload" href={BG} as="image" />
+
+                {/* Favicon */}
+                <link rel="icon" href="/rond_ico.ico" />
             </Helmet>
 
             {/* Navbar */}
             <Navbar />
 
-             <Suspense fallback={null}>
+            {/* Lazy-loaded sections */}
+            <Suspense fallback={null}>
                 <div className="md:min-h-screen ">
                     <Section1 />
                 </div>
@@ -62,7 +72,7 @@ const Accueil = () => {
                     <Section3 />
                 </div>
             </Suspense>
-            
+
             <Suspense fallback={null}>
                 <div className="mt-32">
                     <Section4 />
@@ -98,7 +108,6 @@ const Accueil = () => {
                     <Section9 />
                 </div>
             </Suspense>
-            
 
             {/* Footer */}
             <Footer />
@@ -106,4 +115,4 @@ const Accueil = () => {
     );
 }
 
-export default Accueil;
+export default ImmaMissioCharteGraphique;

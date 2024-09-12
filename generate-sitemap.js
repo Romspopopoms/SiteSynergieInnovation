@@ -1,7 +1,7 @@
 const { SitemapStream } = require('sitemap');
 const { createWriteStream } = require('fs');
 
-// Configuration de base du sitemap
+// Liste complète des liens pour toutes les pages de votre site
 const links = [
   { url: '/', changefreq: 'daily', priority: 1.0 },
   { url: '/VoxUnity', changefreq: 'weekly', priority: 0.8 },
@@ -15,27 +15,32 @@ const links = [
   { url: '/ImmaMissioWebDesign', changefreq: 'weekly', priority: 0.8 },
   { url: '/ImmaMissioCom', changefreq: 'weekly', priority: 0.8 },
 
+  // Autres pages spécifiques pour ImmaMissio ou toute autre partie du site
+  { url: '/SynergieInnovation', changefreq: 'weekly', priority: 0.8 },
+  { url: '/Contact', changefreq: 'weekly', priority: 0.8 },
+
+  // Ajout d'autres pages si besoin
 ];
 
-// Utilisation de createWriteStream pour écrire dans le fichier sitemap.xml
+// Création du flux d'écriture pour le fichier sitemap.xml
 const sitemapStream = new SitemapStream({ hostname: 'https://SynergieInnovation.fr' });
 const writeStream = createWriteStream('./public/sitemap.xml');
 
-// Écouteur pour écrire les liens dans le fichier sitemap
+// Envoie du flux vers le fichier sitemap
 sitemapStream.pipe(writeStream);
 
-// Ajoutez les URLs au sitemap
+// Ajout des URLs dans le sitemap
 links.forEach((link) => sitemapStream.write(link));
 
-// Fermez le flux une fois toutes les URLs ajoutées
+// Fin du flux une fois toutes les URLs ajoutées
 sitemapStream.end();
 
-// Gestion des erreurs
+// Gestion des erreurs lors de l'écriture du fichier
 writeStream.on('error', (err) => {
-  console.error('Error writing sitemap:', err);
+  console.error('Erreur lors de la création du sitemap:', err);
 });
 
-// Confirmation une fois terminé
+// Confirmation lorsque le sitemap est créé avec succès
 writeStream.on('finish', () => {
-  console.log('Sitemap created successfully!');
+  console.log('Sitemap créé avec succès !');
 });

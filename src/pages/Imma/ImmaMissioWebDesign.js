@@ -1,8 +1,9 @@
 import React, { Suspense } from "react";
 import { Helmet } from 'react-helmet-async';
-import BG from "../../assets/bg6.webp";
+import BG from "assets/bg6.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../../components/AccueilImma/Navbar";
 import Footer from "../../components/AccueilImma/Footer";
+import Synergie from "assets/Synergie.webp"
 
 const Section1 = React.lazy(() => import("../../components/ImmaMissioWebDesign/Section1"));
 const Section2 = React.lazy(() => import("../../components/ImmaMissioWebDesign/Section2"));
@@ -11,39 +12,36 @@ const Section4 = React.lazy(() => import("../../components/ImmaMissioWebDesign/S
 const Section5 = React.lazy(() => import("../../components/ImmaMissioWebDesign/Section5"));
 const Section6 = React.lazy(() => import("../../components/ImmaMissioWebDesign/Section6"));
 
-
 const ImmaMissioWebDesign = () => {
     return (
-        <div
-            className="w-full min-h-screen bg-[#FFFBED]"
-        >
+        <div className="w-full min-h-screen bg-[#FFFBED]">
             <Helmet>
                 {/* SEO Meta Tags */}
-                <title>VoxUnity - Web Design Professionnel</title>
-                <meta name="description" content="VoxUnity propose des services de web design uniques et professionnels pour améliorer l'interface utilisateur et l'expérience utilisateur de votre site web." />
-                <meta name="keywords" content="web design, UX, UI, développement web, design professionnel, VoxUnity, Synergie Innovation" />
+                <title>ImmaMissio - Web Design pour l'Église et les Patronages</title>
+                <meta name="description" content="ImmaMissio propose des services de web design uniques pour l'Église et les patronages, avec un focus sur l'expérience utilisateur et la conception visuelle." />
+                <meta name="keywords" content="web design, UX, UI, design d'église, développement web, design professionnel, ImmaMissio, Synergie Innovation" />
 
                 {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/VoxUnityWebDesign" />
+                <link rel="canonical" href="https://synergieinnovation.fr/ImmaMissioWebDesign" />
 
                 {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="VoxUnity - Web Design sur Mesure" />
-                <meta property="og:description" content="Optimisez l'interface utilisateur et l'expérience utilisateur avec les services de web design professionnels de VoxUnity." />
-                <meta property="og:image" content={`${BG}`} />
+                <meta property="og:title" content="ImmaMissio - Web Design pour l'Église et les Patronages" />
+                <meta property="og:description" content="Optimisez l'interface utilisateur et l'expérience utilisateur avec nos services de web design pour l'Église et les patronages." />
+                <meta property="og:image" content={Synergie} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/VoxUnityWebDesign" />
+                <meta property="og:url" content="https://synergieinnovation.fr/ImmaMissioWebDesign" />
 
                 {/* Twitter Cards Meta Tags */}
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="VoxUnity - Web Design Personnalisé" />
-                <meta name="twitter:description" content="Venez découvrir nos services de design professionnel pour améliorer votre présence en ligne." />
-                <meta name="twitter:image" content={`${BG}`} />
+                <meta name="twitter:title" content="ImmaMissio - Web Design Personnalisé pour l'Église" />
+                <meta name="twitter:description" content="Découvrez nos services de design web pour améliorer la présence en ligne des églises et patronages." />
+                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />
 
                 {/* Favicon */}
-                <link rel="icon" type="image/svg+xml" href="../../assets/PictoVox.svg" />
+                <link rel="icon" href="/rond_ico.ico" />
             </Helmet>
 
             {/* Navbar en haut */}
@@ -75,7 +73,7 @@ const ImmaMissioWebDesign = () => {
             </div>
 
             {/* Section 3, visible sur tous les écrans */}
-            <div className="md:w-[75%] md:ml-[25%] ">
+            <div className="md:w-[75%] md:ml-[25%]">
                 <Suspense fallback={null}>
                     <Section3 />
                 </Suspense>

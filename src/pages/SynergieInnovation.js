@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Helmet } from 'react-helmet-async';
 import BG from "../assets/Bglandinghome.webp";
 import Footer from "../components/Footer";
-
+import Synergie from "assets/Synergie.webp"
 // Lazy loading des sections
 const Section1 = React.lazy(() => import("../components/Synergie/Section1"));
 const Section2 = React.lazy(() => import("../components/Synergie/Section2"));
@@ -22,7 +22,7 @@ const SynergieInnovationPage = () => {
                 {/* Meta Tags pour SEO */}
                 <title>Synergie Innovation - Solutions Numériques sur Mesure</title>
                 <meta name="description" content="Découvrez Synergie Innovation : des solutions numériques complètes, de la création de sites web au branding et au développement logiciel sur mesure." />
-                <meta name="keywords" content="création de site web, développement logiciel, design, branding, solutions numériques, Synergie Innovation, sur mesure" />
+                <meta name="keywords" content="création de site web, développement logiciel, design, branding, solutions numériques, Synergie Innovation, services numériques sur mesure" />
 
                 {/* Canonical URL */}
                 <link rel="canonical" href="https://synergieinnovation.fr/SynergieInnovationPage" />
@@ -30,7 +30,7 @@ const SynergieInnovationPage = () => {
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="Synergie Innovation - Solutions Numériques sur Mesure" />
                 <meta property="og:description" content="Synergie Innovation vous offre des solutions sur mesure pour tous vos besoins numériques, du design à la création de sites web et applications." />
-                <meta property="og:image" content={BG} />
+                <meta property="og:image" content={Synergie} />
                 <meta property="og:url" content="https://synergieinnovation.fr/SynergieInnovationPage" />
                 <meta property="og:type" content="website" />
 
@@ -38,13 +38,13 @@ const SynergieInnovationPage = () => {
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content="Synergie Innovation - Solutions Numériques Personnalisées" />
                 <meta name="twitter:description" content="Nous offrons des services numériques personnalisés pour vous aider à atteindre vos objectifs digitaux." />
-                <meta name="twitter:image" content={BG} />
+                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload de l'image de fond */}
-                <link rel="preload" href={BG} as="image" />
+                <link rel="preload" href={Synergie} as="image" />
 
                 {/* Favicon */}
-                <link rel="icon" type="image/webp" href={BG} />
+                <link rel="icon" href="/rond_ico.ico" /> {/* Fichier .ico comme spécifié */}
             </Helmet>
 
             {/* Sections avec Suspense pour un chargement paresseux */}
