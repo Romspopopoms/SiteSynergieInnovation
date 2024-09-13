@@ -15,8 +15,7 @@ const Section7 = React.lazy(() => import("../../components/AccueilImma/Section7"
 
 const Accueil = () => {
     return (
-        <div className="w-full min-h-screen bg-[#FFFBED]"
-            style={{ backgroundImage: `url(${BG})` }} // Assurez-vous que l'image de fond est chargée
+        <div className="w-full min-h-screen bg-[#FFFBED]"// Assurez-vous que l'image de fond est chargée
         >
             <Helmet>
                 {/* SEO Meta Tags */}
@@ -58,7 +57,7 @@ const Accueil = () => {
             </Suspense>
 
             <Suspense fallback={null}>
-                <div className="mt-24">
+                <div className="mt-12 md:mt-24">
                     <Section2 />
                 </div>
             </Suspense>

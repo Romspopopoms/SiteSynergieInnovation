@@ -5,10 +5,10 @@ import { FaYoutube, FaFacebook, FaInstagram } from "react-icons/fa";  // Importa
 
 const Section4 = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center bg-[#FFFBED] w-full py-16">
+        <div className="flex flex-col md:flex-row items-center  w-full py-16">
             {/* Left Section with Phone Image */}
-            <div className="flex justify-center w-full md:w-1/2 p-8">
-                <img src={Tel} alt="Phone showing social media" className="max-w-[300px] md:max-w-[350px] rounded-[50px]" /> {/* Ajout d'un border-radius */}
+            <div className="flex justify-center md:justify-end w-full md:w-1/2 p-8">
+                <img src={Tel} alt="Phone showing social media" className="max-w-[300px] md:max-w-[350px]" /> {/* Ajout d'un border-radius */}
             </div>
 
             {/* Right Section with Background Image and Icons */}
