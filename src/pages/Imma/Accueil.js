@@ -63,13 +63,13 @@ const Accueil = () => {
             </Suspense>
 
             <Suspense fallback={null}>
-                <div className="mt-24">
+                <div className="mt-12 md:mt-24">
                     <Section3 />
                 </div>
             </Suspense>
 
             <Suspense fallback={null}>
-                <div className="mt-24">
+                <div className="mt-12 md:mt-24">
                     <Section4 />
                 </div>
             </Suspense>

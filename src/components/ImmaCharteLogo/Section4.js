@@ -1,20 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
-
-const useMediaQuery = (query) => {
-    const [matches, setMatches] = useState(false);
-
-    useEffect(() => {
-        const media = window.matchMedia(query);
-        if (media.matches !== matches) {
-            setMatches(media.matches);
-        }
-        const listener = () => setMatches(media.matches);
-        media.addEventListener("change", listener);
-        return () => media.removeEventListener("change", listener);
-    }, [matches, query]);
-
-    return matches;
-};
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const Menu = [
     {
@@ -52,59 +39,66 @@ const Menu = [
 ];
 
 
-const Section4 = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const totalItems = Menu.length;
-    const itemsRef = useRef(null);
-    const isMdAndUp = useMediaQuery("(min-width: 768px)"); // Taille md
-
-    const handleNext = () => {
-        setActiveIndex((prevIndex) => (prevIndex + 1) % totalItems); // Assurez-vous que l'index reste dans les limites de `Menu`
-    };
-
+const NextArrow = (props) => {
+    const { onClick } = props;
     return (
-        <section className="min-h-screen bg-[#FFFBED] py-16 px-8">
-            <h1 className="text-4xl font-bold text-center mb-8">Le processus de création de votre logo</h1>
-
-            <div className="flex items-center justify-center">
-                {/* Carrousel avec 3,5 cartes visibles pour md et plus */}
-                <div className="flex overflow-hidden w-[90%] max-w-7xl">
-                    {isMdAndUp ? (
-                        <div
-                            ref={itemsRef}
-                            className="flex transition-transform duration-500 ease-in-out"
-                            style={{ transform: `translateX(-${activeIndex * (100 / 3.5)}%)` }}
-                        >
-                            {Menu.map((item, index) => (
-                                <div key={index} className="flex-shrink-0 md:w-[calc(100%/4.5)] px-4">
-                                    <div className="bg-white shadow-lg rounded-lg p-6 h-[650px]">
-                                        <h2 className="text-2xl font-semibold mb-4">{item.name}</h2>
-                                        <p className="text-lg">{item.description}</p>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    ) : (
-                        // Carrousel basique pour les écrans plus petits que md
-                        <div className="flex flex-col items-center w-full">
-                            <div className="bg-white shadow-lg rounded-lg p-6 h-[650px] w-full">
-                                <h2 className="text-2xl font-semibold mb-4">{Menu[activeIndex].name}</h2>
-                                <p className="text-lg">{Menu[activeIndex].description}</p>
-                            </div>
-                        </div>
-                    )}
-                </div>
-
-                {/* Flèche droite */}
-                <button
-                    className="bg-gray-300 p-2 rounded-full hover:bg-gray-400 ml-4"
-                    onClick={handleNext}
-                >
-                    &#8594;
-                </button>
-            </div>
-        </section>
+      <div
+        onClick={onClick}
+        className="absolute top-1/2 right-0 transform -translate-y-1/2 cursor-pointer z-10"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+          <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z" clipRule="evenodd" />
+        </svg>
+      </div>
     );
-};
+  };
 
-export default Section4;
+  
+
+const Section4 = () => {
+    // Paramètres de React Slick
+    const settings = {
+      infinite: true,          // Active le défilement infini
+      speed: 500,
+      slidesToShow: 3,       // Montre 3,5 cartes en md+
+      slidesToScroll: 1,
+      nextArrow: <NextArrow />, 
+      responsive: [
+        {
+          breakpoint: 768,      // Pour les tailles en dessous de 768px
+          settings: {
+            slidesToShow: 1,    // Montre 1 slide pour les petits écrans
+            slidesToScroll: 1,
+          }
+        }
+      ]
+    };
+  
+    return (
+      <section className="min-h-screen bg-[#FFFBED] py-16 px-8">
+        <h1 className="text-3xl md:text-5xl font-dmserif font-medium text-center mb-8">
+          Le processus de création de votre logo
+        </h1>
+        
+        {/* Utilisation de React Slick pour créer le carrousel */}
+        <div className="max-w-7xl mx-auto">
+          <Slider {...settings}>
+            {Menu.map((item, index) => (
+              <div key={index} className="px-4">
+                <div className="bg-white shadow-lg rounded-lg p-6 h-[480px]">
+                  <h2 className="text-2xl font-dmserif font-medium mb-4">
+                    {item.name}
+                  </h2>
+                  <p className="font-jost font-light text-lg">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </section>
+    );
+  };
+  
+  export default Section4;

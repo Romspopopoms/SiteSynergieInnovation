@@ -12,7 +12,7 @@ const Section6 = () => {
             
             {/* Texte centré */}
             <div className="relative z-10 text-white px-8 max-w-[80%] md:max-w-[40%]">
-                <h2 className="text-4xl md:text-6xl font-DmSerif mb-4 font-semibold text-[#FFFDF5]">Branding</h2>
+                <h2 className="text-4xl md:text-6xl font-dmserif mb-4 font-medium text-[#FFFDF5]">Branding</h2>
                 <p className="text-md md:text-lg font-jost">
                     Nous préparons des designs uniques pour tous vos supports de communication : flyers, affiches, pulls, t-shirts, et plus encore.
                     Faites briller votre entreprise avec une identité visuelle forte et cohérente, prête à marquer les esprits !

@@ -4,7 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 const offers = [
     {
         title: "Logo simple",
-        price: "À partir de 600€",
+        price: "600€",
         items: [
             "Brief client détaillé",
             "Recherche inspirationnelle",
@@ -18,7 +18,7 @@ const offers = [
     },
     {
         title: "Logo Complexe",
-        price: "À partir de 1000€",
+        price: "1000€",
         items: [
             "Analyse approfondie",
             "Étude du marché",
@@ -37,7 +37,7 @@ const offers = [
     },
     {
         title: "Votre charte graphique",
-        price: "À partir de 600€",
+        price: "600€",
         items: [
             "Palette de Couleurs",
             "Typographie",
@@ -51,7 +51,7 @@ const offers = [
     },
     {
         title: "Prestation photo",
-        price: "400€/demi-journée",
+        price: "400€",
         items: [
             "Demi-journée de shooting",
             "Traitement des images",
@@ -61,7 +61,7 @@ const offers = [
     },
     {
         title: "Prestation drone",
-        price: "800€/demi-journée",
+        price: "800€",
         items: [
             "Shooting photo",
             "Traitement des images",
@@ -75,29 +75,27 @@ const offers = [
 const Section9 = () => {
     return (
         <div className="flex flex-col justify-center items-center w-full py-16 px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-12 w-full max-w-[80%] md:max-w-6xl">
                 {/* Affichage des trois premières cartes */}
                 {offers.slice(0, 3).map((offer, index) => (
                     <div 
                         key={index} 
-                        className="relative flex flex-col justify-between bg-[#FFFFFF] bg-opacity-45 p-8 rounded-lg shadow-xl h-full"
-                        style={{
-                            boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.2)"
-                        }}>
+                        className="relative flex flex-col justify-between bg-[#FFFFFF] p-8 shadow-xl h-full">
                         <div>
-                            <h2 className="font-poppins font-bold text-2xl md:text-3xl text-[#474747] mb-4">{offer.title}</h2>
-                            <h3 className="font-poppins font-semibold text-3xl md:text-4xl text-[#474747] mb-4">À partir de <span>{offer.price}</span></h3>
+                            <h2 className="font-dmserif font-medium text-lg text-[#474747] mb-4">{offer.title}</h2>
+                            <h3 className="font-dmserif font-medium text-sm text-[#474747] ">À partir de</h3>
+                            <h4 className="font-dmserif font-medium  text-[#474747] text-6xl leading-none">{offer.price}</h4>
                         </div>
-                        <ul className="flex-grow">
+                        <ul className="flex-grow mt-8">
                             {offer.items.map((item, i) => (
                                 <li key={i} className="flex items-center space-x-2 mb-2">
-                                    <FaCheckCircle className="text-[#474747] w-5 h-5" />
-                                    <p className="text-[#474747] text-lg font-poppins">{item}</p>
+                                    <FaCheckCircle className="text-[#474747] min-w-4 min-h-4" />
+                                    <p className="text-[#474747] text-lg font-dmserif font-light">{item}</p>
                                 </li>
                             ))}
                         </ul>
                         <div className="mt-8 mb-4">
-                            <a href="/Contact" className="bg-white text-[#474747] font-DmSerif py-2 px-6 text-lg border-2 border-[#474747]">
+                            <a href="/Contact" className="bg-white text-[#474747] font-dmserif font-medium  py-2 px-6 text-lg border-2 border-[#474747]">
                                 Demandez votre devis
                             </a>
                         </div>
@@ -106,33 +104,31 @@ const Section9 = () => {
             </div>
 
             {/* Les deux cartes du bas centrées horizontalement */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-3xl mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 w-full max-w-[80%] md:max-w-3xl mt-4 md:mt-12">
                 {offers.slice(3).map((offer, index) => (
                     <div 
                         key={index} 
-                        className="relative flex flex-col justify-between bg-[#FFFFFF] bg-opacity-45 p-8 rounded-lg shadow-xl h-full"
-                        style={{
-                            boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.2)"
-                        }}>
+                        className="relative flex flex-col justify-between bg-[#FFFFFF]  p-8 rounded-lg shadow-xl h-full">
                         <div>
-                            <h2 className="font-poppins font-bold text-2xl md:text-3xl text-[#474747] mb-4">{offer.title}</h2>
-                            <h3 className="font-poppins font-semibold text-3xl md:text-4xl text-[#474747] mb-4">À partir de <span>{offer.price}</span></h3>
+                            <h2 className="font-dmserif font-medium text-lg text-[#474747] mb-4">{offer.title}</h2>
+                            <h3 className="font-dmserif font-medium  text-[#474747] text-sm leading-none">À partir de</h3>
+                            <h4 className="font-dmserif font-medium  text-[#474747] text-6xl leading-none">{offer.price}<span className="text-sm">/demi-journée</span></h4>
                         </div>
-                        <ul className="flex-grow">
+                        <ul className="flex-grow mt-8">
                             {offer.items.map((item, i) => (
                                 <li key={i} className="flex items-center space-x-2 mb-2">
-                                    <FaCheckCircle className="text-[#474747] w-5 h-5" />
-                                    <p className="text-[#474747] text-lg font-poppins">{item}</p>
+                                    <FaCheckCircle className="text-[#474747] min-w-4 min-h-4" />
+                                    <p className="text-[#474747] text-lg font-dmserif font-light">{item}</p>
                                 </li>
                             ))}
                         </ul>
                         <div className="mt-8 mb-4">
-                            <a href="/Contact" className="bg-white text-[#474747] font-DmSerif py-2 px-6 text-lg border-2 border-[#474747]">
+                            <a href="/Contact" className="bg-white text-[#474747] font-dmserif font-medium py-2 px-6 text-lg border-2 border-[#474747]">
                                 Demandez votre devis
                             </a>
                         </div>
                         {offer.note && (
-                            <p className="absolute bottom-2 right-4 text-xs text-white">
+                            <p className="absolute bottom-2 right-4 text-xs font-light font-jost text-white">
                                 {offer.note}
                             </p>
                         )}

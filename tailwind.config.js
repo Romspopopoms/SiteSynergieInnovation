@@ -34,7 +34,7 @@ module.exports = {
         'abeezee': ['ABeeZee', 'sans-serif'],
         'antonio': ['Antonio', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
-        'DmSerif': ['DM+Serif+Text', 'sans-serif'],
+        'dmserif': ['"DM Serif Display"', 'serif'], // Correct format
 
       }, 
       colors: {

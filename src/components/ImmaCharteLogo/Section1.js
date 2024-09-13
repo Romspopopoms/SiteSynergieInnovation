@@ -16,8 +16,8 @@ const Section1 = () => {
       ></div>
 
       {/* Contenu avec opacité non affectée */}
-      <div className="relative z-10 bg-white p-6 min-h-[200px] md:min-h-[270px] md:max-w-3xl shadow-lg w-full max-w-[90%]">
-        <h1 className="text-4xl md:text-6xl font-medium font-DmSerif text-[#474747] md:px-8 md:max-w-[80%] ">
+      <div className="relative flex items-center z-10 bg-white p-2 min-h-[200px] md:min-h-[230px] md:max-w-[38%] shadow-lg w-full max-w-[90%]">
+        <h1 className="text-5xl md:text-6xl font-medium font-dmserif text-[#474747] md:px-8 ">
           Un Visuel Unique Pour Votre Paroisse
         </h1>
 

@@ -2,7 +2,7 @@ import React from "react";
 import Image1 from "../../assets/mockupflyer.webp";  // L'image principale du haut
 import Image2 from "../../assets/mockuppanneau.webp";  // Une des images en dessous
 import Image3 from "../../assets/mockuppull.webp";         // L'autre image en dessous
-
+import Flou from "../../assets/flou.webp"
 const Section8 = () => {
     return (
         <div className="flex flex-col justify-center items-center w-full px-4 md:px-0 mb-8">
@@ -31,7 +31,10 @@ const Section8 = () => {
                             className="w-full h-full rounded-lg shadow-lg object-cover"
                         />
                     </div>
-                    <div className="w-full">
+                    <div 
+                    className="w-full object-cover"
+                    style={{ backgroundImage: `url(${Flou})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+                    >
                         <img 
                             src={Image3} 
                             alt="Branding 2" 

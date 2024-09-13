@@ -7,11 +7,11 @@ const Section1 = () => {
       className="relative bg-cover bg-center pt-32 md:pt-40 min-h-screen" // Ajoute un padding-top pour compenser la hauteur de la navbar
       style={{ backgroundImage: `url(${Colonne})` }}
     >
-      <div className="bg-white p-8 min-h-[400px] max-w-4xl shadow-lg w-full">
-        <h1 className="text-3xl md:text-6xl font-bold font-DmSerif text-[#474747] mb-8 md:px-8 md:text-center ">
+      <div className="flex flex-col justify-center items-center bg-white p-8 min-h-[400px] max-w-4xl shadow-lg w-full">
+        <h1 className="text-3xl md:text-6xl font-medium font-dmserif text-[#474747] text-center mb-8 md:px-8 md:text-center ">
           La mission d'ImaMissio
         </h1>
-        <p className="text-lg md:text-xl text-[#474747] font-jost font-medium leading-relaxed">
+        <p className="text-lg md:text-xl text-[#474747] font-jost font-medium leading-relaxed text-center">
           Depuis décembre 2023, Synergie Innovation, à travers sa branche
           ImaMissio, s'engage à rendre les outils numériques accessibles à
           l’ensemble du monde ecclésial à des tarifs abordables. Nous
