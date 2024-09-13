@@ -15,7 +15,7 @@ const ImmaMissioCom = () => {
     return (
         <div 
             className="w-full min-h-screen bg-[#FFFBED]"
-            style={{ backgroundImage: `url(${BG})` }} // Assurez-vous que l'image de fond est chargée
+             // Assurez-vous que l'image de fond est chargée
         >
             <Helmet>
                 {/* SEO Meta Tags */}

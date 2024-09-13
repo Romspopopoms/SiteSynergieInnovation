@@ -73,7 +73,7 @@ const ImmaMissioWebDesign = () => {
             </div>
 
             {/* Section 3, visible sur tous les écrans */}
-            <div className="md:w-[75%] md:ml-[25%]">
+            <div className="md:w-[75%] md:ml-[25%] py-24 md:py-0">
                 <Suspense fallback={null}>
                     <Section3 />
                 </Suspense>
