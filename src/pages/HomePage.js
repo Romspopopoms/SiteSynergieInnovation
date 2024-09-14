@@ -135,7 +135,7 @@ const HomePage = () => {
                 <meta name="twitter:image" content={Synergie} /> {/* Mise à jour avec Synergie.webp */}
 
                 {/* Preload de l'image de fond */}
-                <link rel="preload" href={Background} as="image" />
+                <img src={Background} alt="Background" loading="lazy" className="absolute w-full h-full object-cover" />
 
                 {/* Favicon en .ico */}
                 <link rel="icon" href="/rond_ico.ico" /> {/* Fichier .ico comme spécifié */}

@@ -41,8 +41,7 @@ const SynergieInnovationPage = () => {
                 <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload de l'image de fond */}
-                <link rel="preload" href={Synergie} as="image" />
-
+                <img src={Synergie} alt="Background" loading="lazy" className="absolute w-full h-full object-cover" />
                 {/* Favicon */}
                 <link rel="icon" href="/rond_ico.ico" /> {/* Fichier .ico comme spécifié */}
             </Helmet>

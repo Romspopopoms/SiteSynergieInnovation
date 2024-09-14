@@ -39,7 +39,7 @@ const VoxUnityWebDesign = () => {
                 <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
-                <link rel="preload" href={BG} as="image" />
+                <img src={BG} alt="Background" loading="lazy" className="absolute w-full h-full object-cover" />
 
                 {/* Favicon */}
                 <link rel="icon" href="/rond_ico.ico" />
