@@ -39,7 +39,7 @@ const VoxUnity = () => {
                 <meta name="twitter:image" content={SynergieInno} />
 
                 {/* Preload background image */}
-                <img src={BG} alt="Background" loading="lazy" className="absolute w-full h-full object-cover" />
+                <link rel="preload" href={BG} as="image" />
 
                 {/* Favicon */}
                 <link rel="icon" href="/rond_ico.ico" />
