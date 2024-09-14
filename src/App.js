@@ -1,33 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import Loader from './components/Loader'; // Import du loader
-import { AnimatePresence, motion } from 'framer-motion';
-import Home from "./pages/HomePage";
 import { HelmetProvider } from 'react-helmet-async';
-import SynergieInnovationPage from './pages/SynergieInnovation';
-import VoxUnity from "./pages/Vox/VoxUnity";
-import VoxUnityLogo from "./pages/Vox/VoxUnityLogo";
-import VoxUnityCharteGraphique from "./pages/Vox/VoxUnityCharteGraphique";
-import VoxUnityWebDesign from './pages/Vox/VoxUnityWebDesign';
-import VoxUnityCom from './pages/Vox/VoxUnityCom';
-import Accueil from "./pages/Imma/Accueil";
-import ImmaMissio from "./pages/Imma/ImmaMissio";
-import ImmaMissioCharteGraphique from "./pages/Imma/ImmaMissioCharteGraphique";
-import ImmaMissioWebDesign from "./pages/Imma/ImmaMissioWebDesign";
-import ImmaMissioCom from "./pages/Imma/ImmaMissioCom";
+import { AnimatePresence, motion } from 'framer-motion';
+import Loader from './components/Loader'; // Import du loader
+
+// Lazy-loading des pages pour optimiser le bundle
+const Home = lazy(() => import('./pages/HomePage'));
+const SynergieInnovationPage = lazy(() => import('./pages/SynergieInnovation'));
+const VoxUnity = lazy(() => import('./pages/Vox/VoxUnity'));
+const VoxUnityLogo = lazy(() => import('./pages/Vox/VoxUnityLogo'));
+const VoxUnityCharteGraphique = lazy(() => import('./pages/Vox/VoxUnityCharteGraphique'));
+const VoxUnityWebDesign = lazy(() => import('./pages/Vox/VoxUnityWebDesign'));
+const VoxUnityCom = lazy(() => import('./pages/Vox/VoxUnityCom'));
+const Accueil = lazy(() => import('./pages/Imma/Accueil'));
+const ImmaMissio = lazy(() => import('./pages/Imma/ImmaMissio'));
+const ImmaMissioCharteGraphique = lazy(() => import('./pages/Imma/ImmaMissioCharteGraphique'));
+const ImmaMissioWebDesign = lazy(() => import('./pages/Imma/ImmaMissioWebDesign'));
+const ImmaMissioCom = lazy(() => import('./pages/Imma/ImmaMissioCom'));
 
 const AppContent = () => {
   const location = useLocation();
   const [isLoading, setIsLoading] = useState(true);
 
-  // Désactivation du loader pour React Snap
   useEffect(() => {
     if (navigator.userAgent === 'ReactSnap') {
       setIsLoading(false);
     } else {
       setIsLoading(true);
-      const timer = setTimeout(() => setIsLoading(false), 4000);
+      const timer = setTimeout(() => setIsLoading(false), 2000); // Chargement réduit à 2 secondes
       return () => clearTimeout(timer);
     }
   }, [location]);
@@ -44,22 +45,24 @@ const AppContent = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5 }}
           >
-            <Routes location={location} key={location.pathname}>
-              <Route path="/" element={<Home />} />
-              <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
-              <Route path="/VoxUnity" element={<VoxUnity />} />
-              <Route path="/VoxUnityLogo" element={<VoxUnityLogo />} />
-              <Route path="/VoxUnityCharteGraphique" element={<VoxUnityCharteGraphique />} />
-              <Route path="/VoxUnityWebDesign" element={<VoxUnityWebDesign />} />
-              <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
-              <Route path="/Accueil" element={<Accueil />} />
-              <Route path="/ImmaMissio" element={<ImmaMissio />} />
-              <Route path="/ImmaMissioCharteGraphique" element={<ImmaMissioCharteGraphique />} />
-              <Route path="/ImmaMissioWebDesign" element={<ImmaMissioWebDesign />} />
-              <Route path="/ImmaMissioCom" element={<ImmaMissioCom />} />
+            <Suspense fallback={<Loader />}>
+              <Routes location={location} key={location.pathname}>
+                <Route path="/" element={<Home />} />
+                <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
+                <Route path="/VoxUnity" element={<VoxUnity />} />
+                <Route path="/VoxUnityLogo" element={<VoxUnityLogo />} />
+                <Route path="/VoxUnityCharteGraphique" element={<VoxUnityCharteGraphique />} />
+                <Route path="/VoxUnityWebDesign" element={<VoxUnityWebDesign />} />
+                <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
+                <Route path="/Accueil" element={<Accueil />} />
+                <Route path="/ImmaMissio" element={<ImmaMissio />} />
+                <Route path="/ImmaMissioCharteGraphique" element={<ImmaMissioCharteGraphique />} />
+                <Route path="/ImmaMissioWebDesign" element={<ImmaMissioWebDesign />} />
+                <Route path="/ImmaMissioCom" element={<ImmaMissioCom />} />
 
-              <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
+                <Route path="*" element={<Navigate to="/" />} />
+              </Routes>
+            </Suspense>
           </motion.div>
         )}
       </AnimatePresence>
@@ -80,12 +83,13 @@ const App = () => {
       } else {
         const timer = setTimeout(() => {
           setIsInitialLoading(false);
-        }, 4000);
+        }, 2000); // Réduction du temps de chargement initial à 2 secondes
         return () => clearTimeout(timer);
       }
     }
   }, []);
 
+  // Intégration de Google Tag Manager uniquement si l'utilisateur n'est pas un robot comme React Snap
   useEffect(() => {
     if (navigator.userAgent !== 'ReactSnap') {
       const script = document.createElement('script');

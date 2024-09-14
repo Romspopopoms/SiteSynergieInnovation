@@ -39,7 +39,8 @@
     "eject": "react-scripts eject",
     "generate-sitemap": "node generate-sitemap.js",
     "postinstall": "echo 'Skipping Puppeteer Chromium Download'",
-    "postbuild": "npm run generate-sitemap"
+    "postbuild": "npm run generate-sitemap",
+    "analyze": "source-map-explorer 'build/static/js/*.js'"
   },
   "reactSnap": {
     "inlineCss": true,
@@ -74,6 +75,7 @@
     ]
   },
   "devDependencies": {
-    "image-webpack-loader": "^8.1.0"
+    "image-webpack-loader": "^8.1.0",
+    "source-map-explorer": "^2.5.3"
   }
 }
