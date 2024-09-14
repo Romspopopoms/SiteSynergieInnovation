@@ -28,7 +28,7 @@ const AppContent = () => {
       setIsLoading(false);
     } else {
       setIsLoading(true);
-      const timer = setTimeout(() => setIsLoading(false), 3000); // Chargement réduit à 2 secondes
+      const timer = setTimeout(() => setIsLoading(false), 2500); // Chargement réduit à 2 secondes
       return () => clearTimeout(timer);
     }
   }, [location]);
@@ -83,7 +83,7 @@ const App = () => {
       } else {
         const timer = setTimeout(() => {
           setIsInitialLoading(false);
-        }, 3000); // Réduction du temps de chargement initial à 2 secondes
+        }, 2500); // Réduction du temps de chargement initial à 2 secondes
         return () => clearTimeout(timer);
       }
     }
