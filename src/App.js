@@ -36,36 +36,36 @@ const AppContent = () => {
   return (
     <>
       {isLoading && <Loader />}
-      <AnimatePresence mode="wait">
-        {!isLoading && (
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
-          >
-            <Suspense fallback={<Loader />}>
-              <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Home />} />
-                <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
-                <Route path="/VoxUnity" element={<VoxUnity />} />
-                <Route path="/VoxUnityLogo" element={<VoxUnityLogo />} />
-                <Route path="/VoxUnityCharteGraphique" element={<VoxUnityCharteGraphique />} />
-                <Route path="/VoxUnityWebDesign" element={<VoxUnityWebDesign />} />
-                <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
-                <Route path="/Accueil" element={<Accueil />} />
-                <Route path="/ImmaMissio" element={<ImmaMissio />} />
-                <Route path="/ImmaMissioCharteGraphique" element={<ImmaMissioCharteGraphique />} />
-                <Route path="/ImmaMissioWebDesign" element={<ImmaMissioWebDesign />} />
-                <Route path="/ImmaMissioCom" element={<ImmaMissioCom />} />
+  <AnimatePresence mode="wait" initial={false}>
+    {!isLoading && (
+      <motion.div
+        key={location.pathname}
+        initial={{ opacity: 0, y: 20 }}  // Ajout d'une légère translation pour adoucir
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}  // Transition en douceur lors de la sortie
+        transition={{ duration: 0.8 }}  // Durée plus courte pour éviter l'effet de flash
+      >
+        <Suspense fallback={<Loader />}>
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
+            <Route path="/VoxUnity" element={<VoxUnity />} />
+            <Route path="/VoxUnityLogo" element={<VoxUnityLogo />} />
+            <Route path="/VoxUnityCharteGraphique" element={<VoxUnityCharteGraphique />} />
+            <Route path="/VoxUnityWebDesign" element={<VoxUnityWebDesign />} />
+            <Route path="/VoxUnityCom" element={<VoxUnityCom />} />
+            <Route path="/Accueil" element={<Accueil />} />
+            <Route path="/ImmaMissio" element={<ImmaMissio />} />
+            <Route path="/ImmaMissioCharteGraphique" element={<ImmaMissioCharteGraphique />} />
+            <Route path="/ImmaMissioWebDesign" element={<ImmaMissioWebDesign />} />
+            <Route path="/ImmaMissioCom" element={<ImmaMissioCom />} />
 
-                <Route path="*" element={<Navigate to="/" />} />
-              </Routes>
-            </Suspense>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <Route path="*" element={<Navigate to="/" />} />
+          </Routes>
+        </Suspense>
+      </motion.div>
+    )}
+    </AnimatePresence>
     </>
   );
 };
