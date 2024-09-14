@@ -21,31 +21,36 @@ const ImmaMissioCom = lazy(() => import('./pages/Imma/ImmaMissioCom'));
 
 const AppContent = () => {
   const location = useLocation();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isPageLoading, setIsPageLoading] = useState(false); // Gestion du chargement des pages
 
   useEffect(() => {
-    if (navigator.userAgent === 'ReactSnap') {
-      setIsLoading(false);
-    } else {
-      setIsLoading(true);
-      const timer = setTimeout(() => setIsLoading(false), 2500); // Chargement réduit à 2 secondes
-      return () => clearTimeout(timer);
-    }
+    setIsPageLoading(true); // Démarre le chargement à chaque changement de route
+    const timer = setTimeout(() => setIsPageLoading(false), 500); // 500ms pour donner un effet fluide
+    return () => clearTimeout(timer);
   }, [location]);
 
   return (
     <>
-      {isLoading && <Loader />}
       <AnimatePresence mode="wait">
-        {!isLoading && (
+        {isPageLoading ? (
+          <motion.div
+            key="loader"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Loader /> {/* Loader seulement pendant le chargement de la page */}
+          </motion.div>
+        ) : (
           <motion.div
             key={location.pathname}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 0.5 }} // Animation plus rapide
           >
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={null}> {/* Pas de loader lors du suspense après le premier chargement */}
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home />} />
                 <Route path="/SynergieInnovation" element={<SynergieInnovationPage />} />
@@ -74,19 +79,8 @@ const App = () => {
   const [isInitialLoading, setIsInitialLoading] = useState(true);
 
   useEffect(() => {
-    if (navigator.userAgent === 'ReactSnap') {
-      setIsInitialLoading(false);
-    } else {
-      const isMobile = window.innerWidth < 768;
-      if (isMobile) {
-        setIsInitialLoading(false);
-      } else {
-        const timer = setTimeout(() => {
-          setIsInitialLoading(false);
-        }, 2500); // Réduction du temps de chargement initial à 2 secondes
-        return () => clearTimeout(timer);
-      }
-    }
+    const timer = setTimeout(() => setIsInitialLoading(false), 2500); // Chargement initial de 2,5 secondes
+    return () => clearTimeout(timer);
   }, []);
 
   // Intégration de Google Tag Manager uniquement si l'utilisateur n'est pas un robot comme React Snap
@@ -109,7 +103,7 @@ const App = () => {
   return (
     <HelmetProvider>
       {isInitialLoading ? (
-        <Loader />
+        <Loader /> 
       ) : (
         <Router>
           <div className="flex flex-col xl:gap-y-12 w-full">
