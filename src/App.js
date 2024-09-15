@@ -34,7 +34,7 @@ const AppContent = () => {
   }, [location]);
 
   // Génère l'URL canonique basée sur l'URL actuelle
-  const canonicalUrl = `https://synergieinnovation.fr${location.pathname}`.replace(/\/$/, ''); // Supprimer le slash à la fin
+  const canonicalUrl = `https://synergieinnovation.fr${location.pathname}`.replace(/\/$/, ''); // Supprime le slash à la fin
 
   return (
     <>
