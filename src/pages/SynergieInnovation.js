@@ -24,8 +24,6 @@ const SynergieInnovationPage = () => {
                 <meta name="description" content="Découvrez Synergie Innovation : des solutions numériques complètes, de la création de sites web au branding et au développement logiciel sur mesure." />
                 <meta name="keywords" content="création de site web, développement logiciel, design, branding, solutions numériques, Synergie Innovation, services numériques sur mesure" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/SynergieInnovationPage" />
 
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="Synergie Innovation - Solutions Numériques sur Mesure" />

@@ -22,8 +22,6 @@ const VoxUnityLogo = () => {
                 <meta name="description" content="VoxUnity vous propose des services professionnels de création de logos uniques et sur-mesure pour renforcer l'identité visuelle de votre marque." />
                 <meta name="keywords" content="création de logo, identité visuelle, branding, VoxUnity, Synergie Innovation, design graphique, logo personnalisé" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/VoxUnityLogo" />
 
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="VoxUnity - Création de Logos sur Mesure" />

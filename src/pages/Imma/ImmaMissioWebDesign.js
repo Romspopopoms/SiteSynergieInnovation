@@ -21,9 +21,6 @@ const ImmaMissioWebDesign = () => {
                 <meta name="description" content="ImmaMissio propose des services de web design uniques pour l'Église et les patronages, avec un focus sur l'expérience utilisateur et la conception visuelle." />
                 <meta name="keywords" content="web design, UX, UI, design d'église, développement web, design professionnel, ImmaMissio, Synergie Innovation" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/ImmaMissioWebDesign" />
-
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="ImmaMissio - Web Design pour l'Église et les Patronages" />
                 <meta property="og:description" content="Optimisez l'interface utilisateur et l'expérience utilisateur avec nos services de web design pour l'Église et les patronages." />

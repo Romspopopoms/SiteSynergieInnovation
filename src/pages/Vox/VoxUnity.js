@@ -22,8 +22,6 @@ const VoxUnity = () => {
                 <meta name="description" content="VoxUnity, le studio créatif spécialisé dans la conception de logo, web design, branding et communication visuelle." />
                 <meta name="keywords" content="VoxUnity, design, branding, web design, logo, communication visuelle, création graphique" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/VoxUnity" />
 
                 {/* Open Graph Tags */}
                 <meta property="og:title" content="VoxUnity - Design et Branding sur mesure" />

@@ -22,8 +22,7 @@ const VoxUnityCom = () => {
                 <meta name="description" content="Améliorez votre communication digitale avec VoxUnity. Découvrez nos stratégies sur mesure pour renforcer votre présence en ligne et atteindre vos objectifs." />
                 <meta name="keywords" content="communication digitale, stratégie marketing, branding, VoxUnity, Synergie Innovation, réseaux sociaux, stratégie de contenu" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/VoxUnityCom" />
+
 
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="VoxUnity - Stratégies de Communication Digitale" />

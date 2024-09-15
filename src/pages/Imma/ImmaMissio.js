@@ -21,8 +21,7 @@ const Accueil = () => {
                 <meta name="description" content="ImmaMissio vous accompagne avec des solutions numériques dédiées à l'Église et aux Patronages, pour une présence numérique forte et dynamique." />
                 <meta name="keywords" content="ImmaMissio, solutions numériques, Église, Patronages, mission, digitalisation, Synergie Innovation" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/ImmaMissioAccueil" />
+
 
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="ImmaMissio - Accueil" />

@@ -24,8 +24,7 @@ const VoxUnityCharteGraphique = () => {
                 <meta name="description" content="Découvrez les solutions graphiques et l'identité visuelle unique que nous créons pour renforcer votre marque grâce à VoxUnity." />
                 <meta name="keywords" content="charte graphique, identité visuelle, branding, VoxUnity, communication, design graphique, Synergie Innovation" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/VoxUnityCharteGraphique" />
+
 
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="VoxUnity - Charte Graphique et Branding" />

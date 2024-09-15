@@ -23,8 +23,7 @@ const ImmaMissioCom = () => {
                 <meta name="description" content="Découvrez ImmaCom, spécialisé dans les solutions de communication numérique pour l'Église et les patronages." />
                 <meta name="keywords" content="ImmaCom, solutions de communication, église, patronages, Synergie Innovation, communication digitale" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/ImmaMissioCom" />
+
 
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="ImmaCom - Communication pour l'Église" />

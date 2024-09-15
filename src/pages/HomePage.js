@@ -118,9 +118,6 @@ const HomePage = () => {
                 <meta name="description" content="Synergie Innovation vous offre des solutions en création de sites web, développement logiciel, design, branding, et plus encore." />
                 <meta name="keywords" content="création de site web, développement logiciel, design, branding, QR code, Synergie Innovation, La Ciotat" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr" />
-
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="Synergie Innovation - Création de Solutions Numériques" />
                 <meta property="og:description" content="Découvrez Synergie Innovation pour toutes vos solutions numériques, y compris le développement de sites web, le branding et plus encore." />

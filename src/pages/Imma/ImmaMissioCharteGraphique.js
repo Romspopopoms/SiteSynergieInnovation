@@ -28,8 +28,6 @@ const ImmaMissioCharteGraphique = () => {
                 <meta name="description" content="Découvrez ImmaCharteLogo, spécialisé dans la création de chartes graphiques et de logos sur mesure pour une identité visuelle forte et cohérente." />
                 <meta name="keywords" content="ImmaCharteLogo, charte graphique, création de logo, branding, identité visuelle, Synergie Innovation" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/ImmaMissioCharteGraphique" />
 
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="ImmaCharteLogo - Chartes Graphiques et Logos sur Mesure" />

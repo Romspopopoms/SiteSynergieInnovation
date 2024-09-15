@@ -22,9 +22,6 @@ const VoxUnityWebDesign = () => {
                 <meta name="description" content="VoxUnity propose des services de web design uniques et professionnels pour améliorer l'interface utilisateur et l'expérience utilisateur de votre site web." />
                 <meta name="keywords" content="web design, UX, UI, développement web, design professionnel, VoxUnity, Synergie Innovation" />
 
-                {/* Canonical URL */}
-                <link rel="canonical" href="https://synergieinnovation.fr/VoxUnityWebDesign" />
-
                 {/* Open Graph / Facebook Meta Tags */}
                 <meta property="og:title" content="VoxUnity - Web Design sur Mesure" />
                 <meta property="og:description" content="Optimisez l'interface utilisateur et l'expérience utilisateur avec les services de web design professionnels de VoxUnity." />
