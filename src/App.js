@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import Loader from './components/Loader'; // Import du loader
 
@@ -28,10 +28,13 @@ const AppContent = () => {
       setIsLoading(false);
     } else {
       setIsLoading(true);
-      const timer = setTimeout(() => setIsLoading(false), 4000); // Chargement réduit à 2 secondes
+      const timer = setTimeout(() => setIsLoading(false), 2500); // Chargement réduit à 2 secondes
       return () => clearTimeout(timer);
     }
   }, [location]);
+
+  // Génère l'URL canonique basée sur l'URL actuelle
+  const currentUrl = `https://synergieinnovation.fr${location.pathname}`;
 
   return (
     <>
@@ -45,6 +48,11 @@ const AppContent = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1.1 }}
           >
+            <Helmet>
+              {/* URL Canonical dynamique pour chaque page */}
+              <link rel="canonical" href={currentUrl} />
+            </Helmet>
+
             <Suspense fallback={<Loader />}>
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<Home />} />
