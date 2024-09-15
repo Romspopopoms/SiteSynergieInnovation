@@ -28,13 +28,13 @@ const AppContent = () => {
       setIsLoading(false);
     } else {
       setIsLoading(true);
-      const timer = setTimeout(() => setIsLoading(false), 2500); // Chargement réduit à 2 secondes
+      const timer = setTimeout(() => setIsLoading(false), 2500); // Réduction du temps de chargement
       return () => clearTimeout(timer);
     }
   }, [location]);
 
   // Génère l'URL canonique basée sur l'URL actuelle
-  const currentUrl = `https://synergieinnovation.fr${location.pathname}`;
+  const canonicalUrl = `https://synergieinnovation.fr${location.pathname}`.replace(/\/$/, ''); // Supprimer le slash à la fin
 
   return (
     <>
@@ -50,7 +50,7 @@ const AppContent = () => {
           >
             <Helmet>
               {/* URL Canonical dynamique pour chaque page */}
-              <link rel="canonical" href={currentUrl} />
+              <link rel="canonical" href={canonicalUrl} />
             </Helmet>
 
             <Suspense fallback={<Loader />}>
@@ -91,7 +91,7 @@ const App = () => {
       } else {
         const timer = setTimeout(() => {
           setIsInitialLoading(false);
-        }, 4000); // Réduction du temps de chargement initial à 2 secondes
+        }, 4000); // Réduction du temps de chargement initial
         return () => clearTimeout(timer);
       }
     }
