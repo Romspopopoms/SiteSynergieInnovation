@@ -43,7 +43,6 @@ const VoxUnityCharteGraphique = () => {
                 <link rel="preload" href={BG} as="image" />
 
                 {/* Favicon */}
-                <link rel="icon" href="/rond_ico.ico" type="image/x-icon" />
             </Helmet>
 
             {/* Navbar */}

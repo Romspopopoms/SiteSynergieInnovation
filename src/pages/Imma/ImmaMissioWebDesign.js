@@ -38,7 +38,6 @@ const ImmaMissioWebDesign = () => {
                 <link rel="preload" href={BG} as="image" />
 
                 {/* Favicon */}
-                <link rel="icon" href="/rond_ico.ico" />
             </Helmet>
 
             {/* Navbar en haut */}

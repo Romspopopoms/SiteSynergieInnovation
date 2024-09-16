@@ -41,8 +41,6 @@ const SynergieInnovationPage = () => {
                 {/* Preload de l'image de fond */}
                 <link rel="preload" href={Synergie} as="image" />
 
-                {/* Favicon */}
-                <link rel="icon" href="/rond_ico.ico" /> {/* Fichier .ico comme spécifié */}
             </Helmet>
 
             {/* Sections avec Suspense pour un chargement paresseux */}

@@ -135,7 +135,6 @@ const HomePage = () => {
                 <link rel="preload" href={Background} as="image" />
 
                 {/* Favicon en .ico */}
-                <link rel="icon" href="/rond_ico.ico" /> {/* Fichier .ico comme spécifié */}
             </Helmet>
 
             <div className='flex items-center justify-center min-h-screen w-full'

@@ -39,9 +39,7 @@ const VoxUnityLogo = () => {
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />
 
-                {/* Favicon */}
-                <link rel="icon" href="/rond_ico.ico" />
-            </Helmet>
+                </Helmet>
 
             {/* Navbar */}
             <Navbar />
