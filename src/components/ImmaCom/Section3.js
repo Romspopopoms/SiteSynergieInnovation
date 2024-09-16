@@ -63,25 +63,25 @@ const Section3 = () => {
     <div className="flex flex-col items-center w-full py-48 bg-cover">
       {/* Titres */}
       <div className="text-center max-w-[80%] mb-12">
-        <h1 className="text-[#474747] text-2xl md:text-5xl font-medium font-dmserif">
+        <h1 className="text-[#474747] text-3xl md:text-5xl font-semibold font-dmserif">
           Votre Directeur de Communication
         </h1>
-        <h2 className="text-[#474747] text-2xl md:text-5xl font-medium font-dmserif mt-2 md:0">
+        <h2 className="text-[#474747] text-3xl md:text-5xl font-semibold font-dmserif mt-2 md:0">
           Dédié pour une Stratégie Web Réussie.
         </h2>
       </div>
 
       {/* Grille pour écrans moyens et grands */}
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 w-auto">
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-3 w-[60%]">
         {data.map((section, index) => (
-          <div key={index} className="space-y-6 mx-16">
+          <div key={index} className="space-y-6 w-auto space-x-4">
             <h3 className="text-[#474747] font-medium font-dmserif text-base md:text-xl text-center">
               {section.category}
             </h3>
             {section.elements.map((element, idx) => (
               <div 
                 key={idx} 
-                className="relative flex flex-col justify-start bg-white py-10 px-4 shadow-xl space-y-6" 
+                className="relative flex flex-col justify-start bg-white py-10 px-4 shadow-xl space-y-6 " 
               >
                 <h4 className=" text-[#474747] text-xl md:text-lg font-semibold font-dmserif mb-2 max-w-[42%]"
                 style={{lineHeight:"1"}}>{element.title}</h4>
@@ -94,26 +94,20 @@ const Section3 = () => {
       </div>
 
       {/* Slider pour petits écrans */}
-      <div className="md:hidden flex overflow-x-scroll snap-x snap-mandatory space-x-6 w-full px-4">
+      <div className="md:hidden flex overflow-x-scroll no-scrollbar snap-x snap-mandatory space-x-6 w-full px-4">
         {data.map((section, index) => (
-          <div key={index} className="snap-center flex-shrink-0 flex flex-col justify-start items-start w-[90%] min-h-[400px] space-y-4">
-            <h3 className="text-[#474747] font-medium font-dmserif text-lg md:text-xl  text-center">
+          <div key={index} className="snap-center flex-shrink-0 flex flex-col justify-start items-start w-[60%] min-h-[400px] space-y-4">
+            <h3 className="text-[#474747] text-2xl md:text-5xl font-medium font-dmserif">
               {section.category}
             </h3>
             <div className="flex flex-col space-y-4">
               {section.elements.map((element, idx) => (
                 <div 
                   key={idx} 
-                  className="relative flex flex-col justify-start bg-transparent py-10 px-4 rounded-[20px] shadow-xl min-h-[300px]" 
-                  style={{
-                    backdropFilter: "blur(40px)",
-                    backgroundColor: "rgba(255, 255, 255, 0.1)",
-                    borderRadius: "20px",
-                    boxShadow: "0px 0px 50px 0px rgba(0, 0, 0, 0.67)"
-                  }}
+                  className="relative flex flex-col justify-start bg-white py-10 px-4 shadow-xl space-y-6" 
                 >
-                  <h4 className="font-medium font-dmserif text-[#474747] text-md md:text-lg  mb-2">{element.title}</h4>
-                  <p className="text-[#474747] font-light font-jost text-sm md:text-base">{element.description}</p>
+                  <h4 className="text-[#474747] text-xl md:text-lg font-semibold font-dmserif mb-2 max-w-[42%]">{element.title}</h4>
+                  <p className="text-[#474747] font-jost font-medium text-lg">{element.description}</p>
                 </div>
               ))}
             </div>

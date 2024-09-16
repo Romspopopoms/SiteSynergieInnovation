@@ -32,78 +32,49 @@ const ManagerServices = [
 
 const Section5 = () => {
     return (
-        <div className="flex justify-center items-center w-full py-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full md:max-w-[65%] px-4">
-                
+        <div className="flex flex-col justify-center items-center w-full py-16 px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 max-w-[90%] md:max-w-[80%]">
                 {/* Colonne gauche - Directeur de Communication */}
-                <div className="flex flex-col justify-between bg-transparent p-8 rounded-lg shadow-xl h-full"
-                    style={{
-                        backdropFilter: "blur(100px)",
-                        borderRadius: "20px",
-                        boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.3)",  
-                    }}>
-                    <div className="flex flex-col items-start">
-                        <div className="min-h-[100px]">
-                            <h1 className="font-poppins font-semibold text-[#474747] text-2xl md:text-xl">Directeur de Communication</h1>
-                            <h2 className="font-poppins font-bold text-[#474747] text-xl md:text-2xl mt-4">À partir de</h2>
-                            <span className="text-4xl md:text-5xl font-poppins font-bold text-[#474747]">3000€</span>
-                        </div>
-
-                        {/* Liste des services pour Directeur de Communication */}
-                        <div className="mt-6 flex-grow">
-                            {DirectorServices.map((item, index) => (
-                                <div key={index} className="flex items-center space-x-2 mt-8">
-                                    <FaCheckCircle className="text-[#474747] w-5 h-5" />
-                                    <p className="text-[#474747] text-lg font-poppins">{item.name}</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Bouton pour devis */}
-                        <div className="mt-8">
-                            <a
-                                href="/Contact"
-                                className="bg-transparent border-2 border-black font-poppins font-bold  text-[#474747] py-2 px-8"
-                            >
+                <div className="relative flex flex-col justify-between bg-[#FFFFFF] p-8 shadow-xl h-full">
+                    <div>
+                        <h2 className="font-dmserif font-medium text-lg text-[#474747] mb-4">Directeur de Communication</h2>
+                        <h3 className="font-dmserif font-medium text-sm text-[#474747] ">À partir de</h3>
+                        <h4 className="font-dmserif font-medium  text-[#474747] text-6xl leading-none">3000€</h4>
+                    </div>
+                    <ul className="flex-grow mt-8 space-y-4">
+                        {DirectorServices.map((item, index) => (
+                            <li key={index} className="flex items-center space-x-2 mb-2">
+                                <FaCheckCircle className="text-[#474747] min-w-6 min-h-6" />
+                                <p className="text-[#474747] text-lg font-dmserif font-light">{item.name}</p>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="mt-8 mb-4">
+                        <a href="/Contact" className="bg-white text-[#474747] font-dmserif font-medium py-2 px-6 text-lg border-2 border-[#474747]">
                             Demandez votre devis
-                            </a>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
                 {/* Colonne droite - Community Manager */}
-                <div className="flex flex-col justify-between bg-transparent p-8 rounded-lg shadow-xl h-full"
-                    style={{
-                        backdropFilter: "blur(100px)",
-                        borderRadius: "20px",
-                        boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.3)",  
-                    }}>
-                    <div className="flex flex-col items-start">
-                        <div className="min-h-[100px]">
-                            <h1 className="font-poppins font-semibold text-[#474747] text-2xl md:text-xl">Community Manager</h1>
-                            <h2 className="font-poppins font-bold text-[#474747] text-xl md:text-2xl mt-4">À partir de</h2>
-                            <span className="text-4xl md:text-5xl font-poppins font-bold text-[#474747]">800€/mois</span>
-                        </div>
-
-                        {/* Liste des services pour Community Manager */}
-                        <div className="mt-6 flex-grow">
-                            {ManagerServices.map((item, index) => (
-                                <div key={index} className="flex items-center space-x-2 mt-8">
-                                    <FaCheckCircle className="text-[#474747] w-5 h-5" />
-                                    <p className="text-[#474747] text-lg font-poppins">{item.name}</p>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Bouton pour devis */}
-                        <div className="mt-8">
-                            <a
-                                href="/Contact"
-                                className="bg-transparent border-2 border-black font-poppins font-bold text-[#474747] py-2 px-8"
-                            >
+                <div className="relative flex flex-col justify-between bg-[#FFFFFF] p-8 shadow-xl h-full">
+                    <div>
+                        <h2 className="font-dmserif font-medium text-lg text-[#474747] mb-4">Community Manager</h2>
+                        <h3 className="font-dmserif font-medium text-sm text-[#474747] ">À partir de</h3>
+                        <h4 className="font-dmserif font-medium  text-[#474747] text-6xl leading-none">800€/mois</h4>
+                    </div>
+                    <ul className="flex-grow mt-8 space-y-4">
+                        {ManagerServices.map((item, index) => (
+                            <li key={index} className="flex items-center space-x-2 mb-2">
+                                <FaCheckCircle className="text-[#474747] min-w-6 min-h-6" />
+                                <p className="text-[#474747] text-lg font-dmserif font-light">{item.name}</p>
+                            </li>
+                        ))}
+                    </ul>
+                    <div className="mt-8 mb-4">
+                        <a href="/Contact" className="bg-white text-[#474747] font-dmserif font-medium py-2 px-6 text-lg border-2 border-[#474747]">
                             Demandez votre devis
-                            </a>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

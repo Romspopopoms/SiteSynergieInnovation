@@ -41,10 +41,10 @@ const Section3 = () => {
     return (
         <div className="grid grid-cols-1 relative mt-24 md:max-w-[80%] mx-auto">
             <div className="flex flex-col py-8 px-8 space-y-8 items-center">
-                <h2 className=" text-2xl md:text-5xl font-bold font-poppins mb-12 text-center text-[#474747]">
-                Optimisez Votre Présence en Ligne avec unCommunity Manager Dédié.
+                <h2 className=" text-2xl md:text-5xl font-medium font-dmserif mb-12 text-center text-[#474747]">
+                Optimisez Votre Présence en Ligne avec un Community Manager Dévoué.
                 </h2>
-                <div className="flex flex-col gap-4 items-start w-full">
+                <div className="flex flex-col gap-8 items-start w-full">
                     {services.map((service, index) => (
                         <div key={index} className="flex flex-col w-full">
                             <div
@@ -52,7 +52,7 @@ const Section3 = () => {
                                 onClick={() => toggleOpen(index)}
                             >
                                 <FontAwesomeIcon icon={openIndexes.includes(index) ? faTimes : faPlus} className="size-6 text-[#474747] mt-1" />
-                                <h3 className="font-poppins text-[#474747] font-semibold text-xl">{service.title}</h3>
+                                <h3 className="font-semibold font-dmserif text-[#474747] text-xl">{service.title}</h3>
                             </div>
                             <motion.div
                                 initial={false}
@@ -61,11 +61,10 @@ const Section3 = () => {
                                 style={{ overflow: "hidden" }}
                                 className="mt-2 ml-10"
                             >
-                                <p className="ml-2 text-[#474747] text-base leading-relaxed">
+                                <p className="ml-2 text-[#474747] font-jost text-base font-medium leading-relaxed">
                                     {service.description}
                                 </p>
                             </motion.div>
-                            <hr className="border-0 h-px bg-gradient-to-r from-transparent via-[#474747] to-transparent my-0 mt-8" />
                         </div>
                     ))}
                 </div>
