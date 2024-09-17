@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import BG from "assets/bg6.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../../components/AccueilImma/Navbar";
 import Footer from "../../components/AccueilImma/Footer";
-import Synergie from "assets/Synergie.webp"
 
 const Section1 = React.lazy(() => import("../../components/ImmaMissioWebDesign/Section1"));
 const Section2 = React.lazy(() => import("../../components/ImmaMissioWebDesign/Section2"));
@@ -20,19 +19,6 @@ const ImmaMissioWebDesign = () => {
                 <title>ImmaMissio - Web Design pour l'Église et les Patronages</title>
                 <meta name="description" content="ImmaMissio propose des services de web design uniques pour l'Église et les patronages, avec un focus sur l'expérience utilisateur et la conception visuelle." />
                 <meta name="keywords" content="web design, UX, UI, design d'église, développement web, design professionnel, ImmaMissio, Synergie Innovation" />
-
-                {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="ImmaMissio - Web Design pour l'Église et les Patronages" />
-                <meta property="og:description" content="Optimisez l'interface utilisateur et l'expérience utilisateur avec nos services de web design pour l'Église et les patronages." />
-                <meta property="og:image" content={Synergie} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/ImmaMissioWebDesign" />
-
-                {/* Twitter Cards Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="ImmaMissio - Web Design Personnalisé pour l'Église" />
-                <meta name="twitter:description" content="Découvrez nos services de design web pour améliorer la présence en ligne des églises et patronages." />
-                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />

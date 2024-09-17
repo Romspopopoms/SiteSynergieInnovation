@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from "../../components/AccueilImma/Navbar";
 import Footer from "../../components/AccueilImma/Footer";
 import BG from "assets/bgCharteImma.webp"; 
-import Synergie from "assets/Synergie.webp"
 
 // Lazy-loaded sections
 const Section1 = React.lazy(() => import("../../components/ImmaCharteLogo/Section1"));
@@ -28,19 +27,6 @@ const ImmaMissioCharteGraphique = () => {
                 <meta name="description" content="Découvrez ImmaCharteLogo, spécialisé dans la création de chartes graphiques et de logos sur mesure pour une identité visuelle forte et cohérente." />
                 <meta name="keywords" content="ImmaCharteLogo, charte graphique, création de logo, branding, identité visuelle, Synergie Innovation" />
 
-
-                {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="ImmaCharteLogo - Chartes Graphiques et Logos sur Mesure" />
-                <meta property="og:description" content="Créez une identité visuelle unique avec nos services de conception de logos et chartes graphiques sur mesure." />
-                <meta property="og:image" content={Synergie} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/ImmaCharteLogo" />
-
-                {/* Twitter Cards Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="ImmaCharteLogo - Création de Logos et Chartes Graphiques" />
-                <meta name="twitter:description" content="Renforcez l'identité visuelle de votre marque grâce à nos solutions de création de logos et chartes graphiques." />
-                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />

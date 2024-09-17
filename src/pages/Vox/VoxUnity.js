@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import BG from "../../assets/bg5.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../../components/VoxUnity/Navbar";
 import Footer from "../../components/VoxUnity/Footer";
-import SynergieInno from "assets/Synergie.webp"
 // Lazy-loaded sections
 const Section1 = React.lazy(() => import("../../components/VoxUnity/Section1"));
 const Section2 = React.lazy(() => import("../../components/VoxUnity/Section2"));
@@ -21,20 +20,6 @@ const VoxUnity = () => {
                 <title>VoxUnity - Design et Branding sur mesure</title>
                 <meta name="description" content="VoxUnity, le studio créatif spécialisé dans la conception de logo, web design, branding et communication visuelle." />
                 <meta name="keywords" content="VoxUnity, design, branding, web design, logo, communication visuelle, création graphique" />
-
-
-                {/* Open Graph Tags */}
-                <meta property="og:title" content="VoxUnity - Design et Branding sur mesure" />
-                <meta property="og:description" content="Création de logos et d'identités visuelles uniques pour refléter votre marque de manière impactante." />
-                <meta property="og:image" content={SynergieInno} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/VoxUnity" />
-
-                {/* Twitter Cards */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="VoxUnity - Votre partenaire en Design et Branding" />
-                <meta name="twitter:description" content="Découvrez nos solutions de branding, création de logo, et web design pour votre entreprise." />
-                <meta name="twitter:image" content={SynergieInno} />
 
                 {/* Preload background image */}
                 <link rel="preload" href={BG} as="image" />

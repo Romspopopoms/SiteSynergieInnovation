@@ -24,20 +24,6 @@ const SynergieInnovationPage = () => {
                 <meta name="description" content="Découvrez Synergie Innovation : des solutions numériques complètes, de la création de sites web au branding et au développement logiciel sur mesure." />
                 <meta name="keywords" content="création de site web, développement logiciel, design, branding, solutions numériques, Synergie Innovation, services numériques sur mesure" />
 
-
-                {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="Synergie Innovation - Solutions Numériques sur Mesure" />
-                <meta property="og:description" content="Synergie Innovation vous offre des solutions sur mesure pour tous vos besoins numériques, du design à la création de sites web et applications." />
-                <meta property="og:image" content={Synergie} />
-                <meta property="og:url" content="https://synergieinnovation.fr/SynergieInnovationPage" />
-                <meta property="og:type" content="website" />
-
-                {/* Twitter Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Synergie Innovation - Solutions Numériques Personnalisées" />
-                <meta name="twitter:description" content="Nous offrons des services numériques personnalisés pour vous aider à atteindre vos objectifs digitaux." />
-                <meta name="twitter:image" content={Synergie} />
-
                 {/* Preload de l'image de fond */}
                 <link rel="preload" href={Synergie} as="image" />
 

@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import BG from "../../assets/bg1.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../../components/VoxUnity/Navbar";
 import Footer from "../../components/VoxUnity/Footer";
-import Synergie from "assets/Synergie.webp"
 
 const Section1 = React.lazy(() => import("../../components/VoxUnityLogo/Section1"));
 const Section2 = React.lazy(() => import("../../components/VoxUnityLogo/Section2"));
@@ -21,20 +20,6 @@ const VoxUnityLogo = () => {
                 <title>VoxUnity - Création de Logos Professionnels</title>
                 <meta name="description" content="VoxUnity vous propose des services professionnels de création de logos uniques et sur-mesure pour renforcer l'identité visuelle de votre marque." />
                 <meta name="keywords" content="création de logo, identité visuelle, branding, VoxUnity, Synergie Innovation, design graphique, logo personnalisé" />
-
-
-                {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="VoxUnity - Création de Logos sur Mesure" />
-                <meta property="og:description" content="Découvrez les services de création de logos professionnels par VoxUnity, adaptés aux besoins de votre entreprise pour une identité visuelle percutante." />
-                <meta property="og:image" content={Synergie} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/VoxUnityLogo" />
-
-                {/* Twitter Cards Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="VoxUnity - Création de Logos Personnalisés" />
-                <meta name="twitter:description" content="Renforcez votre identité visuelle avec nos services de création de logos uniques et professionnels." />
-                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />

@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet-async';
 import BG from "../../assets/bg6.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
 import Navbar from "../../components/VoxUnity/Navbar";
 import Footer from "../../components/VoxUnity/Footer"
-import Synergie from "assets/Synergie.webp"
 
 const Section1 = React.lazy(() => import("../../components/VoxUnityWebDesign/Section1"));
 const Section2 = React.lazy(() => import("../../components/VoxUnityWebDesign/Section2"));
@@ -21,19 +20,6 @@ const VoxUnityWebDesign = () => {
                 <title>VoxUnity - Web Design Professionnel</title>
                 <meta name="description" content="VoxUnity propose des services de web design uniques et professionnels pour améliorer l'interface utilisateur et l'expérience utilisateur de votre site web." />
                 <meta name="keywords" content="web design, UX, UI, développement web, design professionnel, VoxUnity, Synergie Innovation" />
-
-                {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="VoxUnity - Web Design sur Mesure" />
-                <meta property="og:description" content="Optimisez l'interface utilisateur et l'expérience utilisateur avec les services de web design professionnels de VoxUnity." />
-                <meta property="og:image" content={Synergie} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/VoxUnityWebDesign" />
-
-                {/* Twitter Cards Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="VoxUnity - Web Design Personnalisé" />
-                <meta name="twitter:description" content="Venez découvrir nos services de design professionnel pour améliorer votre présence en ligne." />
-                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />

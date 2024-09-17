@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from "../../components/AccueilImma/Navbar";
 import Footer from "../../components/AccueilImma/Footer";
 import BG from "assets/bg1imma.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
-import Synergie from "assets/Synergie.webp"
+
 // Lazy-loaded sections
 const Section1 = React.lazy(() => import("../../components/ImmaCom/Section1"));
 const Section2 = React.lazy(() => import("../../components/ImmaCom/Section2"));
@@ -22,21 +22,6 @@ const ImmaMissioCom = () => {
                 <title>ImmaCom - Solutions de Communication pour l'Église</title>
                 <meta name="description" content="Découvrez ImmaCom, spécialisé dans les solutions de communication numérique pour l'Église et les patronages." />
                 <meta name="keywords" content="ImmaCom, solutions de communication, église, patronages, Synergie Innovation, communication digitale" />
-
-
-
-                {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="ImmaCom - Communication pour l'Église" />
-                <meta property="og:description" content="ImmaCom propose des solutions numériques complètes pour l'Église, y compris la communication digitale pour les patronages." />
-                <meta property="og:image" content={Synergie} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/ImmaCom" />
-
-                {/* Twitter Cards Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="ImmaCom - Solutions de Communication Digitale pour l'Église" />
-                <meta name="twitter:description" content="Découvrez comment ImmaCom aide l'Église et les patronages à se connecter avec leurs communautés grâce à des solutions numériques." />
-                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />

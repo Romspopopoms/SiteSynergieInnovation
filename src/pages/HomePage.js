@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Background from "../assets/Bg2.webp";
-import Synergie from "assets/Synergie.webp"
 import LogoSynergie from "../assets/V4 simple W.svg";
 import LogoVox from "../assets/PictoVox.svg";
 import LogoImma from "../assets/PictoImaMissio.svg";
@@ -100,19 +99,6 @@ const HomePage = () => {
                 <title>Synergie Innovation - Accueil</title>
                 <meta name="description" content="Synergie Innovation vous offre des solutions en création de sites web, développement logiciel, design, branding, et plus encore." />
                 <meta name="keywords" content="création de site web, développement logiciel, design, branding, QR code, Synergie Innovation, La Ciotat" />
-
-                {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="Synergie Innovation - Création de Solutions Numériques" />
-                <meta property="og:description" content="Découvrez Synergie Innovation pour toutes vos solutions numériques, y compris le développement de sites web, le branding et plus encore." />
-                <meta property="og:image" content={Synergie} /> {/* Mise à jour avec Synergie.webp */}
-                <meta property="og:url" content="https://synergieinnovation.fr" />
-                <meta property="og:type" content="website" />
-
-                {/* Twitter Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Synergie Innovation - Solutions Numériques" />
-                <meta name="twitter:description" content="Nous créons des solutions personnalisées pour sites web, logiciels et branding." />
-                <meta name="twitter:image" content={Synergie} /> {/* Mise à jour avec Synergie.webp */}
 
                 {/* Preload de l'image de fond */}
                 <link rel="preload" href={Background} as="image" />

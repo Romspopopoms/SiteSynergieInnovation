@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import Navbar from "../../components/AccueilImma/Navbar";
 import Footer from "../../components/AccueilImma/Footer";
 import BG from "assets/bg1imma.webp"; // Assurez-vous que le chemin et le nom du fichier sont corrects
-import Synergie from "assets/Synergie.webp"
+
 // Lazy-loaded sections
 const Section1 = React.lazy(() => import("../../components/AccueilImma/Section1"));
 const Section2 = React.lazy(() => import("../../components/AccueilImma/Section2"));
@@ -23,19 +23,6 @@ const Accueil = () => {
                 <meta name="description" content="ImmaMissio propose des solutions numériques pour l'Église et les Patronages, permettant de rayonner et d'incarner la mission en ligne." />
                 <meta name="keywords" content="ImmaMissio, Église, Patronage, solutions numériques, mission chrétienne, digitalisation, Synergie Innovation" />
 
-
-                {/* Open Graph / Facebook Meta Tags */}
-                <meta property="og:title" content="ImmaMissio - Solutions Numériques pour l'Église" />
-                <meta property="og:description" content="Découvrez comment ImmaMissio propose des solutions numériques pour soutenir l'Église et les Patronages dans leur mission en ligne." />
-                <meta property="og:image" content={Synergie} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://synergieinnovation.fr/Accueil" />
-
-                {/* Twitter Cards Meta Tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="ImmaMissio - Solutions numériques pour l'Église et les Patronages" />
-                <meta name="twitter:description" content="Soutenez l'Église dans sa mission avec nos solutions numériques personnalisées." />
-                <meta name="twitter:image" content={Synergie} />
 
                 {/* Preload Background Image */}
                 <link rel="preload" href={BG} as="image" />
