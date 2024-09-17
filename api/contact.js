@@ -20,8 +20,9 @@ export default async function handler(req, res) {
         try {
             // Contenu de l'email
             await transporter.sendMail({
-                from: `"${firstName} ${lastName}" <${email}>`, // L'adresse email de l'expéditeur (l'utilisateur)
+                from: `"${firstName} ${lastName}" <Contact@synergieInnovation.fr>`, // Utilisez votre adresse autorisée ici
                 to: "Contact@synergieInnovation.fr", // L'adresse email de réception
+                replyTo: email, // Permet au destinataire de répondre directement à l'utilisateur
                 subject: `Nouvelle demande de contact : ${subject}`, // Sujet de l'email
                 text: `
                     Nom: ${firstName} ${lastName}
@@ -30,6 +31,7 @@ export default async function handler(req, res) {
                     Message: ${message}
                 `,
             });
+            
 
             // Réponse succès
             return res.status(200).json({ message: "Email envoyé avec succès" });
