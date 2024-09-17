@@ -178,14 +178,14 @@ const Contact = () => {
 
             {/* Modal de confirmation */}
             {modalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                <div className="fixed inset-0 flexitems-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-gray-200 rounded-lg p-8 shadow-xl backdrop-blur-[160px]">
-                        <h2 className="text-3xl font-bold text-center text-black">Merci ! Votre message a bien été envoyé !</h2>
-                        <p className="text-xl text-center text-gray-600">Nous reviendrons vers vous dans les plus brefs délais.</p>
+                        <h2 className="text-3xl font-bold font-afacad text-center text-[#071726]">Merci ! Votre message a bien été envoyé !</h2>
+                        <p className="text-xl font-afacad text-center text-[#071726]">Nous reviendrons vers vous dans les plus brefs délais.</p>
                         <div className="flex justify-center mt-6">
                             <button
                                 onClick={() => setModalOpen(false)}
-                                className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-700"
+                                className="px-6 py-2 bg-white text-[#071726] font-afacad text-xl rounded-lg hover:bg-[#071726] hover:text-white"
                             >
                                 C'est dans la boîte !
                             </button>
