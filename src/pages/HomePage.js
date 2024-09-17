@@ -5,7 +5,6 @@ import Synergie from "assets/Synergie.webp"
 import LogoSynergie from "../assets/V4 simple W.svg";
 import LogoVox from "../assets/PictoVox.svg";
 import LogoImma from "../assets/PictoImaMissio.svg";
-import LogoScan from "../assets/PictoScanAvis.webp";
 import SynergieLong from "../assets/V4longW.svg";
 import { FaPhoneAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
@@ -46,22 +45,6 @@ const HomePage = () => {
                     <p className="text-lg">Venez découvrir notre offre complète en</p>
                     <p className="text-lg">logo, web design, communication</p>
                     <p className="text-lg">et branding.</p>
-                </>
-            )
-        },
-        {
-            logo: LogoScan,
-            text: 'Scan\'Avis',
-            alt: 'LogoScan',
-            href: "/",
-            class: 'size-10 md:size-16',
-            extraClass: 'md:mr-32',
-            description: (
-                <>
-                    <p className="text-3xl font-bold mb-4">Votre suivi client</p>
-                    <p className="text-xl mb-4">Depuis un QR code</p>
-                    <p className="text-lg">Venez découvrir notre offre de suivi client</p>
-                    <p className="text-lg">depuis un QR code.</p>
                 </>
             )
         },

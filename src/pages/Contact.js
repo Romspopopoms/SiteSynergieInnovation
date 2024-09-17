@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import BG from "../assets/Bglandinghome.webp";
 import { FaChevronDown } from "react-icons/fa";
-
+import Navbar from "components/Navbar";
+import Footer from "components/Footer";
 const Contact = () => {
     const [formData, setFormData] = useState({
         firstName: "",
@@ -69,10 +70,11 @@ const Contact = () => {
             className="w-full min-h-screen bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: `url(${BG})` }}
         >
-            <div className="min-h-screen flex items-center justify-center">
+            <Navbar />
+            <div className="min-h-screen flex items-center justify-center md:py-24 py-12">
                 <form onSubmit={handleSubmit} className="p-8 w-full max-w-xl space-y-8">
                     <div className="flex flex-col justify-center items-center">
-                        <h1 className="text-7xl font-bold font-afacad text-center text-white w-full">
+                        <h1 className="md:text-7xl text-3xl font-bold font-afacad text-center text-white w-full mt-6 md:mt-0">
                             Contactez-nous !
                         </h1>
                         <p className="text-center text-white font-afacad text-3xl">Et obtenez votre devis</p>
@@ -193,6 +195,8 @@ const Contact = () => {
                     </div>
                 </div>
             )}
+            
+            <Footer />
         </div>
     );
 };

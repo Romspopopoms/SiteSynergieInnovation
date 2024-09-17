@@ -1,15 +1,13 @@
-
-import { FaBars } from "react-icons/fa";
-import Logo from "../../assets/V4longW.svg";
 import React, { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import Logo from "../assets/V4longW.svg";
+
 
 const Menu = [
     { name: "Hub", href: "/" },
-    { name: "Nos Solutions", href: "#NosSolutions" },
-    { name: "Nos Services", href: "#NosServices" },
-    { name: "Notre Mission", href: "#NotreMission" },
-    { name: "Notre équipe", href: "#Notreequipe" },
-    { name: "Contact", href: "#Contact" },
+    { name: "Synergie", href: "/SynergieInnovation" },
+    { name: "VoxUnity", href: "/VoxUnity" },
+    { name: "ImmaMissio", href: "/Accueil" },
 ];
 
 const Navbar = () => {
@@ -35,7 +33,7 @@ const Navbar = () => {
         <div className="w-full absolute top-0 left-0 z-50 bg-transparent">
             <div className="relative flex justify-between items-center min-h-20 px-4 sm:px-8">
                 {/* Logo à gauche */}
-                <a href="#Accueil" className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2">
+                <a href="/Contact" className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2">
                     <img src={Logo} alt="Logo" className="h-10 sm:h-12" />
                 </a>
                 {/* Menu centré */}
