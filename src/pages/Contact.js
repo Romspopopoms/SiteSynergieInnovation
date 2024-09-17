@@ -1,9 +1,6 @@
-import React, { Suspense, useState } from "react";
-import { Helmet } from "react-helmet-async";
+import React, { useState } from "react";
 import BG from "../assets/Bglandinghome.webp";
 import { FaChevronDown } from "react-icons/fa";
-import Navbar from "../components/Synergie/Navbar"
-import Footer from "../components/Footer";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -14,8 +11,9 @@ const Contact = () => {
         message: "",
     });
 
-    const [menuOpen, setMenuOpen] = useState(false); // État pour gérer l'ouverture du menu
-    const [selectedSubject, setSelectedSubject] = useState(""); // État pour gérer le sujet sélectionné
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [selectedSubject, setSelectedSubject] = useState("");
+    const [modalOpen, setModalOpen] = useState(false); // État pour gérer l'ouverture du modal
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -38,7 +36,9 @@ const Contact = () => {
             });
 
             if (response.ok) {
-                alert("Votre message a été envoyé avec succès !");
+                // Ouvre le modal après soumission réussie
+                setModalOpen(true);
+                // Réinitialiser les champs du formulaire
                 setFormData({
                     firstName: "",
                     lastName: "",
@@ -55,19 +55,13 @@ const Contact = () => {
         }
     };
 
-    // Gestion de l'ouverture/fermeture du menu
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-
-    // Gérer la sélection dans le menu
     const handleSelect = (value) => {
         setSelectedSubject(value);
         setFormData((prevState) => ({
             ...prevState,
-            subject: value, // Mettre à jour le sujet dans le formulaire
+            subject: value,
         }));
-        setMenuOpen(false); // Fermer le menu après sélection
+        setMenuOpen(false);
     };
 
     return (
@@ -75,29 +69,7 @@ const Contact = () => {
             className="w-full min-h-screen bg-center bg-cover bg-no-repeat"
             style={{ backgroundImage: `url(${BG})` }}
         >
-            <Helmet>
-                <title>Contactez-nous - Synergie Innovation</title>
-                <meta
-                    name="description"
-                    content="Contactez Synergie Innovation pour obtenir un devis personnalisé pour la création de votre site web, branding, ou développement d'applications."
-                />
-                <meta name="keywords" content="contact, synergie innovation, site web, développement, branding" />
-                <meta property="og:title" content="Contactez Synergie Innovation" />
-                <meta
-                    property="og:description"
-                    content="Demandez un devis personnalisé pour vos projets de développement web, design ou branding avec Synergie Innovation."
-                />
-                <meta property="og:image" content={BG} />
-                <meta property="og:type" content="website" />
-            </Helmet>
-
-            {/* Navbar avec lazy loading */}
-            <Suspense fallback={null}>
-                <Navbar />
-            </Suspense>
-
-            {/* Section Contact */}
-            <div className="min-h-screen flex items-center justify-center py-24">
+            <div className="min-h-screen flex items-center justify-center">
                 <form onSubmit={handleSubmit} className="p-8 w-full max-w-xl space-y-8">
                     <div className="flex flex-col justify-center items-center">
                         <h1 className="text-7xl font-bold font-afacad text-center text-white w-full">
@@ -136,32 +108,28 @@ const Contact = () => {
                     <div className="flex flex-col w-full">
                         <h4 className="text-white font-afacad mb-1 font-medium text-xl">Votre demande concerne :</h4>
                         <div className="relative w-full">
-                            {/* Icône à droite qui tourne en fonction de l'état */}
                             <FaChevronDown
                                 className={`absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-white transition-transform duration-300 ${
                                     menuOpen ? "rotate-180" : ""
                                 }`}
                             />
-
-                            {/* Affichage de l'option sélectionnée avec la gestion correcte du placeholder */}
                             <div
                                 className={`w-full px-4 py-2 border rounded-md cursor-pointer flex justify-between items-center 
                                 ${selectedSubject === "" ? "text-gray-400" : "text-black"} bg-white`}
-                                onClick={toggleMenu} // Ouvre ou ferme le menu
+                                onClick={() => setMenuOpen(!menuOpen)}
                             >
                                 {selectedSubject === "" ? "Sélectionnez" : selectedSubject}
                             </div>
 
-                            {/* Liste déroulante */}
                             {menuOpen && (
-                                <div className="absolute w-full mt-2 bg-transparent shadow-md rounded-lg backdrop-blur-[160px] ">
+                                <div className="absolute w-full mt-2 bg-transparent shadow-md rounded-lg backdrop-blur-[160px]">
                                     <ul className="space-y-2">
                                         {["Site web", "Logo", "Charte graphique", "Communication", "Photo", "Autre"].map(
                                             (item, index) => (
                                                 <li
                                                     key={index}
                                                     className="px-4 py-2 cursor-pointer hover:bg-gray-200 text-white text-center font-afacad text-xl"
-                                                    onClick={() => handleSelect(item)} // Sélectionne l'élément
+                                                    onClick={() => handleSelect(item)}
                                                 >
                                                     {item}
                                                     <hr className="border-b h-px bg-gradient-to-r from-transparent via-white to-transparent mt-2" />
@@ -208,10 +176,23 @@ const Contact = () => {
                 </form>
             </div>
 
-            {/* Footer avec lazy loading */}
-            <Suspense fallback={null}>
-                <Footer />
-            </Suspense>
+            {/* Modal de confirmation */}
+            {modalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div className="bg-gray-200 rounded-lg p-8 shadow-xl backdrop-blur-[160px]">
+                        <h2 className="text-3xl font-bold text-center text-black">Merci ! Votre message a bien été envoyé !</h2>
+                        <p className="text-xl text-center text-gray-600">Nous reviendrons vers vous dans les plus brefs délais.</p>
+                        <div className="flex justify-center mt-6">
+                            <button
+                                onClick={() => setModalOpen(false)}
+                                className="px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-700"
+                            >
+                                C'est dans la boîte !
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
