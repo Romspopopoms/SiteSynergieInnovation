@@ -87,7 +87,7 @@ const HomePage = () => {
             logo: 'phone',
             text: 'Contact',
             alt: 'Contact',
-            href: "/",
+            href: "/Contact",
             class: 'size-10 md:size-12 text-[#FFFFFF]',
             extraClass: 'md:ml-32',
             description: (

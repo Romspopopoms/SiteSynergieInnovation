@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence, motion } from 'framer-motion';
 import Loader from './components/Loader'; // Import du loader
+import Contact from 'pages/Contact';
 
 // Lazy-loading des pages pour optimiser le bundle
 const Home = lazy(() => import('./pages/HomePage'));
@@ -67,6 +68,7 @@ const AppContent = () => {
                 <Route path="/ImmaMissioCharteGraphique" element={<ImmaMissioCharteGraphique />} />
                 <Route path="/ImmaMissioWebDesign" element={<ImmaMissioWebDesign />} />
                 <Route path="/ImmaMissioCom" element={<ImmaMissioCom />} />
+                <Route path="/Contact" element={<Contact />} />
 
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
