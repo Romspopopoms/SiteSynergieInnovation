@@ -31,14 +31,14 @@ const Menu2 = [
 const Section3 = () => {
     return (
         <div className="flex justify-center items-center w-full py-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full md:max-w-[65%] px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full md:max-w-[55%] px-4">
                 
                 {/* Colonne gauche (Logo Simple) */}
-                <div className="flex flex-col justify-between bg-transparent p-8 rounded-lg shadow-xl h-full"
+                <div className="flex flex-col justify-between bg-transparent p-8 rounded-lg shadow-2xl h-full"
                     style={{
-                        backdropFilter: "blur(100px)",
+                        backdropFilter: "blur(40px)",
                         borderRadius: "20px",
-                        boxShadow: "0px 0px 5px 0px #FFFFFF",  // Application de l'ombre
+                        boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.2)"
                     }}>
                     <div className="flex flex-col items-start">
                         <h1 className="font-poppins font-semibold text-[#ffffff] text-2xl md:text-3xl">Logo Simple</h1>
@@ -50,17 +50,17 @@ const Section3 = () => {
                     <div className="mt-6 flex-grow">
                         {Menu1.map((item, index) => (
                             <div key={index} className="flex items-center space-x-2 my-2">
-                                <FaCheckCircle className="text-[#FFFFFF] w-5 h-5" />
+                                <FaCheckCircle className="text-[#FFFFFF] w-4 h-4 md:w-5 md:h-5" />
                                 <p className="text-white text-lg font-poppins">{item.name}</p>
                             </div>
                         ))}
                     </div>
 
                     {/* Bouton pour contacter */}
-                    <div className="mt-8">
+                    <div className="mt-8 ">
                         <a
                             href="/Contact"
-                            className="bg-transparent border-2 border-[#FFFFFF] font-poppins font-bold bg-white text-[#8D1257] rounded-full py-2 px-8"
+                            className="bg-transparent border-2 border-[#FFFFFF] font-poppins font-bold bg-white text-[#8D1257] rounded-full py-2 px-2 md:px-8  "
                         >
                         Demander votre devis
                         </a>
@@ -70,9 +70,9 @@ const Section3 = () => {
                 {/* Colonne droite (Logo Premium) */}
                 <div className="flex flex-col justify-between bg-transparent p-8 rounded-lg shadow-xl h-full"
                     style={{
-                        backdropFilter: "blur(100px)",
+                        backdropFilter: "blur(40px)",
                         borderRadius: "20px",
-                        boxShadow: "0px 0px 5px 0px #FFFFFF",  // Application de l'ombre
+                        boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.2)"
                     }}>
                     <div className="flex flex-col items-start">
                         <h1 className="font-poppins font-semibold text-[#ffffff] text-2xl md:text-3xl">Logo Premium</h1>
@@ -84,7 +84,7 @@ const Section3 = () => {
                     <div className="mt-6 flex-grow">
                         {Menu2.map((item, index) => (
                             <div key={index} className="flex items-center space-x-2 my-2">
-                                <FaCheckCircle className="text-[#FFFFFF] w-5 h-5" />
+                                <FaCheckCircle className="text-[#FFFFFF] w-4 h-4 md:w-5 md:h-5" />
                                 <p className="text-white text-lg font-poppins">{item.name}</p>
                             </div>
                         ))}
@@ -94,7 +94,7 @@ const Section3 = () => {
                     <div className="mt-8">
                         <a
                             href="/Contact"
-                            className="bg-transparent border-2 border-[#FFFFFF] font-poppins font-bold bg-white text-[#8D1257] rounded-full py-2 px-8"
+                            className="bg-transparent border-2 border-[#FFFFFF] font-poppins font-bold bg-white text-[#8D1257] rounded-full py-2 px-2 md:px-8 "
                         >
                             Demander votre devis
                         </a>

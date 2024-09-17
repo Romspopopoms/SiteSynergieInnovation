@@ -62,13 +62,13 @@ const VoxUnityCharteGraphique = () => {
             </Suspense>
 
             <Suspense fallback={null}>
-                <div className="mt-24">
+                <div className="">
                     <Section3/>
                 </div>
             </Suspense>
 
             <Suspense fallback={null}>
-                <div className="mt-24">
+                <div className="mt-12">
                     <Section4/>
                 </div>
             </Suspense>

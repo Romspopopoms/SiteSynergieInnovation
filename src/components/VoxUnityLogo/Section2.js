@@ -49,7 +49,7 @@ const Section2 = () => {
     };
 
     return (
-        <div className="w-full max-w-6xl mx-auto mt-8">
+        <div className="w-full max-w-6xl mx-auto mt-8 relative">
             {/* Grille pour les grands écrans */}
             <div className=" grid-cols-2 gap-4 w-full hidden md:grid">
                 {/* Colonne de gauche : Menu des étapes */}
@@ -70,25 +70,25 @@ const Section2 = () => {
                             <FaCircleArrowRight
                                 className="text-white cursor-pointer h-8 w-8 hover:text-[#8D1257] transition-all duration-200"
                             />
-
-                            {/* Modal qui s'affiche si l'élément est survolé */}
-                            {hoveredIndex === index && (
-                                <div
-                                    className="absolute flex justify-center items-center left-full top-1/2 transform -translate-y-1/2 ml-4 p-4 w-full bg-transparent rounded-md z-10"
-                                    style={{ backdropFilter: "blur(40px)" }}
-                                >
-                                    <p className="text-white font-poppins font-medium text-lg max-w-[90%] text-center">
-                                        {item.description}
-                                    </p>
-                                </div>
-                            )}
                         </div>
                     ))}
                 </div>
 
                 {/* Colonne de droite : Image */}
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center relative">
                     <img src={LogoVox} alt="Logo Vox" className="w-[80%] h-auto" />
+
+                    {/* Modal toujours positionné sur le logo Vox */}
+                    {hoveredIndex !== null && (
+                        <div
+                            className="absolute flex justify-center items-center top-0 bottom-0 left-0 right-0 m-auto w-[80%] h-full bg-transparent rounded-md z-10"
+                            style={{ backdropFilter: "blur(40px)" }}
+                        >
+                            <p className="text-white font-poppins font-medium text-lg max-w-[90%] text-center">
+                                {Menu[hoveredIndex].description}
+                            </p>
+                        </div>
+                    )}
                 </div>
             </div>
 

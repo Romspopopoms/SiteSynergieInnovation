@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useLocation } from 'react-router-dom'; // Importer useLocation
-import Logo from '../../assets/PictoVox.svg'; // Remplacez par le chemin correct vers le logo VoxUnity
+import Logo from '../../assets/PictoVox.svg'; // Remplacez par le chemin c0orrect vers le logo VoxUnity
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const location = useLocation(); // Obtenez l'URL actuelle
+    const location = useLocation();
 
     const Menu = [
         { name: "Hub", href: "/" },

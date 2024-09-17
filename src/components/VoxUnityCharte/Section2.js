@@ -3,7 +3,7 @@ import React from "react";
 const Section2 = () => {
     return (
         <div className="flex flex-col justify-center items-center w-full px-4 md:px-0">
-            <h1 className="font-poppins font-bold text-2xl md:text-4xl text-white text-center mb-8">
+            <h1 className="font-poppins font-bold text-2xl md:text-5xl text-white text-center mb-8">
                 Conception de la charte graphique
             </h1>
 
@@ -27,7 +27,7 @@ const Section2 = () => {
                 </div>
 
                 {/* Bloc Typographie - Colonne 3 à 5 */}
-                <div className="flex flex-col justify-start items-center col-span-3">
+                <div className="flex flex-col justify-start items-center col-span-3 max-w-[90%]">
                     {/* Élément graphique : Boîte avec la typographie */}
                     <div className="bg-white p-8 rounded-[20px] shadow-lg w-full h-[320px] flex flex-col justify-center max-w-[90%] md:max-w-[700px] space-y-4">
                         <h3 className="font-poppins font-bold text-3xl md:text-5xl">Titre (bold)</h3>
