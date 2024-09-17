@@ -185,7 +185,7 @@ const Contact = () => {
                         <div className="flex justify-center mt-6">
                             <button
                                 onClick={() => setModalOpen(false)}
-                                className="px-6 py-2 bg-white text-[#071726] font-afacad text-xl rounded-lg hover:bg-[#071726] hover:text-white"
+                                className="px-6 py-2 bg-transparent border-2 border-[#071726] text-[#071726] font-afacad text-xl rounded-lg hover:bg-[#071726] hover:text-white hover:border-white"
                             >
                                 C'est dans la boîte !
                             </button>
