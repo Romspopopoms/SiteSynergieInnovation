@@ -11,7 +11,7 @@ const Section5 = () => {
             </div>
             <div className="flex flex-col justify-center items-center max-w-[80%] gap-y-6">
             <p className="font-poppins text-[#FFFFFF] text-xl font-medium text-left md:max-w-[80%] mt-12">Nous préparons des designs uniques pour tous vos supports de communication : flyers, affiches, pulls, t-shirts, et plus encore. Faites briller votre entreprise avec une identité visuelle forte et cohérente, prête à marquer les esprits !</p>
-            <a href="/CharteGraphique" className="bg-white px-8 py-2 rounded-full self-center mt-2 mb-12">
+            <a href="/VoxUnityCharteGraphique" className="bg-white px-8 py-2 rounded-full self-center mt-2 mb-12">
             <h2 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
             Soyez partout</h2>
         </a>

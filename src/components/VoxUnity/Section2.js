@@ -31,7 +31,7 @@ const Section2 = () => {
                     <p className="font-poppins text-[#FFFFFF] text-base mb-4 flex-grow text-start mt-2">
                         Votre entreprise est unique, et votre logo doit l'être aussi. Ensemble, concevons un logo sur mesure qui incarne votre vision et attire vos clients dès le premier regard.
                     </p>
-                    <a href="/Logo" className="bg-white px-6 py-2 rounded-full self-center">
+                    <a href="/VoxUnityLogo" className="bg-white px-6 py-2 rounded-full self-center">
                         <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
                             En savoir plus
                         </h3>
@@ -57,7 +57,7 @@ const Section2 = () => {
                     <p className="font-poppins text-[#FFFFFF] text-base mb-4 flex-grow text-start mt-2">
                         Votre identité visuelle est essentielle. Nous vous aidons à concevoir une charte graphique sur mesure qui reflète parfaitement l'esprit et les valeurs de votre entreprise, pour un impact unique et mémorable.
                     </p>
-                    <a href="/Logo" className="bg-white px-6 py-2 rounded-full self-center">
+                    <a href="/VoxUnityCharteGraphique" className="bg-white px-6 py-2 rounded-full self-center">
                         <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
                             En savoir plus
                         </h3>
@@ -83,7 +83,7 @@ const Section2 = () => {
                     <p className="font-poppins text-[#FFFFFF] text-base mb-4 flex-grow text-start mt-2">
                         Votre site web doit refléter votre identité. Nous créons des designs sur mesure qui captivent vos visiteurs et mettent en valeur votre marque. Faites la différence avec un site unique, pensé pour vous.
                     </p>
-                    <a href="/Logo" className="bg-white px-6 py-2 rounded-full self-center">
+                    <a href="/VoxUnityWebDesign" className="bg-white px-6 py-2 rounded-full self-center">
                         <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
                             En savoir plus
                         </h3>
@@ -112,7 +112,7 @@ const Section2 = () => {
         <p className="font-poppins text-[#FFFFFF] text-base mb-4 flex-grow text-start mt-2">
             Votre entreprise est unique, et votre logo doit l'être aussi. Ensemble, concevons un logo sur mesure qui incarne votre vision et attire vos clients dès le premier regard.
         </p>
-        <a href="/Logo" className="bg-white px-6 py-2 rounded-full self-center">
+        <a href="/VoxUnityLogo" className="bg-white px-6 py-2 rounded-full self-center">
             <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
                 En savoir plus
             </h3>
@@ -138,7 +138,7 @@ const Section2 = () => {
         <p className="font-poppins text-[#FFFFFF] text-base mb-4 flex-grow text-start mt-2">
             Votre identité visuelle est essentielle. Nous vous aidons à concevoir une charte graphique sur mesure qui reflète parfaitement l'esprit et les valeurs de votre entreprise, pour un impact unique et mémorable.
         </p>
-        <a href="/Logo" className="bg-white px-6 py-2 rounded-full self-center">
+        <a href="/VoxUnityCharteGraphique" className="bg-white px-6 py-2 rounded-full self-center">
             <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
                 En savoir plus
             </h3>
@@ -164,7 +164,7 @@ const Section2 = () => {
         <p className="font-poppins text-[#FFFFFF] text-base mb-4 flex-grow text-start mt-2">
             Votre site web doit refléter votre identité. Nous créons des designs sur mesure qui captivent vos visiteurs et mettent en valeur votre marque. Faites la différence avec un site unique, pensé pour vous.
         </p>
-        <a href="/Logo" className="bg-white px-6 py-2 rounded-full self-center">
+        <a href="/VoxUnityWebDesign" className="bg-white px-6 py-2 rounded-full self-center">
             <h3 className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-text1 to-text2">
                 En savoir plus
             </h3>
