@@ -7,11 +7,15 @@ const Footer = () => {
         <h1 className="font-inter text-white text-center">© Synergie Innovation 2024</h1>
         </div>
         <div className="max-w-[80%] flex justify-center md:justify-end items-center space-x-4 md:space-x-0">
-            <a href="/">
+        <a
+          href="https://www.instagram.com/synergie_innovation"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
         <h1 className="font-inter text-white">Instagram</h1>
             </a>
-            <a href="/">
-        <h2 className="font-inter text-white md:ml-8">Email</h2>
+            <a href="mailto:contact@synergieinnovation.fr">
+            <h2 className="font-inter text-white md:ml-8">Email</h2>
             </a>
         </div>
        
