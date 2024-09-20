@@ -22,7 +22,7 @@ const Section4 = () => {
             </a>
 
             <img src={Site2} alt="Site1" className="w-full object-cover" style={{borderRadius: '35px'}}></img>
-            <a href="/VoxUnity" target="blank" className="flex w-full justify-between items-center">
+            <a href="https://template-paroisse.vercel.app/" target="blank" className="flex w-full justify-between items-center">
             <h2 className="font-poppins font-bold text-xl md:text-2xl text-white w-full mb-2">Modèle Saint Athanase</h2>
             <div className="flex w-full justify-end items-center space-x-2">
             <p className="text-white">Découvrir</p>
@@ -31,7 +31,7 @@ const Section4 = () => {
             </a>
 
             <img src={Site3} alt="Site1" className="w-full object-cover" style={{borderRadius: '35px'}}></img>
-            <a href="/VoxUnity" target="blank" className="flex w-full justify-between items-center">
+            <a href="https://template-boulangerie.vercel.app/" target="blank" className="flex w-full justify-between items-center">
             <h2 className="font-poppins font-bold text-xl md:text-2xl text-white w-full mb-2">Modèle Pain</h2>
             <div className="flex w-full justify-end items-center space-x-2">
             <p className="text-white">Découvrir</p>
