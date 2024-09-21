@@ -74,9 +74,10 @@ const Section6 = () => {
                             borderRadius: "20px",
                             boxShadow: "0px 0px 20px 0px rgba(255, 255, 255, 0.2)"
                         }}>
-                        <div>
+                        <div className="flex flex-col">
                             <h2 className="font-poppins font-bold text-2xl md:text-3xl text-white mb-4">{offer.title}</h2>
-                            <h3 className="font-poppins font-semibold text-3xl md:text-4xl text-white mb-4">À partir de <span>{offer.price}</span></h3>
+                            <h3 className="font-poppins font-semibold text-sm text-white">À partir de</h3>
+                            <h4 className="font-poppins font-semibold text-white mb-4 text-3xl md:text-4xl">{offer.price}</h4>
                         </div>
                         <ul className="flex-grow">
                             {offer.items.map((item, i) => (
