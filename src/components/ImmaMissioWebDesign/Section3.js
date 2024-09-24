@@ -17,7 +17,7 @@ const Section3 = () => {
                 <h1 className="text-3xl md:text-6xl text-[#474747] font-dmserif font-medium">
                 Notre constat et nos objectifs
                 </h1>
-                <p className="text-xl sm:text-2xl md:text-2xl font-jost font-medium text-[#474747] mt-6 sm:mt-8 md:mt-12 max-w-[83%] mx-auto">
+                <p className="text-xl sm:text-2xl md:text-2xl font-jost font-medium text-[#474747] mt-6 sm:mt-8 md:mt-12 max-w-[95%] mx-auto">
                 Nous plaçons l'écoute des paroisses, des patronages, des diocèses, et de toutes les communautés ecclésiales au cœur de notre démarche. Nous vous accompagnons dans la création de votre logo et de votre charte graphique, en concevant des solutions entièrement personnalisées. Notre expertise inclut la conception de chartes graphiques uniques et de logos sur mesure, conçus pour refléter l'identité de votre communauté et renforcer votre visibilité. Chaque élément est pensé pour transmettre votre message de manière claire et impactante, tout en mettant en valeur la mission et les valeurs de votre paroisse, patronage, ou diocèse.
                 </p>
             </div>

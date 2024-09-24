@@ -60,7 +60,7 @@ const Section4 = () => {
     const settings = {
       infinite: true,          // Active le défilement infini
       speed: 500,
-      slidesToShow: 3,       // Montre 3,5 cartes en md+
+      slidesToShow: 4,       // Montre 3,5 cartes en md+
       slidesToScroll: 1,
       nextArrow: <NextArrow />, 
       responsive: [
@@ -76,20 +76,20 @@ const Section4 = () => {
   
     return (
       <section className="min-h-screen bg-[#FFFBED] py-16 px-8">
-        <h1 className="text-3xl md:text-5xl font-dmserif font-medium text-center mb-8">
+        <h1 className="text-3xl md:text-5xl font-dmserif font-medium text-center mb-8 text-[#474747]">
           Le processus de création de votre logo
         </h1>
         
         {/* Utilisation de React Slick pour créer le carrousel */}
-        <div className="max-w-7xl mx-auto">
+        <div className="w-full">
           <Slider {...settings}>
             {Menu.map((item, index) => (
               <div key={index} className="px-4">
-                <div className="bg-white shadow-lg rounded-lg p-6 h-[480px]">
-                  <h2 className="text-2xl font-dmserif font-medium mb-4">
+                <div className="bg-white shadow-lg p-6 h-[570px]">
+                  <h2 className="text-2xl font-dmserif font-medium mb-4 text-[#474747]">
                     {item.name}
                   </h2>
-                  <p className="font-jost font-light text-lg">
+                  <p className="font-jost font-light text-lg text-[#474747]">
                     {item.description}
                   </p>
                 </div>

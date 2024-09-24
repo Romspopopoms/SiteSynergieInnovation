@@ -18,7 +18,7 @@ const Section3 = () => {
           <img
             src={ParoisseLogo}
             alt="Paroisse Logo"
-            className="w-full h-full object-cover shadow-lg rounded-lg"
+            className="w-full h-full object-cover shadow-lg"
           />
         </div>
       </div>

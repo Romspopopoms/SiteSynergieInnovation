@@ -12,7 +12,7 @@ const Section4 = () => {
             <div className="grid grid-cols-3 gap-4 md:gap-12 mt-12 md:mt-24 max-w-[80%] ">
                 {/* Colonne 1 */}
                 <a href="/VoxUnity" className="flex justify-center">
-                    <img src={Vox} alt="Vox" className="h-auto w-24 md:w-40"></img>
+                    <img src={Vox} alt="Vox" className="h-auto w-24"></img>
                 </a>
 
                 {/* Colonne 2 */}

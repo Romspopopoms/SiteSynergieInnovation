@@ -13,7 +13,7 @@ const Section5 = () => {
                     <p className="text-md font-jost text-[#474747] mt-4 text-left">
                         Immortalisez vos événements et valorisez votre institution avec des visuels percutants qui enrichissent votre communication et captivent votre communauté grâce à une prestation photographique professionnelle.
                     </p>
-                    <a href="/">
+                    <a href="/ImmaMissioCharteGraphique">
                     <button className="mt-8 border-2 border-black px-4 py-2 font-jost text-left">En savoir plus</button> {/* Bouton aligné à gauche */}
                     </a>
                 </div>
@@ -25,7 +25,7 @@ const Section5 = () => {
                     <p className="text-md font-jost text-[#474747] mt-4 text-left">
                         Capturez des images uniques et spectaculaires pour mettre en valeur votre institution. Nos drones offrent une perspective aérienne innovante pour dynamiser votre communication visuelle.
                     </p>
-                    <a href="/">
+                    <a href="/ImmaMissioCharteGraphique">
                     <button className="mt-8 border-2 border-black px-4 py-2 font-jost text-left">En savoir plus</button> {/* Bouton aligné à gauche */}
                     </a>
                 </div>

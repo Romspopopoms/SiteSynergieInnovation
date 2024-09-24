@@ -60,7 +60,7 @@ const data = [
 
 const Section3 = () => {
   return (
-    <div className="flex flex-col items-center w-full py-48 bg-cover">
+    <div className="flex flex-col items-center w-full pt-48 bg-cover">
       {/* Titres */}
       <div className="text-center max-w-[80%] mb-12">
         <h1 className="text-[#474747] text-3xl md:text-5xl font-semibold font-dmserif">

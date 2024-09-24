@@ -19,7 +19,7 @@ const Section2 = () => {
                     <br></br> pour mieux y répondre
                 </h1>
                 <p className="text-xl sm:text-2xl md:text-2xl font-jost font-medium text-[#474747] mt-6 sm:mt-8 md:mt-12 max-w-[83%] mx-auto">
-                    une équipe catholique passionnée, bien consciente des besoins spécifiques de l'Église sur le web. Grâce à notre expertise, nous répondons de la meilleure façon en développant des solutions numériques adaptées pour soutenir la mission de l'Église et faire rayonner l'Évangile dans le monde digital.
+                    Une équipe catholique passionnée, bien consciente des besoins spécifiques de l'Église sur le web. Grâce à notre expertise, nous répondons de la meilleure façon en développant des solutions numériques adaptées pour soutenir la mission de l'Église et faire rayonner l'Évangile dans le monde digital.
                 </p>
             </div>
         </div>

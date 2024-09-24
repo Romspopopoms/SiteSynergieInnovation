@@ -111,7 +111,7 @@ const Contact = () => {
                         <h4 className="text-white font-afacad mb-1 font-medium text-xl">Votre demande concerne :</h4>
                         <div className="relative w-full">
                             <FaChevronDown
-                                className={`absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-white transition-transform duration-300 ${
+                                className={`absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-[#264A6E] transition-transform duration-300 ${
                                     menuOpen ? "rotate-180" : ""
                                 }`}
                             />
@@ -124,20 +124,22 @@ const Contact = () => {
                             </div>
 
                             {menuOpen && (
-                                <div className="absolute w-full mt-2 bg-transparent shadow-md rounded-lg backdrop-blur-[160px]">
+                                <div className="absolute w-full mt-2 bg-transparent shadow-md rounded-lg backdrop-blur-[160px] py-4">
                                     <ul className="space-y-2">
-                                        {["Site web", "Logo", "Charte graphique", "Communication", "Photo", "Autre"].map(
+                                        {["Site web", "Logo", "Charte graphique", "Communication", "Photo"].map(
                                             (item, index) => (
                                                 <li
                                                     key={index}
-                                                    className="px-4 py-2 cursor-pointer hover:bg-gray-200 text-white text-center font-afacad text-xl"
+                                                    className="px-4 py-1 cursor-pointer hover:bg-gray-200 text-white text-center font-afacad text-xl "
                                                     onClick={() => handleSelect(item)}
                                                 >
                                                     {item}
-                                                    <hr className="border-b h-px bg-gradient-to-r from-transparent via-white to-transparent mt-2" />
+                                                    <hr className="border-0 h-px bg-gradient-to-r from-transparent via-white to-transparent my-0 mt-4" />
+                                                    
                                                 </li>
                                             )
                                         )}
+                                        <h5 className="px-4 cursor-pointer hover:bg-gray-200 text-white text-center font-afacad text-xl">Autres</h5>
                                     </ul>
                                 </div>
                             )}
@@ -161,7 +163,7 @@ const Contact = () => {
                         <h6 className="text-white font-afacad mb-1 font-medium text-xl">Votre message</h6>
                         <textarea
                             name="message"
-                            placeholder="Bonjour, nous souhaitons créer un site vitrine 5 pages sur mesure, pour notre entreprise, pouvons-nous avoir d'avantages d'informations sur vos pratiques?"
+                            placeholder="Bonjour, nous souhaitons créer un site vitrine 5 pages sur mesure, pour notre entreprise, pouvons-nous avoir davantage d'informations sur vos pratiques?"
                             value={formData.message}
                             onChange={handleChange}
                             required

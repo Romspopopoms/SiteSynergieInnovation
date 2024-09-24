@@ -61,12 +61,12 @@ const Navbar = () => {
                 </div>
 
                 {/* Menu pour grands écrans */}
-                <div className={`hidden xl:flex md:items-center md:space-x-3 text-[#474747] font-poppins font-semibold ml-3`}>
+                <div className={`hidden xl:flex md:items-center md:space-x-3 text-[#474747] font-poppins font-medium ml-3`}>
                     {Menu.map((item, index) => (
                         <a 
                             key={index} 
                             href={item.href} 
-                            className={`px-1 ${location.pathname === item.href ? 'underline' : ''}`}
+                            className={`px-1 ${location.pathname === item.href ? '' : ''}`}
                         >
                             {item.name}
                         </a>
@@ -103,7 +103,7 @@ const Navbar = () => {
                         <li key={index}>
                             <a
                                 href={item.href}
-                                className={`text-[#474747] text-lg font-medium hover:text-gray-300 transition-colors duration-200 ${location.pathname === item.href ? 'underline' : ''}`}
+                                className={`text-[#474747] text-lg font-medium hover:text-gray-300 transition-colors duration-200 ${location.pathname === item.href ? '' : ''}`}
                                 onClick={() => setIsOpen(false)} // Ferme le menu après sélection
                             >
                                 {item.name}

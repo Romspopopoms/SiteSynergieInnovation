@@ -7,12 +7,12 @@ const Section5 = () => {
                 Conception de la charte graphique
             </h1>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 space-y-16 md:space-y-0 w-full max-w-6xl mx-auto md:mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-5 space-y-16 md:space-y-0 w-full max-w-6xl mx-auto mt-12">
                 
                 {/* Bloc Couleurs - Colonne 1 à 2 */}
                 <div className="flex flex-col justify-center items-center col-span-2">
                     {/* Élément graphique : Carré */}
-                    <div className="w-full max-w-[90%] md:max-w-[320px] h-[320px] grid grid-rows-2 rounded-[20px] overflow-hidden mx-auto shadow-2xl">
+                    <div className="w-full max-w-[90%] md:max-w-[320px] h-[320px] grid grid-rows-2 overflow-hidden mx-auto">
                         <div className="bg-[#FFFDF5] w-full h-full"></div>
                         <div className="bg-[#474747] w-full h-full"></div>
                     </div>
@@ -27,9 +27,9 @@ const Section5 = () => {
                 </div>
 
                 {/* Bloc Typographie - Colonne 3 à 5 */}
-                <div className="flex flex-col justify-start items-center col-span-3">
+                <div className="flex flex-col justify-start items-center col-span-3 max-w-[90%]">
                     {/* Élément graphique : Boîte avec la typographie */}
-                    <div className="bg-white p-8 rounded-[20px] shadow-lg w-full md:h-[320px] flex flex-col justify-center max-w-[90%] md:max-w-[700px] space-y-4">
+                    <div className="bg-white p-8 shadow-lg w-full h-[320px] flex flex-col justify-center max-w-[90%] md:max-w-[700px] space-y-4">
                         <h3 className="font-dmserif font-medium text-3xl md:text-5xl">Titre (bold)</h3>
                         <h4 className="font-dmserif font-medium text-xl md:text-3xl">Sous-titre (semi-bold)</h4>
                         <p className="font-jost font-light text-lg md:text-xl">text (regular)</p>

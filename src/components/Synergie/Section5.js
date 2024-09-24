@@ -27,7 +27,7 @@ const Section5 = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50}}
             transition={{delay:0.1, duration: 0.5, ease: easeInOut }}
             className="text-white text-lg sm:text-2xl font-afacad max-w-[60%] mx-auto text-center mt-12">
-                Depuis décembre 2023, Synergie Innovation s'efforce de rendre les outils numériques accessibles à l'ensemble du monde ecclésial à des tarifs abordables. Nous travaillons également avec des entreprises, offrant des services à des tarifs raisonnables.
+                Depuis décembre 2023, Synergie Innovation s'efforce de rendre les outils numériques accessibles à des tarifs abordables.
             </motion.p>
             <div className="grid grid-cols-1 md:grid-cols-2 max-w-[80%] md:space-y-0 space-y-12 md:space-x-24 mt-32">
                 <div className="flex flex-col items-start justify-center">
