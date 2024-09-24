@@ -1,10 +1,9 @@
 import React from 'react';
 import VoxUnityLogo from "../../assets/Logo vox W.svg";
-import RomsDev from "../../assets/Picto rom's Dev W.webp";
 
 const Section1 = () => {
     return (
-        <div className="fixed left-0 top-0 h-full w-[25%] bg-transparent flex-col justify-between items-start text-white p-8 hidden md:flex">
+        <div className="fixed left-0 top-0 h-full w-[25%] bg-transparent flex-col justify-between items-start text-white p-8 hidden xl:flex">
             {/* Titre de la section */}
             <div className="w-full mb-8 mt-24">
                 <h1 className="font-poppins font-bold text-4xl md:text-5xl mb-2">
@@ -16,15 +15,12 @@ const Section1 = () => {
             </div>
 
             {/* Logos partenaires */}
-            <div className="flex justify-start items-center space-x-4 w-full mb-8">
+            <div className="flex justify-center items-end space-x-4 w-full ">
                 <img src={VoxUnityLogo} alt="Vox Unity Logo" className="w-24 md:w-28" />
-                <p className="font-poppins font-semibold text-lg md:text-xl">x</p>
-                <img src={RomsDev} alt="Roms Dev Logo" className="w-24 md:w-28" />
             </div>
 
             {/* Informations de contact */}
             <div className="w-full space-y-2 mb-8">
-                <hr className="border-t border-white opacity-40 mb-2" />
                 <p className="font-poppins text-sm md:text-base">Instagram</p>
                 <hr className="border-t border-white opacity-40 mb-2" />
                 <p className="font-poppins text-sm md:text-base">Email</p>

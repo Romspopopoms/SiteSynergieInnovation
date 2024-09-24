@@ -8,6 +8,7 @@ const Section1 = React.lazy(() => import("../../components/VoxUnityWebDesign/Sec
 const Section2 = React.lazy(() => import("../../components/VoxUnityWebDesign/Section2"));
 const Section3 = React.lazy(() => import("../../components/VoxUnityWebDesign/Section3"));
 const Section4 = React.lazy(() => import("../../components/VoxUnityWebDesign/Section4"));
+const Section5 = React.lazy(() => import("../../components/VoxUnityWebDesign/Section5"));
 
 const VoxUnityWebDesign = () => {
     return (
@@ -40,7 +41,7 @@ const VoxUnityWebDesign = () => {
                 </div>
 
                 {/* Section 2 : Occupant 75% de l'écran, centrée verticalement */}
-                <div className="w-[75%] ml-[25%] flex justify-center items-center">
+                <div className="xl:w-[70%] xl:ml-[25%] flex justify-center items-center">
                     <Suspense fallback={null}>
                         <Section2 />
                     </Suspense>
@@ -48,28 +49,34 @@ const VoxUnityWebDesign = () => {
             </div>
 
             {/* Section visible pour les petits écrans */}
-            <div className="md:hidden">
+            <div className="xl:hidden">
                 <Suspense fallback={null}>
                     <Section2 />
                 </Suspense>
             </div>
 
             {/* Section 3, visible sur tous les écrans */}
-            <div className="md:w-[75%] md:ml-[25%]">
+            <div className="xl:w-[70%] xl:ml-[25%]">
                 <Suspense fallback={null}>
                     <Section3 />
                 </Suspense>
             </div>
 
             {/* Section 4 */}
-            <div className="md:w-[75%] md:ml-[25%] mt-24">
+            <div className="xl:w-[70%] xl:ml-[25%] mt-24">
                 <Suspense fallback={null}>
                     <Section4 />
                 </Suspense>
             </div>
 
+            <div className="xl:w-[70%] xl:ml-[25%] mt-24">
+                <Suspense fallback={null}>
+                    <Section5 />
+                </Suspense>
+            </div>
+
             {/* Footer visible sur mobile uniquement */}
-            <div className="md:hidden block">
+            <div className="xl:hidden block">
                 <Footer />
             </div>
         </div>
