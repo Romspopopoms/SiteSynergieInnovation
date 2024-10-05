@@ -37,7 +37,7 @@ const Navbar = () => {
                 </div>
 
 
-                <a href="/Contact" className="hidden md:block border-2 border-black py-2 px-4 mr-4">
+                <a href="/Contact" className="hidden xl:block border-2 border-black py-2 px-4 mr-4">
                 <h1 className="font-jost font-semibold ">Contact</h1>
                 </a>
                 {isOpen ? (
@@ -47,7 +47,7 @@ const Navbar = () => {
                 )  : null}
 
             </div>
-            <div className="hidden bg-[#FFFBED]/85 md:flex justify-end md:justify-between items-center h-12 w-full px-4 border-b-2 border-[#222222]">
+            <div className="hidden bg-[#FFFBED]/85 xl:flex justify-end xl:justify-between items-center h-12 w-full px-4 border-b-2 border-[#222222]">
 
                 {/* Bouton Hamburger pour les petits écrans */}
                 <div className="xl:hidden">

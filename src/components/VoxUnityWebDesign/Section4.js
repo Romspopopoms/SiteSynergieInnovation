@@ -12,7 +12,7 @@ const Section4 = () => {
 
         <div className="flex flex-col justify-center items-center max-w-[90%] space-y-8 mt-12 mb-12" >
             
-            <img src={Site1} alt="Site1" className="w-full object-cover" style={{borderRadius: '35px'}}></img>
+            <img src={Site1} alt="Site1" className="w-full object-cover"></img>
             <a href="/VoxUnity" target="blank" className="flex w-full justify-between items-center">
             <h2 className="font-poppins font-bold text-xl md:text-2xl text-white w-full mb-2">Modèle VoxUnity</h2>
             <div className="flex w-full justify-end items-center space-x-2">
@@ -21,7 +21,7 @@ const Section4 = () => {
             </div>
             </a>
 
-            <img src={Site2} alt="Site1" className="w-full object-cover" style={{borderRadius: '35px'}}></img>
+            <img src={Site2} alt="Site1" className="w-full object-cover"></img>
             <a href="https://template-paroisse.vercel.app/" target="blank" className="flex w-full justify-between items-center">
             <h2 className="font-poppins font-bold text-xl md:text-2xl text-white w-full mb-2">Modèle Saint Athanase</h2>
             <div className="flex w-full justify-end items-center space-x-2">
@@ -30,7 +30,7 @@ const Section4 = () => {
             </div>
             </a>
 
-            <img src={Site3} alt="Site1" className="w-full object-cover" style={{borderRadius: '35px'}}></img>
+            <img src={Site3} alt="Site1" className="w-full object-cover"></img>
             <a href="https://template-boulangerie.vercel.app/" target="blank" className="flex w-full justify-between items-center">
             <h2 className="font-poppins font-bold text-xl md:text-2xl text-white w-full mb-2">Modèle Pain</h2>
             <div className="flex w-full justify-end items-center space-x-2">

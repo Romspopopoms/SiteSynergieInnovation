@@ -67,14 +67,14 @@ const Section4 = () => {
             </h1>
 
             {/* Grille d'icônes et de fonctionnalités */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 w-full max-w-[70%]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full max-w-[70%]">
                 {/* Mapping des trois premiers éléments */}
                 {features.slice(0, 3).map((feature, index) => (
                     <div key={index} className="flex flex-col items-center space-y-8">
                         <div className="bg-white shadow-lg w-60 h-60 flex justify-center items-center ">
                             <span className="text-[#474747]">{feature.icon}</span>
                         </div>
-                        <div className="flex flex-col justify-items-center md:justify-start md:items-start w-full max-w-full">
+                        <div className="flex flex-col justify-items-center md:justify-start md:items-start">
                             <h3 className="font-dmserif font-medium text-3xl text-[#474747] text-center md:text-left">
                                 {feature.title}
                             </h3>
