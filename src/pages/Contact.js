@@ -3,6 +3,7 @@ import BG from "../assets/Bglandinghome.webp";
 import { FaChevronDown } from "react-icons/fa";
 import Navbar from "components/Navbar";
 import Footer from "components/Footer";
+import { Helmet } from "react-helmet-async";
 const Contact = () => {
     const [formData, setFormData] = useState({
         firstName: "",
@@ -71,6 +72,27 @@ const Contact = () => {
             style={{ backgroundImage: `url(${BG})` }}
         >
             <Navbar />
+            
+            {/* SEO and Schema */}
+            <Helmet>
+                <title>Contact - Synergie Innovation</title>
+                <meta name="description" content="Contactez Synergie Innovation pour discuter de vos projets de création de site web, design, branding, et plus encore. Obtenez un devis sur mesure." />
+                <meta name="keywords" content="contact, devis site web, création de site, design, branding, Synergie Innovation" />
+                <link rel="canonical" href="https://synergieinnovation.fr/contact" />
+                <script type="application/ld+json">
+                    {`
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "ContactPage",
+                      "name": "Contact Synergie Innovation",
+                      "description": "Page de contact pour obtenir un devis ou discuter d'un projet avec Synergie Innovation.",
+                      "url": "https://synergieinnovation.fr/contact"
+                    }
+                    `}
+                </script>
+            </Helmet>
+
+            {/* Main Contact Form */}
             <div className="min-h-screen flex items-center justify-center md:py-24 py-12">
                 <form onSubmit={handleSubmit} className="p-8 w-full max-w-xl space-y-8">
                     <div className="flex flex-col justify-center items-center">
