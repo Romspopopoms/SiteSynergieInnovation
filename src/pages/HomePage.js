@@ -87,7 +87,8 @@ const HomePage = () => {
 
                     {/* Section Découvrez Synergie */}
                     <h1 className='text-5xl font-bold font-afacad text-center'>
-                        Bienvenue chez <span className='text-[#A11238]'>Synergie Innovation</span> - Solutions Digitales
+                        Bienvenue chez <span className='text-[#A11238]'>Synergie Innovation</span> <br></br>
+                        - Solutions Digitales -
                     </h1>
 
                     <a href='/SynergieInnovation' className='text-center flex flex-col justify-center items-center'>
